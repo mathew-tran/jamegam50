@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc22edvi1p3l1"]
+
+[ext_resource type="Script" uid="uid://c25jxewqvy8pw" path="res://Scripts/Cutscene.gd" id="1_c1xi3"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_idm0t"]
+[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_idm0t"]
+
+[sub_resource type="Resource" id="Resource_idm0t"]
+script = ExtResource("2_idm0t")
+TextToSay = "< A shot of the city >
+< A shot of the factory>
+< A shot of the protagonist wincing in pain>"
+BackgroundImage = ExtResource("3_idm0t")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="CutScene" type="Node2D"]
+script = ExtResource("1_c1xi3")
+Data = Array[ExtResource("2_idm0t")]([SubResource("Resource_idm0t")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_idm0t")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -228.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = -17.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "This is a test script."
