@@ -1,17 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnsfdc5wb0cb1"]
+[gd_scene load_steps=9 format=3 uid="uid://cnsfdc5wb0cb1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="3_kln2b"]
-[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://cr3mstg62i332" path="res://Prefabs/Environment/InteractableDresser.tscn" id="5_jw32o"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://dkwadeoluirfn" path="res://Prefabs/Environment/InteractableLamp.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://b4sh2igo0fbb7" path="res://Prefabs/Environment/InteractableLightSwitch.tscn" id="7_jw32o"]
+[ext_resource type="Script" uid="uid://dd2m821wpfcou" path="res://Scripts/LightEnvironment.gd" id="8_50glp"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_r150o")
 
 [node name="Environment" type="Node2D" parent="."]
-
-[node name="InteractableItem" parent="Environment" instance=ExtResource("4_rgh2o")]
-position = Vector2(818, 922)
 
 [node name="Box" parent="Environment" instance=ExtResource("3_kln2b")]
 position = Vector2(172, 951)
@@ -22,5 +23,25 @@ position = Vector2(461, 949)
 [node name="Box3" parent="Environment" instance=ExtResource("3_kln2b")]
 position = Vector2(316, 951)
 
+[node name="InteractableItem2" parent="Environment" instance=ExtResource("5_jw32o")]
+position = Vector2(1055, 917)
+TriggerState = 1
+
+[node name="InteractableItem" parent="Environment" instance=ExtResource("6_v1gob")]
+position = Vector2(153, 450)
+
+[node name="InteractableItem3" parent="Environment" instance=ExtResource("7_jw32o")]
+position = Vector2(734, 264)
+ToggleObject = NodePath("../../CanvasModulate")
+
 [node name="Player" parent="." instance=ExtResource("2_idj7w")]
 position = Vector2(1005, 539)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("5_pbw6q")]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.100439, 0.082729, 0.332926, 1)
+script = ExtResource("8_50glp")

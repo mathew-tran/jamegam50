@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4sh2igo0fbb7"]
+
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_ohx6h"]
+[ext_resource type="Texture2D" uid="uid://b3d37xebxs7m6" path="res://Art/Player/LightOn.png" id="2_5geck"]
+[ext_resource type="Script" uid="uid://ehecxuw10kep" path="res://Scripts/InteractableItemChangeSpriteToggle.gd" id="3_sx44c"]
+[ext_resource type="Texture2D" uid="uid://d11irmssbcv8v" path="res://Art/Player/LightOff.png" id="4_m2ijy"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="4_t61gd"]
+
+[sub_resource type="Resource" id="Resource_2307a"]
+script = ExtResource("4_t61gd")
+TextToSay = "Turned Light On."
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_t61gd"]
+script = ExtResource("4_t61gd")
+TextToSay = "Turn Light Off
+"
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ektl7"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(150, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxwd2"]
+resource_local_to_scene = true
+size = Vector2(150, 149)
+
+[node name="InteractableItem" instance=ExtResource("1_ohx6h")]
+texture = ExtResource("2_5geck")
+script = ExtResource("3_sx44c")
+ToggledCutScene = Array[ExtResource("4_t61gd")]([SubResource("Resource_2307a")])
+PostCutSceneTexture = ExtResource("4_m2ijy")
+CutScenes = Array[ExtResource("4_t61gd")]([SubResource("Resource_t61gd")])
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_ektl7")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_bxwd2")

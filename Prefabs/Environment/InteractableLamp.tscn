@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkwadeoluirfn"]
+
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_1w8ho"]
+[ext_resource type="Texture2D" uid="uid://bcm1jytcevnkt" path="res://Art/Player/LampPlaceholder.png" id="2_uv21u"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_fwrgd"]
+
+[sub_resource type="Resource" id="Resource_bsdpi"]
+script = ExtResource("3_fwrgd")
+TextToSay = "This is a lamp."
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwrgd"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(150, 345)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsdpi"]
+resource_local_to_scene = true
+size = Vector2(150, 345)
+
+[node name="InteractableItem" instance=ExtResource("1_1w8ho")]
+texture = ExtResource("2_uv21u")
+CutScenes = Array[ExtResource("3_fwrgd")]([SubResource("Resource_bsdpi")])
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_fwrgd")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_bsdpi")

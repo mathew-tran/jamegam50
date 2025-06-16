@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+class_name Player
+
 var TargetPosition = Vector2.ZERO
-var MoveSpeed = 500
+var MoveSpeed = 1800
 
 
 func _ready() -> void:
@@ -19,7 +21,7 @@ func _process(delta: float) -> void:
 		$Waypoint.visible = false
 		
 	if TargetPosition.distance_to(GetPlayerPosition()) > 5:
-		velocity *= .95
+		velocity *= .90
 		var direction = (TargetPosition - GetPlayerPosition()).normalized()
 		velocity += direction * MoveSpeed * delta
 		$AnimatedSprite2D.flip_h = TargetPosition.x < GetPlayerPosition().x
@@ -29,6 +31,9 @@ func _process(delta: float) -> void:
 			velocity = Vector2.ZERO
 	else:
 		TargetPosition = GetPlayerPosition()
+		
+		Finder.GetInteractPanel().InteractWithObject()
+			
 
 func GetPlayerPosition():
 	return global_position + Vector2(0, 80)

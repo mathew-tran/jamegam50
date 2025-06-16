@@ -1,23 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc22edvi1p3l1"]
+[gd_scene load_steps=9 format=3 uid="uid://dc22edvi1p3l1"]
 
 [ext_resource type="Script" uid="uid://c25jxewqvy8pw" path="res://Scripts/Cutscene.gd" id="1_c1xi3"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_idm0t"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_idm0t"]
+[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_0m8yb"]
+[ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="5_kweal"]
 
 [sub_resource type="Resource" id="Resource_idm0t"]
 script = ExtResource("2_idm0t")
 TextToSay = "< A shot of the city >
-< A shot of the factory>
-< A shot of the protagonist wincing in pain>"
+This is more things to say."
 BackgroundImage = ExtResource("3_idm0t")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_g4us0"]
+script = ExtResource("2_idm0t")
+TextToSay = "< A shot of the factory>"
+BackgroundImage = ExtResource("4_0m8yb")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_dqmat"]
+script = ExtResource("2_idm0t")
+TextToSay = "< A shot of the protagonist wincing in pain>"
+BackgroundImage = ExtResource("5_kweal")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="CutScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_c1xi3")
-Data = Array[ExtResource("2_idm0t")]([SubResource("Resource_idm0t")])
+Data = Array[ExtResource("2_idm0t")]([SubResource("Resource_idm0t"), SubResource("Resource_g4us0"), SubResource("Resource_dqmat")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 custom_minimum_size = Vector2(1920, 1080)

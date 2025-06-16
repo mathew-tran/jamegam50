@@ -7,6 +7,9 @@ signal CutsceneComplete
 
 var RemainingText = []
 
+func Setup(newData):
+	Data = newData.duplicate()
+	
 func _ready() -> void:
 	get_tree().paused = true
 	PlayNextScene()
@@ -53,7 +56,7 @@ func PlayNextText():
 	if len(RemainingText) > 0:
 		$CanvasLayer/Panel/RichTextLabel.text = RemainingText.pop_front()
 	else:
-		Destroy()
+		PlayNextScene()
 		
 func Destroy():
 	get_tree().paused = false
