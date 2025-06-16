@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	else:
 		$Waypoint.visible = false
 		
-	if TargetPosition.distance_to(GetPlayerPosition()) > 10:
+	if TargetPosition.distance_to(GetPlayerPosition()) > 5:
 		velocity *= .95
 		var direction = (TargetPosition - GetPlayerPosition()).normalized()
 		velocity += direction * MoveSpeed * delta

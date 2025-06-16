@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnsfdc5wb0cb1"]
+[gd_scene load_steps=5 format=3 uid="uid://cnsfdc5wb0cb1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="4_rgh2o"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_r150o")
 
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="InteractableItem" parent="Environment" instance=ExtResource("4_rgh2o")]
+position = Vector2(818, 922)
 
 [node name="Box" parent="Environment" instance=ExtResource("3_kln2b")]
 position = Vector2(172, 951)
