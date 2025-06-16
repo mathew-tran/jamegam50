@@ -13,6 +13,7 @@ BackgroundImage = ExtResource("3_idm0t")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="CutScene" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_c1xi3")
 Data = Array[ExtResource("2_idm0t")]([SubResource("Resource_idm0t")])
 

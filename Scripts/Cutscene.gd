@@ -8,6 +8,7 @@ signal CutsceneComplete
 var RemainingText = []
 
 func _ready() -> void:
+	get_tree().paused = true
 	PlayNextScene()
 
 func PlayNextScene():
@@ -55,6 +56,8 @@ func PlayNextText():
 		Destroy()
 		
 func Destroy():
+	get_tree().paused = false
 	CutsceneComplete.emit()
 	queue_free()
+
 	
