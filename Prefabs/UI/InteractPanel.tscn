@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmwjabbwgt077"]
+[gd_scene load_steps=3 format=3 uid="uid://cmwjabbwgt077"]
 
 [ext_resource type="Script" uid="uid://dspmkffa0qyql" path="res://Scripts/UI/InteractPanel.gd" id="1_buwaf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buwaf"]
+bg_color = Color(0, 0, 0, 0.823529)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(200, 50)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_buwaf")
 script = ExtResource("1_buwaf")
 
 [node name="Label" type="Label" parent="."]

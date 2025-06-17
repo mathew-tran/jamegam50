@@ -130,6 +130,7 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "This is a test script."
+visible_characters_behavior = 1
 
 [node name="OwnerImage" type="TextureRect" parent="CanvasLayer"]
 custom_minimum_size = Vector2(140, 140)

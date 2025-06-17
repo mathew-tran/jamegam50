@@ -2,7 +2,10 @@ extends CanvasLayer
 
 class_name TransitionSceneManager
 
+var bHasTransitioned = true
+
 func TransitionToScene(newPackedScene : PackedScene):
+	bHasTransitioned = false
 	$AnimationPlayer.speed_scale = 1
 	$AnimationPlayer.play("animateIn")
 	$AudioStreamPlayer2D.pitch_scale = randf_range(1, 1.3)
@@ -10,3 +13,4 @@ func TransitionToScene(newPackedScene : PackedScene):
 	get_tree().change_scene_to_packed(newPackedScene)
 	$AnimationPlayer.speed_scale = 2
 	$AnimationPlayer.play_backwards("animateIn")
+	bHasTransitioned = true

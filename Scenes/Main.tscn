@@ -20,8 +20,9 @@
 
 [sub_resource type="Resource" id="Resource_1p5hy"]
 script = ExtResource("2_4kpch")
-TextToSay = "...
-..
+TextToSay = "[shake rate=20.0 level=5 connected=1]...[/shake]
+...
+[shake rate=20.0 level=20 connected=1]...[/shake]
 The atmosphere in the apartment is gloomy. 
 Peeling wallpaper, old furniture, garbage in the corners and usual discomfort. 
 The windows and walls are thin, you are able to hear the cars and other sounds of life outside.

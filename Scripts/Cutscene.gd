@@ -7,6 +7,9 @@ signal CutsceneComplete
 
 var RemainingText = []
 
+var bCanSkip = true
+
+@onready var Content = $CanvasLayer/Panel/RichTextLabel
 func _enter_tree() -> void:
 	$CanvasLayer/Panel.visible = false
 	$CanvasLayer/OwnerImage.visible = false
@@ -39,7 +42,6 @@ func PlayNextScene():
 
 		$CanvasLayer/Options.visible = false
 		if len(newData.Options) > 0:
-			$CanvasLayer/TextureRect2.visible = false
 			var optionClass = load("res://Prefabs/UI/OptionButton.tscn")
 			for option in newData.Options:
 				var instance = optionClass.instantiate()
@@ -48,9 +50,13 @@ func PlayNextScene():
 				await get_tree().process_frame
 			
 		if newData.Owner:
+			$CanvasLayer/OwnerImage.modulate = Color(1,1, 1, 0)
 			$CanvasLayer/OwnerImage.texture = newData.Owner.OwnerImage
 			$CanvasLayer/OwnerImage/Label.text = newData.Owner.OwnerName
 			$CanvasLayer/OwnerImage.visible = true
+			var tween = get_tree().create_tween()
+			tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+			tween.tween_property($CanvasLayer/OwnerImage, "modulate", Color.WHITE, .1)
 		else:
 			$CanvasLayer/OwnerImage.visible = false
 		var textToUse = newData.TextToSay
@@ -83,13 +89,23 @@ func PlayNextScene():
 		
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_click"):
-		PlayNextText()
+	if event.is_action_pressed("left_click") and bCanSkip:
+			PlayNextText()
 		
 func PlayNextText():
 	if len(RemainingText) > 0:
+		var tween = get_tree().create_tween()
+		tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		Content.visible_ratio = 0
+		bCanSkip = false
+		$CanvasLayer/TextureRect2.visible = false
 		$CanvasLayer/Panel/RichTextLabel.text = RemainingText.pop_front()
+		tween.tween_property(Content, "visible_ratio", 1, len(Content.text) * .01)
+		await tween.finished or bCanSkip
+		bCanSkip = true
 		$CanvasLayer/Options.visible = false
+		
+		$CanvasLayer/TextureRect2.visible = true
 	else:
 		if HasOptions() == false:
 			PlayNextScene()
