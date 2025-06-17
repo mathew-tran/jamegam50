@@ -6,3 +6,5 @@
 process_mode = 3
 playback_type = 1
 script = ExtResource("1_c6xn0")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]

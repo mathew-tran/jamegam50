@@ -8,3 +8,4 @@ class_name CutSceneData
 @export var Owner : OwnerData
 
 @export  var MusicType = JukeboxPlayer.MUSIC_TYPE.CONTINUE
+@export var SFX : AudioStream

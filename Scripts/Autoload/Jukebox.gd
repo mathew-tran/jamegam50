@@ -22,3 +22,9 @@ func PlayMusic(musicType : MUSIC_TYPE):
 		MUSIC_TYPE.CONTINUE:
 			return
 	play()
+
+func PlaySFX(audiostream : AudioStream):
+	if audiostream:
+		$SFX.stream = audiostream
+		$SFX.play()
+	

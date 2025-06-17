@@ -23,6 +23,8 @@ func PlayNextScene():
 		
 		Jukebox.PlayMusic(newData.MusicType)
 		
+		Jukebox.PlaySFX(newData.SFX)
+		
 		if newData.Owner:
 			$CanvasLayer/OwnerImage.texture = newData.Owner.OwnerImage
 			$CanvasLayer/OwnerImage/Label.text = newData.Owner.OwnerName

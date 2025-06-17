@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cnsfdc5wb0cb1"]
+[gd_scene load_steps=22 format=3 uid="uid://cnsfdc5wb0cb1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_4kpch"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://dkwadeoluirfn" path="res://Prefabs/Environment/InteractableLamp.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://b4sh2igo0fbb7" path="res://Prefabs/Environment/InteractableLightSwitch.tscn" id="7_jw32o"]
+[ext_resource type="AudioStream" uid="uid://d0puxgd53a0na" path="res://Audio/SFX/drawer.ogg" id="8_erwvk"]
 [ext_resource type="PackedScene" uid="uid://n5aq5qkyuyks" path="res://Prefabs/Environment/House/InteractableNotepad.tscn" id="12_grg3l"]
 [ext_resource type="PackedScene" uid="uid://bfvaw5h806ccy" path="res://Prefabs/Environment/House/InteractableBook.tscn" id="13_frkhe"]
 [ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Outside.tscn" id="13_h1m7h"]
@@ -37,6 +38,19 @@ I would really like myself to be in a coffin rather than here.
 BackgroundImage = ExtResource("4_frkhe")
 Owner = ExtResource("5_grg3l")
 MusicType = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_uibst"]
+script = ExtResource("2_4kpch")
+TextToSay = "There is nothing in here."
+MusicType = 2
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_2w5on"]
+script = ExtResource("2_4kpch")
+TextToSay = ""
+MusicType = 2
+SFX = ExtResource("8_erwvk")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_erwvk"]
@@ -71,6 +85,7 @@ position = Vector2(316, 1097)
 
 [node name="InteractableItem2" parent="Environment" instance=ExtResource("5_jw32o")]
 position = Vector2(689, 477)
+CutScenes = Array[ExtResource("2_4kpch")]([SubResource("Resource_uibst"), SubResource("Resource_2w5on")])
 TriggerState = 1
 
 [node name="InteractableItem" parent="Environment" instance=ExtResource("6_v1gob")]
