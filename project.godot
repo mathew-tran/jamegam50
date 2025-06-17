@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="jamegam50"
-run/main_scene="uid://cnsfdc5wb0cb1"
+run/main_scene="uid://bjwc1x8a33x0h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Finder="*res://Scripts/Autoload/Finder.gd"
 Jukebox="*res://Prefabs/Autoload/Jukebox.tscn"
+TransitionScene="*res://Prefabs/Autoload/TransitionScene.tscn"
 
 [display]
 

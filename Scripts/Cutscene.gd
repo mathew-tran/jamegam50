@@ -12,6 +12,7 @@ func Setup(newData):
 	
 func _ready() -> void:
 	get_tree().paused = true
+	$CanvasLayer/AnimationPlayer.play("animate")
 	PlayNextScene()
 
 func PlayNextScene():

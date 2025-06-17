@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc22edvi1p3l1"]
+[gd_scene load_steps=16 format=3 uid="uid://dc22edvi1p3l1"]
 
 [ext_resource type="Script" uid="uid://c25jxewqvy8pw" path="res://Scripts/Cutscene.gd" id="1_c1xi3"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_idm0t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_0m8yb"]
 [ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="5_kweal"]
 [ext_resource type="Texture2D" uid="uid://dwnj62rvpsn7r" path="res://Art/Player/PlayerFace.png" id="6_kweal"]
+[ext_resource type="Texture2D" uid="uid://bq5kwh30qkar5" path="res://Art/UI/CutSceneContinueArrow.png" id="7_g4us0"]
 
 [sub_resource type="Resource" id="Resource_idm0t"]
 script = ExtResource("2_idm0t")
@@ -29,12 +30,56 @@ BackgroundImage = ExtResource("5_kweal")
 MusicType = 2
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4us0"]
+bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kweal"]
 bg_color = Color(0.103744, 0.103744, 0.103743, 1)
 expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
+
+[sub_resource type="Animation" id="Animation_g4us0"]
+resource_name = "animate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1862, 1022), Vector2(1862, 1000), Vector2(1862, 1022)]
+}
+
+[sub_resource type="Animation" id="Animation_dqmat"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1862, 1022)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnhl5"]
+_data = {
+&"RESET": SubResource("Animation_dqmat"),
+&"animate": SubResource("Animation_g4us0")
+}
 
 [node name="CutScene" type="Node2D"]
 process_mode = 3
@@ -61,16 +106,18 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -228.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4us0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 16.0
+offset_left = 36.0
+offset_top = 37.0
 offset_right = -17.0
 offset_bottom = -18.0
 grow_horizontal = 2
@@ -102,3 +149,15 @@ offset_bottom = 224.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_kweal")
 text = "PlayerName"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 1862.0
+offset_top = 1022.0
+offset_right = 1902.0
+offset_bottom = 1062.0
+texture = ExtResource("7_g4us0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_bnhl5")
+}

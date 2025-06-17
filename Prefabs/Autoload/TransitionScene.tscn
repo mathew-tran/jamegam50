@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://jsqg7rvmk1le"]
+
+[ext_resource type="Script" uid="uid://8onqdtieylkg" path="res://Scripts/Autoload/TransitionScene.gd" id="1_bfmyn"]
+[ext_resource type="AudioStream" uid="uid://b7m2orjiytd7l" path="res://Audio/SFX/static.ogg" id="2_83n5x"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nw0oy"]
+noise_type = 5
+frequency = 1.0
+domain_warp_enabled = true
+domain_warp_frequency = 2.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ciiyh"]
+width = 1920
+height = 1080
+seamless = true
+seamless_blend_skirt = 0.58
+noise = SubResource("FastNoiseLite_nw0oy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bfmyn"]
+texture = SubResource("NoiseTexture2D_ciiyh")
+
+[sub_resource type="Animation" id="Animation_ohxp3"]
+resource_name = "animateIn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ufw5x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iyff8"]
+_data = {
+&"RESET": SubResource("Animation_ufw5x"),
+&"animateIn": SubResource("Animation_ohxp3")
+}
+
+[node name="TransitionScene" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_bfmyn")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bfmyn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iyff8")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_83n5x")
