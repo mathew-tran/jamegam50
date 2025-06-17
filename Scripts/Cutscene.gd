@@ -36,7 +36,8 @@ func PlayNextScene():
 			child.queue_free()
 			
 		await get_tree().process_frame
-		
+
+		$CanvasLayer/Options.visible = false
 		if len(newData.Options) > 0:
 			$CanvasLayer/TextureRect2.visible = false
 			var optionClass = load("res://Prefabs/UI/OptionButton.tscn")
@@ -44,7 +45,7 @@ func PlayNextScene():
 				var instance = optionClass.instantiate()
 				instance.Setup(option, self)
 				$CanvasLayer/Options.add_child(instance)
-			await get_tree().process_frame
+				await get_tree().process_frame
 			
 		if newData.Owner:
 			$CanvasLayer/OwnerImage.texture = newData.Owner.OwnerImage
@@ -88,9 +89,12 @@ func _input(event: InputEvent) -> void:
 func PlayNextText():
 	if len(RemainingText) > 0:
 		$CanvasLayer/Panel/RichTextLabel.text = RemainingText.pop_front()
+		$CanvasLayer/Options.visible = false
 	else:
 		if HasOptions() == false:
 			PlayNextScene()
+		else:
+			$CanvasLayer/Options.visible = true
 		
 func HasOptions():
 	return $CanvasLayer/Options.get_child_count() > 0

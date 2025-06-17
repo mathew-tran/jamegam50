@@ -14,5 +14,5 @@ func _on_button_up() -> void:
 	var cutScene = load("res://Scenes/Cutscene.tscn")
 	var instance =  cutScene.instantiate()
 	instance.Setup(OptionInfo.CutScenes)
-	add_child(instance)
+	Finder.GetPlayer().add_child(instance)
 	

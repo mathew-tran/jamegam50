@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://b70hfbgiccgt8"]
+
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_yjmo8"]
+[ext_resource type="Texture2D" uid="uid://qy4kiwbiwwvy" path="res://Art/Environment/Busplaceholder.png" id="2_bjt44"]
+[ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="3_10dos"]
+[ext_resource type="PackedScene" uid="uid://ynu4hab6besn" path="res://Scenes/Part4.tscn" id="4_10dos"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="5_6hs73"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="6_tbsdx"]
+
+[sub_resource type="Resource" id="Resource_enrcn"]
+script = ExtResource("5_6hs73")
+TextToSay = "You take the bus to work.
+.."
+MusicType = 2
+Options = Array[ExtResource("6_tbsdx")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1h4cg"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(150, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjt44"]
+resource_local_to_scene = true
+size = Vector2(150, 149)
+
+[node name="InteractableItem" instance=ExtResource("1_yjmo8")]
+texture = ExtResource("2_bjt44")
+script = ExtResource("3_10dos")
+SceneToChangeTo = ExtResource("4_10dos")
+InteractText = "Go to work"
+CutScenes = Array[ExtResource("5_6hs73")]([SubResource("Resource_enrcn")])
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_1h4cg")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_bjt44")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="OwnerData" load_steps=3 format=3 uid="uid://cka4xesmx7e7g"]
+
+[ext_resource type="Texture2D" uid="uid://beys7rvd4kgup" path="res://Art/CharacterPortraits/YourCircuit.png" id="1_bjowp"]
+[ext_resource type="Script" uid="uid://dk4h0ebc24me" path="res://DataTypes/OwnerData.gd" id="2_btb4f"]
+
+[resource]
+script = ExtResource("2_btb4f")
+OwnerName = "Inner Circuit"
+OwnerImage = ExtResource("1_bjowp")
+metadata/_custom_type_script = "uid://dk4h0ebc24me"

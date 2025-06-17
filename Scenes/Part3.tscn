@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bl3yxwcfopbm"]
+[gd_scene load_steps=23 format=3 uid="uid://bl3yxwcfopbm"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_kokk2"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_fsubk"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_86v50"]
 [ext_resource type="Resource" uid="uid://c61lgyo74kdki" path="res://Content/StoryFlags/FLAG_001_NICE_TO_HOMELESS.tres" id="6_jupxk"]
 [ext_resource type="Resource" uid="uid://t3fk5g3bhmlh" path="res://Content/StoryFlags/FLAG_002_MEAN_TO_HOMELESS.tres" id="7_r57g8"]
+[ext_resource type="PackedScene" uid="uid://b70hfbgiccgt8" path="res://Prefabs/Environment/Part3/InteractableNextAreainPart3.tscn" id="11_r57g8"]
 
 [sub_resource type="Resource" id="Resource_kokk2"]
 script = ExtResource("2_fsubk")
@@ -45,23 +46,44 @@ MusicType = 2
 Options = Array[ExtResource("3_86v50")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_bvtwy"]
+script = ExtResource("2_fsubk")
+TextToSay = "The homeless man smiles. Thanks you and goes on with his life."
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [sub_resource type="Resource" id="Resource_p2vix"]
 script = ExtResource("3_86v50")
 OptionName = "Yeah, take this, pal"
-CutScenes = Array[ExtResource("2_fsubk")]([])
+CutScenes = Array[ExtResource("2_fsubk")]([SubResource("Resource_bvtwy")])
 StoryFlagSet = ExtResource("6_jupxk")
 metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_u1qu8"]
+script = ExtResource("2_fsubk")
+TextToSay = "You walk past him. He is silent."
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_86v50"]
 script = ExtResource("3_86v50")
 OptionName = "Nah, leave me alone!"
-CutScenes = Array[ExtResource("2_fsubk")]([])
+CutScenes = Array[ExtResource("2_fsubk")]([SubResource("Resource_u1qu8")])
 metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_msf4v"]
+script = ExtResource("2_fsubk")
+TextToSay = "You move past the homeless man. Knocking him down by accident."
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_2guxd"]
 script = ExtResource("3_86v50")
-OptionName = "Get out of the way. I am busy!"
-CutScenes = Array[ExtResource("2_fsubk")]([])
+OptionName = "Go away, you old bastard! You're holding me up! [repels]"
+CutScenes = Array[ExtResource("2_fsubk")]([SubResource("Resource_msf4v")])
 StoryFlagSet = ExtResource("7_r57g8")
 metadata/_custom_type_script = "uid://dvueh6b07v70v"
 
@@ -116,9 +138,12 @@ position = Vector2(1794, 951)
 position = Vector2(1649, 953)
 
 [node name="Player" parent="." instance=ExtResource("4_p2vix")]
-position = Vector2(1005, 539)
+position = Vector2(186, 558)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("5_86v50")]
 visible = false
+
+[node name="InteractableItem" parent="." instance=ExtResource("11_r57g8")]
+position = Vector2(1823, 484)

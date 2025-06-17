@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvoydeg05t3xe"]
+[gd_scene load_steps=12 format=3 uid="uid://dvoydeg05t3xe"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_rwbkk"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_n23su"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_phab4"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_l0pv6"]
 [ext_resource type="PackedScene" uid="uid://ccbnuyoxkff0o" path="res://Prefabs/Environment/Part2/InteractableNextAreaInPart2.tscn" id="6_1sr0h"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="6_kyqwf"]
 [ext_resource type="PackedScene" uid="uid://bl3yxwcfopbm" path="res://Scenes/Part3.tscn" id="7_phab4"]
@@ -13,15 +14,25 @@
 script = ExtResource("2_n23su")
 TextToSay = "You are outside.
 The area around is wildly unkept.
-Homeless roam the streets. 
 Sidewalks filled to the brim with trash and newspapers."
+MusicType = 2
+Options = Array[ExtResource("3_phab4")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_hbeeb"]
+script = ExtResource("2_n23su")
+TextToSay = "Since my childhood it was always unsafe on the streets.
+..
+Bunches of junkies, pickpockets and other dregs of society."
+Owner = ExtResource("4_l0pv6")
 MusicType = 2
 Options = Array[ExtResource("3_phab4")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rwbkk")
-StartingCutScene = Array[ExtResource("2_n23su")]([SubResource("Resource_p8tg3")])
+StartingCutScene = Array[ExtResource("2_n23su")]([SubResource("Resource_p8tg3"), SubResource("Resource_hbeeb")])
+Delay = 0.5
 
 [node name="Environment" type="Node2D" parent="."]
 
