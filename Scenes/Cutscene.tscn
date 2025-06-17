@@ -1,12 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dc22edvi1p3l1"]
+[gd_scene load_steps=18 format=3 uid="uid://dc22edvi1p3l1"]
 
 [ext_resource type="Script" uid="uid://c25jxewqvy8pw" path="res://Scripts/Cutscene.gd" id="1_c1xi3"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_idm0t"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_idm0t"]
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_0m8yb"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_dqmat"]
 [ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="5_kweal"]
-[ext_resource type="Texture2D" uid="uid://dwnj62rvpsn7r" path="res://Art/Player/PlayerFace.png" id="6_kweal"]
+[ext_resource type="Texture2D" uid="uid://dwnj62rvpsn7r" path="res://Art/CharacterPortraits/PlayerFace.png" id="6_kweal"]
 [ext_resource type="Texture2D" uid="uid://bq5kwh30qkar5" path="res://Art/UI/CutSceneContinueArrow.png" id="7_g4us0"]
+[ext_resource type="PackedScene" uid="uid://cdio8dlltmahx" path="res://Prefabs/UI/OptionButton.tscn" id="9_bnhl5"]
 
 [sub_resource type="Resource" id="Resource_idm0t"]
 script = ExtResource("2_idm0t")
@@ -14,6 +16,7 @@ TextToSay = "< A shot of the city >
 This is more things to say."
 BackgroundImage = ExtResource("3_idm0t")
 MusicType = 2
+Options = Array[ExtResource("4_dqmat")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_g4us0"]
@@ -21,6 +24,7 @@ script = ExtResource("2_idm0t")
 TextToSay = "< A shot of the factory>"
 BackgroundImage = ExtResource("4_0m8yb")
 MusicType = 2
+Options = Array[ExtResource("4_dqmat")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_dqmat"]
@@ -28,6 +32,7 @@ script = ExtResource("2_idm0t")
 TextToSay = "< A shot of the protagonist wincing in pain>"
 BackgroundImage = ExtResource("5_kweal")
 MusicType = 2
+Options = Array[ExtResource("4_dqmat")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4us0"]
@@ -44,6 +49,21 @@ expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
 
+[sub_resource type="Animation" id="Animation_dqmat"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1862, 1022)]
+}
+
 [sub_resource type="Animation" id="Animation_g4us0"]
 resource_name = "animate"
 loop_mode = 1
@@ -58,21 +78,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1862, 1022), Vector2(1862, 1000), Vector2(1862, 1022)]
-}
-
-[sub_resource type="Animation" id="Animation_dqmat"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1862, 1022)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bnhl5"]
@@ -161,3 +166,20 @@ texture = ExtResource("7_g4us0")
 libraries = {
 &"": SubResource("AnimationLibrary_bnhl5")
 }
+
+[node name="Options" type="VBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1200, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -453.0
+offset_right = 600.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" parent="CanvasLayer/Options" instance=ExtResource("9_bnhl5")]
+layout_mode = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwnj62rvpsn7r"
-path="res://.godot/imported/PlayerFace.png-605fd6372948591239ffc14fd3c0bb9f.ctex"
+uid="uid://d11irmssbcv8v"
+path="res://.godot/imported/LightOff.png-3ada28d1961fa050c1d4e6cfe3486bf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/PlayerFace.png"
-dest_files=["res://.godot/imported/PlayerFace.png-605fd6372948591239ffc14fd3c0bb9f.ctex"]
+source_file="res://Art/Environment/LightOff.png"
+dest_files=["res://.godot/imported/LightOff.png-3ada28d1961fa050c1d4e6cfe3486bf0.ctex"]
 
 [params]
 

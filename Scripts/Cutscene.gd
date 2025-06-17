@@ -7,12 +7,19 @@ signal CutsceneComplete
 
 var RemainingText = []
 
+func _enter_tree() -> void:
+	$CanvasLayer/Panel.visible = false
+	$CanvasLayer/OwnerImage.visible = false
+	$CanvasLayer/Panel/RichTextLabel.text = ""
+	
 func Setup(newData):
 	Data = newData.duplicate()
 	
 func _ready() -> void:
 	get_tree().paused = true
+
 	$CanvasLayer/AnimationPlayer.play("animate")
+	$CanvasLayer/Panel.visible = true
 	PlayNextScene()
 
 func PlayNextScene():
@@ -25,6 +32,20 @@ func PlayNextScene():
 		
 		Jukebox.PlaySFX(newData.SFX)
 		
+		for child in $CanvasLayer/Options.get_children():
+			child.queue_free()
+			
+		await get_tree().process_frame
+		
+		if len(newData.Options) > 0:
+			$CanvasLayer/TextureRect2.visible = false
+			var optionClass = load("res://Prefabs/UI/OptionButton.tscn")
+			for option in newData.Options:
+				var instance = optionClass.instantiate()
+				instance.Setup(option, self)
+				$CanvasLayer/Options.add_child(instance)
+			await get_tree().process_frame
+			
 		if newData.Owner:
 			$CanvasLayer/OwnerImage.texture = newData.Owner.OwnerImage
 			$CanvasLayer/OwnerImage/Label.text = newData.Owner.OwnerName
@@ -68,8 +89,12 @@ func PlayNextText():
 	if len(RemainingText) > 0:
 		$CanvasLayer/Panel/RichTextLabel.text = RemainingText.pop_front()
 	else:
-		PlayNextScene()
+		if HasOptions() == false:
+			PlayNextScene()
 		
+func HasOptions():
+	return $CanvasLayer/Options.get_child_count() > 0
+	
 func Destroy():
 	get_tree().paused = false
 	CutsceneComplete.emit()

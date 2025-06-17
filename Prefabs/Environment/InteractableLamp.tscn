@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkwadeoluirfn"]
 
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_1w8ho"]
-[ext_resource type="Texture2D" uid="uid://bcm1jytcevnkt" path="res://Art/Player/LampPlaceholder.png" id="2_uv21u"]
+[ext_resource type="Texture2D" uid="uid://bcm1jytcevnkt" path="res://Art/Environment/LampPlaceholder.png" id="2_uv21u"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_fwrgd"]
 
 [sub_resource type="Resource" id="Resource_bsdpi"]

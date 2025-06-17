@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3d37xebxs7m6"
-path="res://.godot/imported/LightOn.png-9dceb0abfb146d40a1fbc20d656ed710.ctex"
+uid="uid://ccxqe8e6jvcjo"
+path="res://.godot/imported/PlayerShadow.png-0c8fcced8c9c3a27f66d251f0ade16ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/LightOn.png"
-dest_files=["res://.godot/imported/LightOn.png-9dceb0abfb146d40a1fbc20d656ed710.ctex"]
+source_file="res://Art/Environment/PlayerShadow.png"
+dest_files=["res://.godot/imported/PlayerShadow.png-0c8fcced8c9c3a27f66d251f0ade16ad.ctex"]
 
 [params]
 

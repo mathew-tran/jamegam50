@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://borwyfesgvafa"
-path="res://.godot/imported/InteractableObjectPlaceholderOpened.png-972696bba312a9413990fcaa170b2df5.ctex"
+uid="uid://t80upgffv8fl"
+path="res://.godot/imported/BookPlaceholder.png-f0ff51e873e4df48d169d3309221648c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/InteractableObjectPlaceholderOpened.png"
-dest_files=["res://.godot/imported/InteractableObjectPlaceholderOpened.png-972696bba312a9413990fcaa170b2df5.ctex"]
+source_file="res://Art/Environment/BookPlaceholder.png"
+dest_files=["res://.godot/imported/BookPlaceholder.png-f0ff51e873e4df48d169d3309221648c.ctex"]
 
 [params]
 

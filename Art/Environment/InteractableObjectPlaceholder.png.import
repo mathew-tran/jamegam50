@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcm1jytcevnkt"
-path="res://.godot/imported/LampPlaceholder.png-115d091d51dad97eab8282e92b9dd617.ctex"
+uid="uid://dsb025xerw5bp"
+path="res://.godot/imported/InteractableObjectPlaceholder.png-7ae5b48fadfabe4cf77fd024374ba27d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/LampPlaceholder.png"
-dest_files=["res://.godot/imported/LampPlaceholder.png-115d091d51dad97eab8282e92b9dd617.ctex"]
+source_file="res://Art/Environment/InteractableObjectPlaceholder.png"
+dest_files=["res://.godot/imported/InteractableObjectPlaceholder.png-7ae5b48fadfabe4cf77fd024374ba27d.ctex"]
 
 [params]
 

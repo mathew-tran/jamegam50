@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4skjsxfvhft3"
-path="res://.godot/imported/Objectplaceholder.png-e773f036bb7ce453d8dca34a520b47cb.ctex"
+uid="uid://61squjjevq0k"
+path="res://.godot/imported/NotepadPlaceholder.png-d22b98eb18a866cf25e689eebc279854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Player/Objectplaceholder.png"
-dest_files=["res://.godot/imported/Objectplaceholder.png-e773f036bb7ce453d8dca34a520b47cb.ctex"]
+source_file="res://Art/Environment/NotepadPlaceholder.png"
+dest_files=["res://.godot/imported/NotepadPlaceholder.png-d22b98eb18a866cf25e689eebc279854.ctex"]
 
 [params]
 

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StoryFlagData" load_steps=2 format=3 uid="uid://t3fk5g3bhmlh"]
+
+[ext_resource type="Script" uid="uid://bmcdwkv0lweiu" path="res://DataTypes/StoryFlagData.gd" id="1_23kmg"]
+
+[resource]
+script = ExtResource("1_23kmg")
+StoryFlagID = "002"
+metadata/_custom_type_script = "uid://bmcdwkv0lweiu"

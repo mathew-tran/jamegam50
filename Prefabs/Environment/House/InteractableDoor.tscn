@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcml3rn2er3g2"]
 
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_ovq1f"]
-[ext_resource type="Texture2D" uid="uid://c3j1f0xkqsocm" path="res://Art/Player/Doorplaceholder.png" id="2_dac3w"]
+[ext_resource type="Texture2D" uid="uid://c3j1f0xkqsocm" path="res://Art/Environment/Doorplaceholder.png" id="2_dac3w"]
 [ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="3_q5h7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dac3w"]

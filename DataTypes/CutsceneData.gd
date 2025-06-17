@@ -9,3 +9,5 @@ class_name CutSceneData
 
 @export  var MusicType = JukeboxPlayer.MUSIC_TYPE.CONTINUE
 @export var SFX : AudioStream
+
+@export var Options : Array[OptionData]

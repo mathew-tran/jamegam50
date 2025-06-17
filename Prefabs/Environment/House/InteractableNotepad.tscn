@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://n5aq5qkyuyks"]
 
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_xc2f2"]
-[ext_resource type="Texture2D" uid="uid://61squjjevq0k" path="res://Art/Player/NotepadPlaceholder.png" id="2_otya1"]
+[ext_resource type="Texture2D" uid="uid://61squjjevq0k" path="res://Art/Environment/NotepadPlaceholder.png" id="2_otya1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_m2cvw"]
 
 [sub_resource type="Resource" id="Resource_gtaft"]

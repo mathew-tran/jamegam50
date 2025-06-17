@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="OwnerData" load_steps=3 format=3 uid="uid://rdwh1ys6h2x"]
 
 [ext_resource type="Script" uid="uid://dk4h0ebc24me" path="res://DataTypes/OwnerData.gd" id="1_cssye"]
-[ext_resource type="Texture2D" uid="uid://dwnj62rvpsn7r" path="res://Art/Player/PlayerFace.png" id="1_xllrf"]
+[ext_resource type="Texture2D" uid="uid://dwnj62rvpsn7r" path="res://Art/CharacterPortraits/PlayerFace.png" id="1_xllrf"]
 
 [resource]
 script = ExtResource("1_cssye")

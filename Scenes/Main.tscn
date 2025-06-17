@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://cnsfdc5wb0cb1"]
+[gd_scene load_steps=23 format=3 uid="uid://cnsfdc5wb0cb1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_4kpch"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_grg3l"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="3_kln2b"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_2w5on"]
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_frkhe"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_grg3l"]
 [ext_resource type="PackedScene" uid="uid://cr3mstg62i332" path="res://Prefabs/Environment/InteractableDresser.tscn" id="5_jw32o"]
@@ -14,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://d0puxgd53a0na" path="res://Audio/SFX/drawer.ogg" id="8_erwvk"]
 [ext_resource type="PackedScene" uid="uid://n5aq5qkyuyks" path="res://Prefabs/Environment/House/InteractableNotepad.tscn" id="12_grg3l"]
 [ext_resource type="PackedScene" uid="uid://bfvaw5h806ccy" path="res://Prefabs/Environment/House/InteractableBook.tscn" id="13_frkhe"]
-[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Outside.tscn" id="13_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Part2.tscn" id="13_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="14_1p5hy"]
 
 [sub_resource type="Resource" id="Resource_1p5hy"]
@@ -27,6 +28,7 @@ The windows and walls are thin, you are able to hear the cars and other sounds o
 You wake up."
 BackgroundImage = ExtResource("3_grg3l")
 MusicType = 3
+Options = Array[ExtResource("4_2w5on")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_h1m7h"]
@@ -38,12 +40,14 @@ I would really like myself to be in a coffin rather than here.
 BackgroundImage = ExtResource("4_frkhe")
 Owner = ExtResource("5_grg3l")
 MusicType = 0
+Options = Array[ExtResource("4_2w5on")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_uibst"]
 script = ExtResource("2_4kpch")
 TextToSay = "There is nothing in here."
 MusicType = 2
+Options = Array[ExtResource("4_2w5on")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_2w5on"]
@@ -51,12 +55,14 @@ script = ExtResource("2_4kpch")
 TextToSay = ""
 MusicType = 2
 SFX = ExtResource("8_erwvk")
+Options = Array[ExtResource("4_2w5on")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_erwvk"]
 script = ExtResource("2_4kpch")
 TextToSay = "You open the door to go outside."
 MusicType = 3
+Options = Array[ExtResource("4_2w5on")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

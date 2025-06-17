@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvoydeg05t3xe"]
+[gd_scene load_steps=10 format=3 uid="uid://dvoydeg05t3xe"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_rwbkk"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_n23su"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_phab4"]
+[ext_resource type="PackedScene" uid="uid://ccbnuyoxkff0o" path="res://Prefabs/Environment/Part2/InteractableNextAreaInPart2.tscn" id="6_1sr0h"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="6_kyqwf"]
+[ext_resource type="PackedScene" uid="uid://bl3yxwcfopbm" path="res://Scenes/Part3.tscn" id="7_phab4"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="10_mjnce"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="11_kp38j"]
 
@@ -13,6 +16,7 @@ The area around is wildly unkept.
 Homeless roam the streets. 
 Sidewalks filled to the brim with trash and newspapers."
 MusicType = 2
+Options = Array[ExtResource("3_phab4")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
@@ -64,3 +68,7 @@ position = Vector2(1005, 539)
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("11_kp38j")]
 visible = false
+
+[node name="InteractableItem" parent="." instance=ExtResource("6_1sr0h")]
+position = Vector2(1831, 596)
+SceneToChangeTo = ExtResource("7_phab4")

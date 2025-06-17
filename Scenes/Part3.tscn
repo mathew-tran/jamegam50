@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://bl3yxwcfopbm"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_kokk2"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_fsubk"]
+[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="3_06gv3"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_86v50"]
+[ext_resource type="Resource" uid="uid://dc1butuwnqt30" path="res://Content/Characters/Character_HomelessMan.tres" id="3_p2vix"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_86v50"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="4_p2vix"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_86v50"]
+[ext_resource type="Resource" uid="uid://c61lgyo74kdki" path="res://Content/StoryFlags/FLAG_001_NICE_TO_HOMELESS.tres" id="6_jupxk"]
+[ext_resource type="Resource" uid="uid://t3fk5g3bhmlh" path="res://Content/StoryFlags/FLAG_002_MEAN_TO_HOMELESS.tres" id="7_r57g8"]
+
+[sub_resource type="Resource" id="Resource_kokk2"]
+script = ExtResource("2_fsubk")
+TextToSay = "...
+A homeless man comes up to you
+.."
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_jupxk"]
+script = ExtResource("2_fsubk")
+TextToSay = "Hey, kid? Do you have something to smoke?
+It feels like I’m literally dying, ha-ha…"
+Owner = ExtResource("3_p2vix")
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_r57g8"]
+script = ExtResource("2_fsubk")
+TextToSay = ".."
+Owner = ExtResource("4_86v50")
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_hqtm8"]
+script = ExtResource("2_fsubk")
+TextToSay = "You know, bad habit… Can’t get rid of it for so many years already.."
+Owner = ExtResource("3_p2vix")
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_p2vix"]
+script = ExtResource("3_86v50")
+OptionName = "Yeah, take this, pal"
+CutScenes = Array[ExtResource("2_fsubk")]([])
+StoryFlagSet = ExtResource("6_jupxk")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_86v50"]
+script = ExtResource("3_86v50")
+OptionName = "Nah, leave me alone!"
+CutScenes = Array[ExtResource("2_fsubk")]([])
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_2guxd"]
+script = ExtResource("3_86v50")
+OptionName = "Get out of the way. I am busy!"
+CutScenes = Array[ExtResource("2_fsubk")]([])
+StoryFlagSet = ExtResource("7_r57g8")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_o5p0b"]
+script = ExtResource("2_fsubk")
+TextToSay = ".. Well.. what do you say?"
+Owner = ExtResource("3_p2vix")
+MusicType = 2
+Options = Array[ExtResource("3_86v50")]([SubResource("Resource_p2vix"), SubResource("Resource_86v50"), SubResource("Resource_2guxd")])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kokk2")
+StartingCutScene = Array[ExtResource("2_fsubk")]([SubResource("Resource_kokk2"), SubResource("Resource_jupxk"), SubResource("Resource_r57g8"), SubResource("Resource_hqtm8"), SubResource("Resource_o5p0b")])
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Box" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(172, 951)
+
+[node name="Box2" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(461, 949)
+
+[node name="Box3" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(322, 883)
+
+[node name="Box4" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(639, 991)
+
+[node name="Box5" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(894, 889)
+
+[node name="Box6" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(760, 951)
+
+[node name="Box7" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(1054, 951)
+
+[node name="Box8" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(1343, 949)
+
+[node name="Box9" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(1198, 1008)
+
+[node name="Box10" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(1502, 907)
+
+[node name="Box11" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(1794, 951)
+
+[node name="Box12" parent="Environment" instance=ExtResource("3_06gv3")]
+position = Vector2(1649, 953)
+
+[node name="Player" parent="." instance=ExtResource("4_p2vix")]
+position = Vector2(1005, 539)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("5_86v50")]
+visible = false
