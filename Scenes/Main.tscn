@@ -1,16 +1,53 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnsfdc5wb0cb1"]
+[gd_scene load_steps=19 format=3 uid="uid://cnsfdc5wb0cb1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_r150o"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_4kpch"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_grg3l"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_frkhe"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_grg3l"]
 [ext_resource type="PackedScene" uid="uid://cr3mstg62i332" path="res://Prefabs/Environment/InteractableDresser.tscn" id="5_jw32o"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://dkwadeoluirfn" path="res://Prefabs/Environment/InteractableLamp.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" uid="uid://b4sh2igo0fbb7" path="res://Prefabs/Environment/InteractableLightSwitch.tscn" id="7_jw32o"]
-[ext_resource type="Script" uid="uid://dd2m821wpfcou" path="res://Scripts/LightEnvironment.gd" id="8_50glp"]
+[ext_resource type="PackedScene" uid="uid://n5aq5qkyuyks" path="res://Prefabs/Environment/House/InteractableNotepad.tscn" id="12_grg3l"]
+[ext_resource type="PackedScene" uid="uid://bfvaw5h806ccy" path="res://Prefabs/Environment/House/InteractableBook.tscn" id="13_frkhe"]
+[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Outside.tscn" id="13_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="14_1p5hy"]
+
+[sub_resource type="Resource" id="Resource_1p5hy"]
+script = ExtResource("2_4kpch")
+TextToSay = "...
+..
+The atmosphere in the apartment is gloomy. 
+Peeling wallpaper, old furniture, garbage in the corners and usual discomfort. 
+The windows and walls are thin, you are able to hear the cars and other sounds of life outside.
+You wake up."
+BackgroundImage = ExtResource("3_grg3l")
+MusicType = 3
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_h1m7h"]
+script = ExtResource("2_4kpch")
+TextToSay = "...
+Another day, another day.... 
+I would really like myself to be in a coffin rather than here.
+... I should go to work."
+BackgroundImage = ExtResource("4_frkhe")
+Owner = ExtResource("5_grg3l")
+MusicType = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_erwvk"]
+script = ExtResource("2_4kpch")
+TextToSay = "You open the door to go outside."
+MusicType = 3
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_r150o")
+StartingCutScene = Array[ExtResource("2_4kpch")]([SubResource("Resource_1p5hy"), SubResource("Resource_h1m7h")])
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -23,25 +60,41 @@ position = Vector2(461, 949)
 [node name="Box3" parent="Environment" instance=ExtResource("3_kln2b")]
 position = Vector2(316, 951)
 
+[node name="Box4" parent="Environment" instance=ExtResource("3_kln2b")]
+position = Vector2(172, 1097)
+
+[node name="Box5" parent="Environment" instance=ExtResource("3_kln2b")]
+position = Vector2(461, 1095)
+
+[node name="Box6" parent="Environment" instance=ExtResource("3_kln2b")]
+position = Vector2(316, 1097)
+
 [node name="InteractableItem2" parent="Environment" instance=ExtResource("5_jw32o")]
-position = Vector2(1055, 917)
+position = Vector2(689, 477)
 TriggerState = 1
 
 [node name="InteractableItem" parent="Environment" instance=ExtResource("6_v1gob")]
-position = Vector2(153, 450)
+position = Vector2(28, 407)
 
 [node name="InteractableItem3" parent="Environment" instance=ExtResource("7_jw32o")]
-position = Vector2(734, 264)
-ToggleObject = NodePath("../../CanvasModulate")
+position = Vector2(605, 999)
+
+[node name="InteractableItem4" parent="Environment" instance=ExtResource("12_grg3l")]
+position = Vector2(460, 911)
+
+[node name="InteractableItem5" parent="Environment" instance=ExtResource("13_frkhe")]
+position = Vector2(156, 878)
+
+[node name="InteractableDoor" parent="Environment" instance=ExtResource("14_1p5hy")]
+position = Vector2(1393, 505)
+SceneToChangeTo = ExtResource("13_h1m7h")
+InteractText = "Go outside"
+CutScenes = Array[ExtResource("2_4kpch")]([SubResource("Resource_erwvk")])
 
 [node name="Player" parent="." instance=ExtResource("2_idj7w")]
-position = Vector2(1005, 539)
+position = Vector2(428, 471)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("5_pbw6q")]
 visible = false
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.100439, 0.082729, 0.332926, 1)
-script = ExtResource("8_50glp")

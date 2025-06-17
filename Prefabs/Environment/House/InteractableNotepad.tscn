@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://n5aq5qkyuyks"]
+
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_xc2f2"]
+[ext_resource type="Texture2D" uid="uid://61squjjevq0k" path="res://Art/Player/NotepadPlaceholder.png" id="2_otya1"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_m2cvw"]
+
+[sub_resource type="Resource" id="Resource_gtaft"]
+script = ExtResource("3_m2cvw")
+TextToSay = "You pickup up the notepad.
+It says the following.
+\"My head hurts from yesterday\"
+\"Not much, but still. Right in the place where this chip was implemented.\"
+\"Maybe that’s the reason? I need to visit a doctor.”
+"
+MusicType = 2
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnsi6"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(66, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otya1"]
+resource_local_to_scene = true
+size = Vector2(67, 76)
+
+[node name="InteractableItem" instance=ExtResource("1_xc2f2")]
+texture = ExtResource("2_otya1")
+InteractText = "READ"
+CutScenes = Array[ExtResource("3_m2cvw")]([SubResource("Resource_gtaft")])
+bHideItemWhileInteracting = true
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_mnsi6")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_otya1")

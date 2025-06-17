@@ -4,7 +4,7 @@ class_name InteractPanel
 
 var ObjectPressed
 func ShowText(newText):
-	$Label.text = newText
+	$Label.text = newText.to_upper()
 	visible = true
 
 func SelectObject(object):

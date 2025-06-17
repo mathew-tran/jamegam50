@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvoydeg05t3xe"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_rwbkk"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_n23su"]
+[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="6_kyqwf"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="10_mjnce"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="11_kp38j"]
+
+[sub_resource type="Resource" id="Resource_p8tg3"]
+script = ExtResource("2_n23su")
+TextToSay = "You are outside.
+The area around is wildly unkept.
+Homeless roam the streets. 
+Sidewalks filled to the brim with trash and newspapers."
+MusicType = 2
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rwbkk")
+StartingCutScene = Array[ExtResource("2_n23su")]([SubResource("Resource_p8tg3")])
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Box" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(172, 951)
+
+[node name="Box2" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(461, 949)
+
+[node name="Box3" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(316, 951)
+
+[node name="Box4" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(616, 951)
+
+[node name="Box5" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(905, 949)
+
+[node name="Box6" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(760, 951)
+
+[node name="Box7" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(1054, 951)
+
+[node name="Box8" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(1343, 949)
+
+[node name="Box9" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(1198, 951)
+
+[node name="Box10" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(1505, 953)
+
+[node name="Box11" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(1794, 951)
+
+[node name="Box12" parent="Environment" instance=ExtResource("6_kyqwf")]
+position = Vector2(1649, 953)
+
+[node name="Player" parent="." instance=ExtResource("10_mjnce")]
+position = Vector2(1005, 539)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("11_kp38j")]
+visible = false

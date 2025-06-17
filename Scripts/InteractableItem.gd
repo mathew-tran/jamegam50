@@ -20,6 +20,8 @@ enum TRIGGER_STATE {
 var State = HOVER_STATE.UNHOVERED
 @export var TriggerState = TRIGGER_STATE.CAN_BE_TRIGGERED_MULTIPLE
 
+@export var bHideItemWhileInteracting = false
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		if State == HOVER_STATE.HOVERED:
@@ -41,6 +43,8 @@ func _on_area_2d_mouse_exited() -> void:
 	State = HOVER_STATE.UNHOVERED
 
 func DoInteraction():
+	if bHideItemWhileInteracting:
+		visible = false
 	var cutScene = load("res://Scenes/Cutscene.tscn")
 	var instance =  cutScene.instantiate()
 	instance.Setup(CutScenes)
@@ -55,7 +59,9 @@ func DoInteraction():
 	
 	if get_node(ToggleObject):
 		get_node(ToggleObject).DoInteraction()
-	
+	if bHideItemWhileInteracting:
+		visible = true
+		
 func DoPostInteraction():
 	pass
 	

@@ -1,6 +1,6 @@
 extends Node2D
 
-var TextLimit = 200
+var TextLimit = 150
 @export var Data : Array[CutSceneData]
 
 signal CutsceneComplete
@@ -19,6 +19,15 @@ func PlayNextScene():
 	if len(Data) > 0:
 		var newData = Data.pop_front() as CutSceneData
 		$CanvasLayer/TextureRect.texture = newData.BackgroundImage
+		
+		Jukebox.PlayMusic(newData.MusicType)
+		
+		if newData.Owner:
+			$CanvasLayer/OwnerImage.texture = newData.Owner.OwnerImage
+			$CanvasLayer/OwnerImage/Label.text = newData.Owner.OwnerName
+			$CanvasLayer/OwnerImage.visible = true
+		else:
+			$CanvasLayer/OwnerImage.visible = false
 		var textToUse = newData.TextToSay
 		print(textToUse)
 		textToUse = textToUse.strip_edges()

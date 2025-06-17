@@ -8,6 +8,7 @@
 [sub_resource type="Resource" id="Resource_uibst"]
 script = ExtResource("4_wp3wt")
 TextToSay = "There is nothing in here."
+MusicType = 2
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp3wt"]

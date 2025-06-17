@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfvaw5h806ccy"]
+
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_kfccb"]
+[ext_resource type="Texture2D" uid="uid://t80upgffv8fl" path="res://Art/Player/BookPlaceholder.png" id="2_gw5v1"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_dl6w5"]
+
+[sub_resource type="Resource" id="Resource_y0wba"]
+script = ExtResource("3_dl6w5")
+TextToSay = "The book reads:
+.. “And then… the great black whale soared into the sky\"
+\"It was so large, beautiful and majestic, that even the most callous person would cry\"
+\"Not because of their next grief, but from that endless immense beauty above their heads…”
+"
+MusicType = 2
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw5v1"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(93, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl6w5"]
+resource_local_to_scene = true
+size = Vector2(92, 93)
+
+[node name="InteractableItem" instance=ExtResource("1_kfccb")]
+texture = ExtResource("2_gw5v1")
+InteractText = "READ"
+CutScenes = Array[ExtResource("3_dl6w5")]([SubResource("Resource_y0wba")])
+bHideItemWhileInteracting = true
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_gw5v1")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_dl6w5")
