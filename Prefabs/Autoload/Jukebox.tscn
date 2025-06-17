@@ -4,7 +4,9 @@
 
 [node name="Jukebox" type="AudioStreamPlayer"]
 process_mode = 3
+volume_db = -5.692
 playback_type = 1
 script = ExtResource("1_c6xn0")
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
