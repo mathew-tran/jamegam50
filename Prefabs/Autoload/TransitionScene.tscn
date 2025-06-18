@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jsqg7rvmk1le"]
+[gd_scene load_steps=9 format=3 uid="uid://cvb0s3d5fpn8e"]
 
 [ext_resource type="Script" uid="uid://8onqdtieylkg" path="res://Scripts/Autoload/TransitionScene.gd" id="1_bfmyn"]
 [ext_resource type="AudioStream" uid="uid://b7m2orjiytd7l" path="res://Audio/SFX/static.ogg" id="2_83n5x"]
@@ -18,6 +18,33 @@ noise = SubResource("FastNoiseLite_nw0oy")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bfmyn"]
 texture = SubResource("NoiseTexture2D_ciiyh")
+
+[sub_resource type="Animation" id="Animation_ufw5x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ohxp3"]
 resource_name = "animateIn"
@@ -45,33 +72,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
-}
-
-[sub_resource type="Animation" id="Animation_ufw5x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iyff8"]

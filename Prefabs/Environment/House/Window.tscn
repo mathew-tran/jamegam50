@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://witv4a48dwkq"]
+
+[ext_resource type="Texture2D" uid="uid://dqdqbb7uclje8" path="res://Art/Environment/House/window.PNG" id="1_ac1yk"]
+
+[node name="Window" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ac1yk")

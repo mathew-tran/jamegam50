@@ -4,6 +4,7 @@
 
 [resource]
 shader = ExtResource("1_0p7yj")
-shader_parameter/allow_out_of_bounds = true
-shader_parameter/outline_thickness = 3.0
-shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/scanline_color = Color(1, 1, 1, 0.5)
+shader_parameter/scanline_spacing = 4.0
+shader_parameter/scanline_width = 0.5
+shader_parameter/edge_softness = 0.25

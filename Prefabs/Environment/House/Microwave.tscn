@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu7s8j3t15jmy"]
+
+[ext_resource type="Texture2D" uid="uid://clf0c0757rgch" path="res://Art/Environment/House/microwave.PNG" id="1_u0rfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lx27"]
+size = Vector2(189, 181)
+
+[node name="Microwave" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u0rfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5, 17.5)
+shape = SubResource("RectangleShape2D_4lx27")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://n5aq5qkyuyks"]
+[gd_scene load_steps=8 format=3 uid="uid://n5aq5qkyuyks"]
 
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_xc2f2"]
-[ext_resource type="Texture2D" uid="uid://61squjjevq0k" path="res://Art/Environment/NotepadPlaceholder.png" id="2_otya1"]
+[ext_resource type="Texture2D" uid="uid://djr107yw8653y" path="res://Art/Environment/House/notes.PNG" id="2_m2cvw"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_m2cvw"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_gtaft"]
 
 [sub_resource type="Resource" id="Resource_gtaft"]
 script = ExtResource("3_m2cvw")
@@ -13,24 +14,26 @@ It says the following.
 \"Maybe that’s the reason? I need to visit a doctor.”
 "
 MusicType = 2
+Options = Array[ExtResource("4_gtaft")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnsi6"]
 resource_local_to_scene = true
 custom_solver_bias = 1.0
-size = Vector2(66, 70)
+size = Vector2(249, 163)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otya1"]
 resource_local_to_scene = true
 size = Vector2(67, 76)
 
-[node name="InteractableItem" instance=ExtResource("1_xc2f2")]
-texture = ExtResource("2_otya1")
+[node name="InteractableNotes" instance=ExtResource("1_xc2f2")]
+texture = ExtResource("2_m2cvw")
 InteractText = "READ"
 CutScenes = Array[ExtResource("3_m2cvw")]([SubResource("Resource_gtaft")])
 bHideItemWhileInteracting = true
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(5.5, 9.5)
 shape = SubResource("RectangleShape2D_mnsi6")
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]

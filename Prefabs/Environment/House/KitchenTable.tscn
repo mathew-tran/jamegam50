@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbkaloki1dggh"]
+
+[ext_resource type="Texture2D" uid="uid://qutt2jkl0py1" path="res://Art/Environment/House/kitchenTable.PNG" id="1_51t4j"]
+
+[node name="KitchenTable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_51t4j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-239, -159.6, -339, -174.6, -339, -171.4, -478.7, -162, -489.2, -162, -485, 13.2, -485, 40, -490, 71.2, -490, 135.9, -459, 159, -459, 164.8, 105, 174.8, 105, 176, 115.5, 176, 246.9, 157.4, 295, 168.8, 295, 172.4, 456.4, 166, 472.4, 166, 483.7, -13, 486.8, -20.2, 458, -50.1, 458, -58.7, 351, -42.3, 321.9, -54, 313.3, -54, 266.4, -37.6, 72, -27.9, 33, -26, 48, -28, -234.4, -32.3, -239, -149)

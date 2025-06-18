@@ -6,6 +6,7 @@ enum MUSIC_TYPE {
 	SAD,
 	DREAM,
 	CONTINUE,
+	ENDING,
 	NONE
 }
 
@@ -16,6 +17,8 @@ func PlayMusic(musicType : MUSIC_TYPE):
 			stream = load("res://Audio/Music/Jamgam-50sadM.ogg")
 		MUSIC_TYPE.DREAM:
 			stream = load("res://Audio/Music/Jamgam-50dream.ogg")
+		MUSIC_TYPE.ENDING:
+			stream = load("res://Scripts/Autoload/Jukebox.gd")
 		MUSIC_TYPE.NONE:
 			stream = null
 			stop()

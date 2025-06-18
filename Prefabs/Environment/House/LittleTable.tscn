@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccaf17kis2eis"]
+
+[ext_resource type="Texture2D" uid="uid://dplx28g6hv6sp" path="res://Art/Environment/House/littleTable.PNG" id="1_2xt13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t50is"]
+size = Vector2(438, 86)
+
+[node name="LittleTable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2xt13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_t50is")

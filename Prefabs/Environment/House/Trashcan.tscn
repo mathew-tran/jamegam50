@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qn670npkvf2"]
+
+[ext_resource type="Texture2D" uid="uid://c5t1xuq8v4cbs" path="res://Art/Environment/House/trashcan.PNG" id="1_qigop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4j3d"]
+size = Vector2(176, 171)
+
+[node name="Trashcan" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qigop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 40.5)
+shape = SubResource("RectangleShape2D_s4j3d")
