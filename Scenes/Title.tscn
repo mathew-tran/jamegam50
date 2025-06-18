@@ -7,6 +7,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_tochr")
+SceneToChangeTo = "uid://cnsfdc5wb0cb1"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15

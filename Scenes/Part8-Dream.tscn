@@ -1,0 +1,136 @@
+[gd_scene load_steps=22 format=3 uid="uid://bg5rv4fo3we8r"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
+[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="3_3rod6"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_aaji3"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_od1vv"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_7rjx3"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_pvgoq"]
+[ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="8_ia3fu"]
+[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="9_ltpxr"]
+[ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="10_s7xk8"]
+
+[sub_resource type="Resource" id="Resource_1awfp"]
+script = ExtResource("2_pg5py")
+TextToSay = "You suddenly find yourself among the clouds."
+BackgroundImage = ExtResource("3_3rod6")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_5uir8"]
+script = ExtResource("2_pg5py")
+TextToSay = "I want..
+I want to walk a bit. It's God's will."
+Owner = ExtResource("5_od1vv")
+MusicType = 1
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_8g6cp"]
+script = ExtResource("2_pg5py")
+TextToSay = "A space whale suddenly swoops over.
+You begin to speak to yourself."
+BackgroundImage = ExtResource("9_ltpxr")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_p06xb"]
+script = ExtResource("2_pg5py")
+TextToSay = "And then… I saw it.
+So beautiful, so incredible God’s creation.
+Hovering in the sky, it seemed to be so real and natural.."
+BackgroundImage = ExtResource("3_3rod6")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_wqo1j"]
+script = ExtResource("2_pg5py")
+TextToSay = "It let me saddle it. And… its skin was so soft, like a plush toy. I wanted only two things — to hug it and soar into the sky, flying from horizon to horizon"
+BackgroundImage = ExtResource("10_s7xk8")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_t8l5c"]
+script = ExtResource("2_pg5py")
+TextToSay = "Unbelievable. The fresh air washed over my face, I never felt this relief and enjoyment before."
+BackgroundImage = ExtResource("3_3rod6")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_hkhdp"]
+script = ExtResource("2_pg5py")
+TextToSay = "Other black whales, appearing from nowhere, joined our journey. 
+And we flew… We flew together in this infinite space of happiness and endless delight."
+BackgroundImage = ExtResource("9_ltpxr")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_cnyuk"]
+script = ExtResource("2_pg5py")
+TextToSay = "Unexpectedly, it has all come to an end. I woke up, and I never felt so disappointed in reality. I wanted to be there — only there. Forever.."
+BackgroundImage = ExtResource("3_3rod6")
+Owner = ExtResource("5_od1vv")
+MusicType = 4
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_uwo6w"]
+script = ExtResource("2_pg5py")
+TextToSay = "Some time passes.
+You exhange money with a stranger in a mask."
+BackgroundImage = ExtResource("10_s7xk8")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_svdgm"]
+script = ExtResource("2_pg5py")
+TextToSay = "But what I got was a free sample. 
+I needed to pay for the next doses. And it was very expensive.."
+BackgroundImage = ExtResource("10_s7xk8")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_pacvq"]
+script = ExtResource("2_pg5py")
+TextToSay = "...
+And then, I had no money left. 
+I spent everything for an opportunity to go on a fantastic sky journey saddling the black whales.
+I didn’t have a choice… I had to sell my property"
+BackgroundImage = ExtResource("3_3rod6")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bjs68")
+StartingCutScene = Array[ExtResource("2_pg5py")]([SubResource("Resource_1awfp"), SubResource("Resource_5uir8")])
+Delay = -1.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("6_7rjx3")]
+position = Vector2(-26, 849)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("7_pvgoq")]
+visible = false
+
+[node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
+position = Vector2(-379, 525)
+Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])

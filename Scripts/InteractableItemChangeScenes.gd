@@ -1,8 +1,8 @@
 extends InteractableItem
 class_name InteractableItemChangeScenes
 
-@export var SceneToChangeTo : PackedScene
+@export_file("*.tscn") var SceneToChangeTo
 
 func DoPostInteraction():
-	TransitionScene.TransitionToScene(SceneToChangeTo)
+	TransitionScene.TransitionToScene(load(SceneToChangeTo))
 	queue_free()

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu1uho0niw53p"]
-
-[ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="1_83k04"]
-[ext_resource type="PackedScene" uid="uid://bl3yxwcfopbm" path="res://Scenes/Part3.tscn" id="2_epseu"]
-
-[node name="OutsideNearHomeArea" instance=ExtResource("1_83k04")]
-
-[node name="InteractableItem" parent="." index="12"]
-SceneToChangeTo = ExtResource("2_epseu")

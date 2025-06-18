@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqir1nb6nyi34"]
+[gd_scene load_steps=9 format=3 uid="uid://dqir1nb6nyi34"]
 
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="1_x3q7f"]
-[ext_resource type="PackedScene" uid="uid://ccbnuyoxkff0o" path="res://Prefabs/Environment/Part2/InteractableNextAreaInPart2.tscn" id="2_8casn"]
+[ext_resource type="Texture2D" uid="uid://b8itsy0ifd55a" path="res://Art/Environment/NextArea.png" id="2_ab0l5"]
+[ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="3_3ycg5"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="4_nx0j3"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="5_y4503"]
+
+[sub_resource type="Resource" id="Resource_hm87k"]
+script = ExtResource("4_nx0j3")
+TextToSay = "You move to the next area."
+MusicType = 2
+Options = Array[ExtResource("5_y4503")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfmjd"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(150, 355)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly1b4"]
+resource_local_to_scene = true
+size = Vector2(137, 348)
 
 [node name="OutsideNearHomeArea" type="Node2D"]
 
@@ -41,5 +60,25 @@ position = Vector2(1794, 951)
 [node name="Box12" parent="." instance=ExtResource("1_x3q7f")]
 position = Vector2(1649, 953)
 
-[node name="InteractableItem" parent="." instance=ExtResource("2_8casn")]
+[node name="InteractableItem" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
 position = Vector2(1831, 596)
+texture = ExtResource("2_ab0l5")
+script = ExtResource("3_3ycg5")
+InteractText = "Continue forward"
+CutScenes = Array[ExtResource("4_nx0j3")]([SubResource("Resource_hm87k")])
+
+[node name="Area2D" type="Area2D" parent="InteractableItem"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableItem/Area2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_sfmjd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="InteractableItem"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableItem/StaticBody2D"]
+position = Vector2(6.5, 1)
+shape = SubResource("RectangleShape2D_ly1b4")
+
+[connection signal="mouse_entered" from="InteractableItem/Area2D" to="InteractableItem" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="InteractableItem/Area2D" to="InteractableItem" method="_on_area_2d_mouse_exited"]

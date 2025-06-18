@@ -1,0 +1,186 @@
+[gd_scene load_steps=27 format=3 uid="uid://bl3yxwcfopbm"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_l01m1"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_gbgjl"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_8bmng"]
+[ext_resource type="Resource" uid="uid://dc1butuwnqt30" path="res://Content/Characters/Character_HomelessMan.tres" id="4_apx80"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_u40ah"]
+[ext_resource type="Resource" uid="uid://c61lgyo74kdki" path="res://Content/StoryFlags/FLAG_001_NICE_TO_HOMELESS.tres" id="6_moamj"]
+[ext_resource type="Resource" uid="uid://t3fk5g3bhmlh" path="res://Content/StoryFlags/FLAG_002_MEAN_TO_HOMELESS.tres" id="7_471px"]
+[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="8_awk88"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_hif2b"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_vkqv7"]
+[ext_resource type="Texture2D" uid="uid://qy4kiwbiwwvy" path="res://Art/Environment/Busplaceholder.png" id="11_gbgjl"]
+[ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="12_8bmng"]
+
+[sub_resource type="Resource" id="Resource_kokk2"]
+script = ExtResource("2_gbgjl")
+TextToSay = "...
+A homeless man comes up to you
+.."
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_jupxk"]
+script = ExtResource("2_gbgjl")
+TextToSay = "Hey, kid? Do you have something to smoke?
+It feels like I’m literally dying, ha-ha…"
+Owner = ExtResource("4_apx80")
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_r57g8"]
+script = ExtResource("2_gbgjl")
+TextToSay = ".."
+Owner = ExtResource("5_u40ah")
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_hqtm8"]
+script = ExtResource("2_gbgjl")
+TextToSay = "You know, bad habit… Can’t get rid of it for so many years already.."
+Owner = ExtResource("4_apx80")
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_bvtwy"]
+script = ExtResource("2_gbgjl")
+TextToSay = "The homeless man smiles. Thanks you and goes on with his life."
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_p2vix"]
+script = ExtResource("3_8bmng")
+OptionName = "Yeah, take this, pal"
+CutScenes = Array[ExtResource("2_gbgjl")]([SubResource("Resource_bvtwy")])
+StoryFlagSet = ExtResource("6_moamj")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_u1qu8"]
+script = ExtResource("2_gbgjl")
+TextToSay = "You walk past him. He is silent."
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_86v50"]
+script = ExtResource("3_8bmng")
+OptionName = "Nah, leave me alone!"
+CutScenes = Array[ExtResource("2_gbgjl")]([SubResource("Resource_u1qu8")])
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_msf4v"]
+script = ExtResource("2_gbgjl")
+TextToSay = "You move past the homeless man. Knocking him down by accident."
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_2guxd"]
+script = ExtResource("3_8bmng")
+OptionName = "Go away, you old bastard! You're holding me up! [repels]"
+CutScenes = Array[ExtResource("2_gbgjl")]([SubResource("Resource_msf4v")])
+StoryFlagSet = ExtResource("7_471px")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_o5p0b"]
+script = ExtResource("2_gbgjl")
+TextToSay = ".. Well.. what do you say?"
+Owner = ExtResource("4_apx80")
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([SubResource("Resource_p2vix"), SubResource("Resource_86v50"), SubResource("Resource_2guxd")])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_enrcn"]
+script = ExtResource("2_gbgjl")
+TextToSay = "You take the bus to work.
+.."
+MusicType = 2
+Options = Array[ExtResource("3_8bmng")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apx80"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(150, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u40ah"]
+resource_local_to_scene = true
+size = Vector2(150, 149)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l01m1")
+StartingCutScene = Array[ExtResource("2_gbgjl")]([SubResource("Resource_kokk2"), SubResource("Resource_jupxk"), SubResource("Resource_r57g8"), SubResource("Resource_hqtm8"), SubResource("Resource_o5p0b")])
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Box" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(172, 951)
+
+[node name="Box2" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(461, 949)
+
+[node name="Box3" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(322, 883)
+
+[node name="Box4" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(639, 991)
+
+[node name="Box5" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(894, 889)
+
+[node name="Box6" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(760, 951)
+
+[node name="Box7" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(1054, 951)
+
+[node name="Box8" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(1343, 949)
+
+[node name="Box9" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(1198, 1008)
+
+[node name="Box10" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(1502, 907)
+
+[node name="Box11" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(1794, 951)
+
+[node name="Box12" parent="Environment" instance=ExtResource("8_awk88")]
+position = Vector2(1649, 953)
+
+[node name="Player" parent="." instance=ExtResource("9_hif2b")]
+position = Vector2(186, 558)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_vkqv7")]
+visible = false
+
+[node name="InteractableItem" type="Sprite2D" parent="."]
+position = Vector2(1823, 484)
+texture = ExtResource("11_gbgjl")
+script = ExtResource("12_8bmng")
+SceneToChangeTo = "uid://ynu4hab6besn"
+InteractText = "Go to work"
+CutScenes = Array[ExtResource("2_gbgjl")]([SubResource("Resource_enrcn")])
+
+[node name="Area2D" type="Area2D" parent="InteractableItem"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableItem/Area2D"]
+shape = SubResource("RectangleShape2D_apx80")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="InteractableItem"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableItem/StaticBody2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_u40ah")
+
+[connection signal="mouse_entered" from="InteractableItem/Area2D" to="InteractableItem" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="InteractableItem/Area2D" to="InteractableItem" method="_on_area_2d_mouse_exited"]

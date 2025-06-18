@@ -1,0 +1,91 @@
+[gd_scene load_steps=20 format=3 uid="uid://sb848qrectgf"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_a3i65"]
+[ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_2t8ut"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="3_ty57k"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="4_3bpxk"]
+[ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="5_1d5ea"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="6_20y4e"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_sgxcx"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="8_v0sdx"]
+[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="9_f7j8j"]
+[ext_resource type="Texture2D" uid="uid://djr107yw8653y" path="res://Art/Environment/House/notes.PNG" id="10_dl60f"]
+[ext_resource type="Resource" uid="uid://osbtdc63buww" path="res://Content/StoryFlags/FLAG_003_PICKUP_SHEET.tres" id="11_jwf1m"]
+[ext_resource type="AudioStream" uid="uid://b7m2orjiytd7l" path="res://Audio/SFX/static.ogg" id="12_xaqea"]
+[ext_resource type="Script" uid="uid://cah28uxy76xks" path="res://Scripts/SceneSwitchListener.gd" id="13_pcurt"]
+
+[sub_resource type="Resource" id="Resource_xopr3"]
+script = ExtResource("6_20y4e")
+TextToSay = "!!!
+A sharp pain runs through your head.
+You hold your head writhing in pain."
+MusicType = 2
+Options = Array[ExtResource("7_sgxcx")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_ushc4"]
+script = ExtResource("6_20y4e")
+TextToSay = "FUCK..... FUCK."
+Owner = ExtResource("8_v0sdx")
+MusicType = 2
+Options = Array[ExtResource("7_sgxcx")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_oqxf7"]
+script = ExtResource("6_20y4e")
+TextToSay = "You lose conciousness.
+..
+."
+BackgroundImage = ExtResource("9_f7j8j")
+MusicType = 2
+Options = Array[ExtResource("7_sgxcx")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_kbb2x"]
+script = ExtResource("6_20y4e")
+TextToSay = "The sheet was picked up."
+MusicType = 2
+Options = Array[ExtResource("7_sgxcx")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_4646v"]
+script = ExtResource("7_sgxcx")
+OptionName = "Pick up the sheet."
+CutScenes = Array[ExtResource("6_20y4e")]([SubResource("Resource_kbb2x")])
+StoryFlagSet = ExtResource("11_jwf1m")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_gd6id"]
+script = ExtResource("6_20y4e")
+TextToSay = "You wake up.
+There is a sheet in front of you."
+BackgroundImage = ExtResource("10_dl60f")
+MusicType = 2
+SFX = ExtResource("12_xaqea")
+Options = Array[ExtResource("7_sgxcx")]([SubResource("Resource_4646v")])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_a3i65")
+Delay = -1.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="OutsideNearHomeArea" parent="Node2D" instance=ExtResource("2_2t8ut")]
+
+[node name="Player" parent="." instance=ExtResource("3_ty57k")]
+position = Vector2(390, 551)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("4_3bpxk")]
+visible = false
+
+[node name="OneTimeCollideCutScene" parent="." instance=ExtResource("5_1d5ea")]
+position = Vector2(0, -21)
+Cutscenes = Array[ExtResource("6_20y4e")]([SubResource("Resource_xopr3"), SubResource("Resource_ushc4"), SubResource("Resource_oqxf7"), SubResource("Resource_gd6id")])
+
+[node name="SceneSwitchListener" type="Node2D" parent="."]
+script = ExtResource("13_pcurt")
+FlagToListenTo = ExtResource("11_jwf1m")
+SceneToGoTo = "uid://cbj4s2vv6cope"

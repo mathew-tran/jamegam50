@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c66gaffxsr6oj"]
-
-[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="1_m6ccx"]
-[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Part2.tscn" id="2_ua1xm"]
-
-[node name="Environment" instance=ExtResource("1_m6ccx")]
-
-[node name="InteractableDoor" parent="." index="9"]
-SceneToChangeTo = ExtResource("2_ua1xm")

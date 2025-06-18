@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=23 format=3 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_1matk"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_7a2xq"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="11_72s53"]
-[ext_resource type="PackedScene" uid="uid://dihft4ato04q1" path="res://Scenes/Part5.tscn" id="12_lfjbx"]
 [ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="13_er777"]
 
 [sub_resource type="Resource" id="Resource_7qjir"]
@@ -158,5 +157,5 @@ visible = false
 
 [node name="InteractableDoor" parent="." instance=ExtResource("11_72s53")]
 position = Vector2(1854, 590)
-SceneToChangeTo = ExtResource("12_lfjbx")
+SceneToChangeTo = "uid://dihft4ato04q1"
 CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq")])
