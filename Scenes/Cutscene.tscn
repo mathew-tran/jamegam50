@@ -35,6 +35,18 @@ MusicType = 2
 Options = Array[ExtResource("4_dqmat")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kweal"]
+bg_color = Color(0.103744, 0.103744, 0.103743, 1)
+skew = Vector2(0.2, 0)
+border_width_left = 20
+border_width_top = 2
+border_width_right = 20
+border_width_bottom = 2
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4us0"]
 bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
 skew = Vector2(0.01, 0)
@@ -42,13 +54,6 @@ border_width_left = 20
 border_width_top = 3
 border_width_right = 20
 border_width_bottom = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kweal"]
-bg_color = Color(0.103744, 0.103744, 0.103743, 1)
-expand_margin_left = 20.0
-expand_margin_top = 20.0
-expand_margin_right = 20.0
-expand_margin_bottom = 20.0
 
 [sub_resource type="Animation" id="Animation_dqmat"]
 length = 0.001
@@ -143,6 +148,30 @@ texture = ExtResource("3_idm0t")
 expand_mode = 2
 stretch_mode = 5
 
+[node name="OwnerImage" type="TextureRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(140, 140)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -588.0
+offset_right = 284.0
+offset_bottom = -308.0
+grow_vertical = 0
+texture = ExtResource("6_kweal")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/OwnerImage"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 268.0
+offset_right = 390.0
+offset_bottom = 341.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_kweal")
+text = "PlayerName"
+
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
@@ -187,30 +216,6 @@ theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "This is a test script."
 visible_characters_behavior = 1
-
-[node name="OwnerImage" type="TextureRect" parent="CanvasLayer"]
-custom_minimum_size = Vector2(140, 140)
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = -464.0
-offset_right = 122.0
-offset_bottom = -346.0
-grow_vertical = 0
-texture = ExtResource("6_kweal")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="CanvasLayer/OwnerImage"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 155.0
-offset_right = 350.0
-offset_bottom = 224.0
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_kweal")
-text = "PlayerName"
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 offset_left = 1862.0

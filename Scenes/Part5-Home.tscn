@@ -82,4 +82,9 @@ position = Vector2(390, 551)
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("8_liinq")]
 visible = false
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.452701, 0.521098, 1, 1)
+energy = 1.23
+blend_mode = 2
+
 [editable path="Environment"]

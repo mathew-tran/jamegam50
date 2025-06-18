@@ -18,6 +18,11 @@ func _enter_tree() -> void:
 func Setup(newData):
 	Data = newData.duplicate()
 	
+func GetNewCutSceneData(newData):
+	Data = newData.duplicate()
+	RemainingText.clear()
+	PlayNextScene()
+	
 func _ready() -> void:
 	get_tree().paused = true
 	Finder.GetPlayer().StopMoving()
@@ -103,7 +108,7 @@ func PlayNextText():
 		$CanvasLayer/TextureRect2.visible = false
 		$CanvasLayer/Panel/RichTextLabel.text = RemainingText.pop_front()
 		$CanvasLayer/Panel/Outline.text = $CanvasLayer/Panel/RichTextLabel.text
-		tween.tween_property(Content, "visible_ratio", 1, len(Content.text) * .01)
+		tween.tween_property(Content, "visible_ratio", 1, len(Content.text) * .007)
 		await tween.finished
 		bCanSkip = true
 		$CanvasLayer/Options.visible = false

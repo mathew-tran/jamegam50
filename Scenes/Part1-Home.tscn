@@ -64,4 +64,7 @@ volume_db = -10.0
 autoplay = true
 script = ExtResource("11_cucws")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 2
+
 [editable path="Environment"]

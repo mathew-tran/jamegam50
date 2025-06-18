@@ -3,13 +3,28 @@
 [ext_resource type="Script" uid="uid://bte55yf0fhrap" path="res://Scripts/UI/OptionButton.gd" id="1_inmwa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inmwa"]
-bg_color = Color(1.73271e-06, 0.525794, 0.654286, 1)
+bg_color = Color(0, 0.710205, 0.879495, 1)
+skew = Vector2(0.2, 0)
+border_width_left = 30
+border_width_top = 5
+border_width_right = 15
+border_width_bottom = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sggi"]
 bg_color = Color(7.70092e-07, 0.314119, 0.395782, 1)
+skew = Vector2(0.2, 0)
+border_width_left = 10
+border_width_top = 5
+border_width_right = 10
+border_width_bottom = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1h72"]
 bg_color = Color(0, 0.466325, 0.581661, 1)
+skew = Vector2(0.2, 0)
+border_width_left = 10
+border_width_top = 5
+border_width_right = 10
+border_width_bottom = 5
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(1200, 130)

@@ -70,3 +70,4 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_nnfgk")
 }
+speed_scale = 2.0
