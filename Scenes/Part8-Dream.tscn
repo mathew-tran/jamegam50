@@ -50,7 +50,8 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_wqo1j"]
 script = ExtResource("2_pg5py")
-TextToSay = "It let me saddle it. And… its skin was so soft, like a plush toy. I wanted only two things — to hug it and soar into the sky, flying from horizon to horizon"
+TextToSay = "It let me saddle it. And… its skin was so soft, like a plush toy. 
+I wanted only two things — to hug it and soar into the sky, flying from horizon to horizon"
 BackgroundImage = ExtResource("10_s7xk8")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
@@ -78,7 +79,8 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_cnyuk"]
 script = ExtResource("2_pg5py")
-TextToSay = "Unexpectedly, it has all come to an end. I woke up, and I never felt so disappointed in reality. I wanted to be there — only there. Forever.."
+TextToSay = "Unexpectedly, it has all come to an end. 
+I woke up, and I never felt so disappointed in reality. I wanted to be there — only there. Forever.."
 BackgroundImage = ExtResource("3_3rod6")
 Owner = ExtResource("5_od1vv")
 MusicType = 4

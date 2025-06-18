@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmwjabbwgt077"]
+[gd_scene load_steps=6 format=3 uid="uid://cmwjabbwgt077"]
 
 [ext_resource type="Script" uid="uid://dspmkffa0qyql" path="res://Scripts/UI/InteractPanel.gd" id="1_buwaf"]
 
@@ -9,10 +9,48 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 
+[sub_resource type="Animation" id="Animation_buwaf"]
+resource_name = "animateIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yopaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnfgk"]
+_data = {
+&"RESET": SubResource("Animation_yopaf"),
+&"animateIn": SubResource("Animation_buwaf")
+}
+
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(200, 50)
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset = Vector2(100, 25)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_buwaf")
 script = ExtResource("1_buwaf")
@@ -27,3 +65,8 @@ grow_vertical = 2
 text = "INTERACT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nnfgk")
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dc22edvi1p3l1"]
+[gd_scene load_steps=21 format=3 uid="uid://dc22edvi1p3l1"]
 
 [ext_resource type="Script" uid="uid://c25jxewqvy8pw" path="res://Scripts/Cutscene.gd" id="1_c1xi3"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_idm0t"]
@@ -37,10 +37,11 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4us0"]
 bg_color = Color(0.0214346, 0.0214346, 0.0214346, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+skew = Vector2(0.01, 0)
+border_width_left = 20
+border_width_top = 3
+border_width_right = 20
+border_width_bottom = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kweal"]
 bg_color = Color(0.103744, 0.103744, 0.103743, 1)
@@ -86,6 +87,43 @@ _data = {
 &"animate": SubResource("Animation_g4us0")
 }
 
+[sub_resource type="Animation" id="Animation_bnhl5"]
+resource_name = "animIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jhjw4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_olnes"]
+_data = {
+&"RESET": SubResource("Animation_jhjw4"),
+&"animIn": SubResource("Animation_bnhl5")
+}
+
 [node name="CutScene" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_c1xi3")
@@ -114,7 +152,25 @@ offset_top = -228.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1, 1e-05)
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4us0")
+
+[node name="Outline" type="RichTextLabel" parent="CanvasLayer/Panel"]
+self_modulate = Color(0.262932, 0.262932, 0.262932, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 34.0
+offset_right = -12.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "This is a test script.s"
+visible_characters_behavior = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -184,3 +240,9 @@ grow_vertical = 2
 
 [node name="Button" parent="CanvasLayer/Options" instance=ExtResource("9_bnhl5")]
 layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_olnes")
+}
+speed_scale = 20.0
