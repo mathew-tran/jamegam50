@@ -8,6 +8,7 @@ var MoveSpeed = 1800
 
 func _ready() -> void:
 	TargetPosition = global_position
+	StopMoving()
 	
 
 func StopMoving():
