@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bl3yxwcfopbm"]
+[gd_scene load_steps=24 format=3 uid="uid://bl3yxwcfopbm"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_kokk2"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_fsubk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://c61lgyo74kdki" path="res://Content/StoryFlags/FLAG_001_NICE_TO_HOMELESS.tres" id="6_jupxk"]
 [ext_resource type="Resource" uid="uid://t3fk5g3bhmlh" path="res://Content/StoryFlags/FLAG_002_MEAN_TO_HOMELESS.tres" id="7_r57g8"]
 [ext_resource type="PackedScene" uid="uid://b70hfbgiccgt8" path="res://Prefabs/Environment/Part3/InteractableNextAreainPart3.tscn" id="11_r57g8"]
+[ext_resource type="PackedScene" uid="uid://ynu4hab6besn" path="res://Scenes/Part4.tscn" id="12_o5p0b"]
 
 [sub_resource type="Resource" id="Resource_kokk2"]
 script = ExtResource("2_fsubk")
@@ -147,3 +148,4 @@ visible = false
 
 [node name="InteractableItem" parent="." instance=ExtResource("11_r57g8")]
 position = Vector2(1823, 484)
+SceneToChangeTo = ExtResource("12_o5p0b")

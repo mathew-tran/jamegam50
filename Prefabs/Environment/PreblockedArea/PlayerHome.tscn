@@ -1,0 +1,96 @@
+[gd_scene load_steps=22 format=3 uid="uid://ostal422jvs1"]
+
+[ext_resource type="PackedScene" uid="uid://cpjejg7t712hd" path="res://Prefabs/Environment/House/FloorWalls.tscn" id="1_eteni"]
+[ext_resource type="PackedScene" uid="uid://c0fvdyooognd7" path="res://Prefabs/Environment/House/HouseTable.tscn" id="2_0avi4"]
+[ext_resource type="PackedScene" uid="uid://odw7tip2m2sd" path="res://Prefabs/Environment/House/Bed.tscn" id="3_v1pl0"]
+[ext_resource type="PackedScene" uid="uid://bbkaloki1dggh" path="res://Prefabs/Environment/House/KitchenTable.tscn" id="4_ownwe"]
+[ext_resource type="PackedScene" uid="uid://ccaf17kis2eis" path="res://Prefabs/Environment/House/LittleTable.tscn" id="5_jawqs"]
+[ext_resource type="PackedScene" uid="uid://cyyuv65adscg2" path="res://Prefabs/Environment/House/Books.tscn" id="6_h1n2y"]
+[ext_resource type="PackedScene" uid="uid://8qn670npkvf2" path="res://Prefabs/Environment/House/Trashcan.tscn" id="7_r1wk1"]
+[ext_resource type="PackedScene" uid="uid://bu7s8j3t15jmy" path="res://Prefabs/Environment/House/Microwave.tscn" id="8_1xd3r"]
+[ext_resource type="PackedScene" uid="uid://bfvaw5h806ccy" path="res://Prefabs/Environment/House/InteractableBook.tscn" id="9_0g2o7"]
+[ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="10_vpgg6"]
+[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Part2.tscn" id="11_fxbx1"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="12_e6flj"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="13_4evrs"]
+[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="14_kmt6n"]
+[ext_resource type="PackedScene" uid="uid://n5aq5qkyuyks" path="res://Prefabs/Environment/House/InteractableNotepad.tscn" id="15_rq8nk"]
+[ext_resource type="PackedScene" uid="uid://bad1pdlg7p8bg" path="res://Prefabs/Environment/House/Plant.tscn" id="16_5q45w"]
+[ext_resource type="PackedScene" uid="uid://b7k8x7w6hgboa" path="res://Prefabs/Environment/House/TableTrash.tscn" id="17_83ffp"]
+[ext_resource type="PackedScene" uid="uid://cykc6830hkf02" path="res://Prefabs/Environment/House/Wardrobe.tscn" id="18_w64vh"]
+[ext_resource type="PackedScene" uid="uid://witv4a48dwkq" path="res://Prefabs/Environment/House/Window.tscn" id="19_7r1ba"]
+[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="20_0avi4"]
+
+[sub_resource type="Resource" id="Resource_erwvk"]
+script = ExtResource("12_e6flj")
+TextToSay = "You open the door to go outside."
+MusicType = 3
+SFX = ExtResource("14_kmt6n")
+Options = Array[ExtResource("13_4evrs")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Environment" type="Node2D"]
+
+[node name="FloorWalls" parent="." instance=ExtResource("1_eteni")]
+position = Vector2(842, 688)
+
+[node name="Table" parent="." instance=ExtResource("2_0avi4")]
+position = Vector2(170, 1074)
+
+[node name="Bed" parent="." instance=ExtResource("3_v1pl0")]
+position = Vector2(160, 540)
+
+[node name="KitchenTable" parent="." instance=ExtResource("4_ownwe")]
+position = Vector2(1120, 1011)
+
+[node name="LittleTable" parent="." instance=ExtResource("5_jawqs")]
+position = Vector2(729, 379)
+
+[node name="Books" parent="." instance=ExtResource("6_h1n2y")]
+position = Vector2(854, 328)
+
+[node name="Trashcan" parent="." instance=ExtResource("7_r1wk1")]
+position = Vector2(534, 1040)
+
+[node name="Microwave" parent="." instance=ExtResource("8_1xd3r")]
+position = Vector2(770, 879)
+
+[node name="InteractableBook" parent="." instance=ExtResource("9_0g2o7")]
+position = Vector2(328, 1068)
+
+[node name="InteractableDoor" parent="." instance=ExtResource("10_vpgg6")]
+position = Vector2(1591, 733)
+SceneToChangeTo = ExtResource("11_fxbx1")
+InteractText = "Go outside"
+CutScenes = Array[ExtResource("12_e6flj")]([SubResource("Resource_erwvk")])
+
+[node name="InteractableItem4" parent="." instance=ExtResource("15_rq8nk")]
+position = Vector2(1091, 458)
+rotation = 0.174533
+scale = Vector2(0.8, 0.8)
+
+[node name="Plant" parent="." instance=ExtResource("16_5q45w")]
+position = Vector2(630, 323)
+
+[node name="TableTrash" parent="." instance=ExtResource("17_83ffp")]
+position = Vector2(867, 1112)
+
+[node name="Wardrobe" parent="." instance=ExtResource("18_w64vh")]
+position = Vector2(1412, 320)
+
+[node name="Window2" parent="." instance=ExtResource("19_7r1ba")]
+position = Vector2(709, 197)
+
+[node name="Blocker" parent="." instance=ExtResource("20_0avi4")]
+position = Vector2(0, 322)
+
+[node name="Blocker2" parent="." instance=ExtResource("20_0avi4")]
+position = Vector2(-20, 1222)
+
+[node name="Blocker3" parent="." instance=ExtResource("20_0avi4")]
+position = Vector2(-193, 1372)
+rotation = -1.57079
+
+[node name="Blocker4" parent="." instance=ExtResource("20_0avi4")]
+position = Vector2(1659, 1337)
+rotation = -1.57079

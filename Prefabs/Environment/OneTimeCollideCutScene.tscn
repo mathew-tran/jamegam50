@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd7vultm6esdi"]
+
+[ext_resource type="Script" uid="uid://kn08534pwcn" path="res://Scripts/OneTimeCollideCutscene.gd" id="1_0qktb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmb1v"]
+size = Vector2(121, 864)
+
+[node name="OneTimeCollideCutScene" type="Area2D"]
+process_mode = 3
+script = ExtResource("1_0qktb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(903, 440)
+shape = SubResource("RectangleShape2D_bmb1v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

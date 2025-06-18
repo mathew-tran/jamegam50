@@ -9,11 +9,12 @@ var MoveSpeed = 1800
 func _ready() -> void:
 	TargetPosition = global_position
 	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_click") and TransitionScene.bHasTransitioned:
-		TargetPosition = get_global_mouse_position()
+
 		
 func _process(delta: float) -> void:
+	if Input.is_action_pressed("left_click") and TransitionScene.bHasTransitioned:
+		TargetPosition = get_global_mouse_position()
+		
 	if TargetPosition != GetPlayerPosition():
 		$Waypoint.global_position = TargetPosition
 		$Waypoint.visible = true

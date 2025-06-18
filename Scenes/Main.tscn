@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cnsfdc5wb0cb1"]
+[gd_scene load_steps=14 format=3 uid="uid://cnsfdc5wb0cb1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_r150o"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_4kpch"]
@@ -8,25 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_frkhe"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_grg3l"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_pbw6q"]
-[ext_resource type="PackedScene" uid="uid://odw7tip2m2sd" path="res://Prefabs/Environment/House/Bed.tscn" id="7_0sclb"]
-[ext_resource type="PackedScene" uid="uid://c0fvdyooognd7" path="res://Prefabs/Environment/House/HouseTable.tscn" id="7_346fj"]
-[ext_resource type="PackedScene" uid="uid://cpjejg7t712hd" path="res://Prefabs/Environment/House/FloorWalls.tscn" id="7_sxkr1"]
-[ext_resource type="PackedScene" uid="uid://cyyuv65adscg2" path="res://Prefabs/Environment/House/Books.tscn" id="8_sxkr1"]
-[ext_resource type="PackedScene" uid="uid://ccaf17kis2eis" path="res://Prefabs/Environment/House/LittleTable.tscn" id="11_hwpts"]
-[ext_resource type="PackedScene" uid="uid://n5aq5qkyuyks" path="res://Prefabs/Environment/House/InteractableNotepad.tscn" id="12_grg3l"]
-[ext_resource type="PackedScene" uid="uid://bfvaw5h806ccy" path="res://Prefabs/Environment/House/InteractableBook.tscn" id="13_frkhe"]
-[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Part2.tscn" id="13_h1m7h"]
-[ext_resource type="PackedScene" uid="uid://8qn670npkvf2" path="res://Prefabs/Environment/House/Trashcan.tscn" id="13_jyqft"]
-[ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="14_1p5hy"]
-[ext_resource type="PackedScene" uid="uid://bu7s8j3t15jmy" path="res://Prefabs/Environment/House/Microwave.tscn" id="14_3tgeq"]
-[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="18_kpo4j"]
-[ext_resource type="PackedScene" uid="uid://bbkaloki1dggh" path="res://Prefabs/Environment/House/KitchenTable.tscn" id="21_fq0cl"]
-[ext_resource type="PackedScene" uid="uid://bad1pdlg7p8bg" path="res://Prefabs/Environment/House/Plant.tscn" id="23_c4ay3"]
-[ext_resource type="PackedScene" uid="uid://cykc6830hkf02" path="res://Prefabs/Environment/House/Wardrobe.tscn" id="24_3tgeq"]
-[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="25_aht7i"]
-[ext_resource type="PackedScene" uid="uid://witv4a48dwkq" path="res://Prefabs/Environment/House/Window.tscn" id="25_c4ay3"]
+[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="7_grg3l"]
 [ext_resource type="AudioStream" uid="uid://cdv6mdlspog7o" path="res://Audio/Ambients/ambientstreet.ogg" id="26_5jffn"]
-[ext_resource type="PackedScene" uid="uid://b7k8x7w6hgboa" path="res://Prefabs/Environment/House/TableTrash.tscn" id="26_aht7i"]
 [ext_resource type="Script" uid="uid://smhacb81w4cp" path="res://Scripts/AmbientPlayer.gd" id="27_5jffn"]
 
 [sub_resource type="Resource" id="Resource_1p5hy"]
@@ -55,70 +38,12 @@ MusicType = 0
 Options = Array[ExtResource("4_2w5on")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
-[sub_resource type="Resource" id="Resource_erwvk"]
-script = ExtResource("2_4kpch")
-TextToSay = "You open the door to go outside."
-MusicType = 3
-SFX = ExtResource("18_kpo4j")
-Options = Array[ExtResource("4_2w5on")]([])
-metadata/_custom_type_script = "uid://byqjsgo6271ad"
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_r150o")
 StartingCutScene = Array[ExtResource("2_4kpch")]([SubResource("Resource_1p5hy"), SubResource("Resource_h1m7h")])
 Delay = -1.0
 
-[node name="Environment" type="Node2D" parent="."]
-
-[node name="FloorWalls" parent="Environment" instance=ExtResource("7_sxkr1")]
-position = Vector2(842, 688)
-
-[node name="Table" parent="Environment" instance=ExtResource("7_346fj")]
-position = Vector2(170, 1074)
-
-[node name="Bed" parent="Environment" instance=ExtResource("7_0sclb")]
-position = Vector2(160, 540)
-
-[node name="KitchenTable" parent="Environment" instance=ExtResource("21_fq0cl")]
-position = Vector2(1120, 1011)
-
-[node name="LittleTable" parent="Environment" instance=ExtResource("11_hwpts")]
-position = Vector2(729, 379)
-
-[node name="Books" parent="Environment" instance=ExtResource("8_sxkr1")]
-position = Vector2(854, 328)
-
-[node name="Trashcan" parent="Environment" instance=ExtResource("13_jyqft")]
-position = Vector2(534, 1040)
-
-[node name="Microwave" parent="Environment" instance=ExtResource("14_3tgeq")]
-position = Vector2(770, 879)
-
-[node name="InteractableBook" parent="Environment" instance=ExtResource("13_frkhe")]
-position = Vector2(328, 1068)
-
-[node name="InteractableDoor" parent="Environment" instance=ExtResource("14_1p5hy")]
-position = Vector2(1591, 733)
-SceneToChangeTo = ExtResource("13_h1m7h")
-InteractText = "Go outside"
-CutScenes = Array[ExtResource("2_4kpch")]([SubResource("Resource_erwvk")])
-
-[node name="InteractableItem4" parent="Environment" instance=ExtResource("12_grg3l")]
-position = Vector2(1091, 458)
-rotation = 0.174533
-scale = Vector2(0.8, 0.8)
-
-[node name="Plant" parent="Environment" instance=ExtResource("23_c4ay3")]
-position = Vector2(630, 323)
-
-[node name="TableTrash" parent="Environment" instance=ExtResource("26_aht7i")]
-position = Vector2(867, 1112)
-
-[node name="Wardrobe" parent="Environment" instance=ExtResource("24_3tgeq")]
-position = Vector2(1412, 320)
-
-[node name="Window2" parent="Environment" instance=ExtResource("25_c4ay3")]
-position = Vector2(709, 197)
+[node name="Environment" parent="." instance=ExtResource("7_grg3l")]
 
 [node name="Player" parent="." instance=ExtResource("2_idj7w")]
 position = Vector2(428, 471)
@@ -127,20 +52,6 @@ position = Vector2(428, 471)
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("5_pbw6q")]
 visible = false
-
-[node name="Blocker" parent="." instance=ExtResource("25_aht7i")]
-position = Vector2(0, 322)
-
-[node name="Blocker2" parent="." instance=ExtResource("25_aht7i")]
-position = Vector2(-20, 1222)
-
-[node name="Blocker3" parent="." instance=ExtResource("25_aht7i")]
-position = Vector2(-193, 1372)
-rotation = -1.57079
-
-[node name="Blocker4" parent="." instance=ExtResource("25_aht7i")]
-position = Vector2(1659, 1337)
-rotation = -1.57079
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

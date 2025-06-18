@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_yjmo8"]
 [ext_resource type="Texture2D" uid="uid://qy4kiwbiwwvy" path="res://Art/Environment/Busplaceholder.png" id="2_bjt44"]
 [ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="3_10dos"]
-[ext_resource type="PackedScene" uid="uid://ynu4hab6besn" path="res://Scenes/Part4.tscn" id="4_10dos"]
+[ext_resource type="PackedScene" uid="uid://bg5rv4fo3we8r" path="res://Scenes/Part8.tscn" id="4_10dos"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="5_6hs73"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="6_tbsdx"]
 

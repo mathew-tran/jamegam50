@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=24 format=3 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="8_7g1ov"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_1matk"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_7a2xq"]
+[ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="11_72s53"]
+[ext_resource type="PackedScene" uid="uid://dihft4ato04q1" path="res://Scenes/Part5.tscn" id="12_lfjbx"]
+[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="13_er777"]
 
 [sub_resource type="Resource" id="Resource_7qjir"]
 script = ExtResource("2_72s53")
@@ -94,6 +97,14 @@ MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([SubResource("Resource_7g1ov")])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_7a2xq"]
+script = ExtResource("2_72s53")
+TextToSay = "You open the door to the medical room."
+MusicType = 2
+SFX = ExtResource("13_er777")
+Options = Array[ExtResource("3_lfjbx")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7qjir")
 StartingCutScene = Array[ExtResource("2_72s53")]([SubResource("Resource_7qjir"), SubResource("Resource_72s53"), SubResource("Resource_lfjbx"), SubResource("Resource_er777"), SubResource("Resource_1matk")])
@@ -138,9 +149,14 @@ position = Vector2(1794, 951)
 position = Vector2(1649, 953)
 
 [node name="Player" parent="." instance=ExtResource("9_1matk")]
-position = Vector2(1005, 539)
+position = Vector2(306, 536)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_7a2xq")]
 visible = false
+
+[node name="InteractableDoor" parent="." instance=ExtResource("11_72s53")]
+position = Vector2(1854, 590)
+SceneToChangeTo = ExtResource("12_lfjbx")
+CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq")])

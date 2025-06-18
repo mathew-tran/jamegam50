@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://dihft4ato04q1"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_e8hlv"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_06vck"]
+[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_0the6"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_ovl7w"]
+[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="6_gcjwq"]
+[ext_resource type="PackedScene" uid="uid://sb848qrectgf" path="res://Scenes/Part6.tscn" id="7_hsolg"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="7_okxt3"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_yo3kc"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_oqype"]
+
+[sub_resource type="Resource" id="Resource_gcjwq"]
+script = ExtResource("2_06vck")
+TextToSay = "!!!
+Ugh.."
+BackgroundImage = ExtResource("3_0the6")
+Owner = ExtResource("7_okxt3")
+MusicType = 2
+Options = Array[ExtResource("4_ovl7w")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_hsolg"]
+script = ExtResource("2_06vck")
+TextToSay = "You black out..
+Sometime later. You find yourself laying in bed at home. Trying to get up.
+"
+BackgroundImage = ExtResource("3_0the6")
+MusicType = 2
+Options = Array[ExtResource("4_ovl7w")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_ovl7w"]
+script = ExtResource("2_06vck")
+TextToSay = "..."
+BackgroundImage = ExtResource("3_0the6")
+MusicType = 2
+Options = Array[ExtResource("4_ovl7w")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_e8hlv"]
+script = ExtResource("2_06vck")
+TextToSay = "These bastards..
+\"Lack of funds\"....
+..
+...
+\"Insignificance of symptoms\" ...
+They don't give a shit about us. We are just consumables for them."
+MusicType = 2
+Options = Array[ExtResource("4_ovl7w")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_06vck"]
+script = ExtResource("4_ovl7w")
+OptionName = "Get up"
+CutScenes = Array[ExtResource("2_06vck")]([SubResource("Resource_e8hlv")])
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_0the6"]
+script = ExtResource("2_06vck")
+TextToSay = ".. I can't take it anymore.. It hurts so bad.."
+BackgroundImage = ExtResource("3_0the6")
+Owner = ExtResource("7_okxt3")
+MusicType = 2
+Options = Array[ExtResource("4_ovl7w")]([SubResource("Resource_06vck")])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_e8hlv")
+StartingCutScene = Array[ExtResource("2_06vck")]([SubResource("Resource_gcjwq"), SubResource("Resource_hsolg"), SubResource("Resource_ovl7w"), SubResource("Resource_0the6")])
+Delay = -1.0
+
+[node name="Environment" parent="." instance=ExtResource("6_gcjwq")]
+
+[node name="InteractableDoor" parent="Environment" index="9"]
+SceneToChangeTo = ExtResource("7_hsolg")
+
+[node name="Player" parent="." instance=ExtResource("9_yo3kc")]
+position = Vector2(390, 551)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_oqype")]
+visible = false
+
+[editable path="Environment"]

@@ -12,7 +12,7 @@ func _on_button_up() -> void:
 		OptionInfo.StoryFlagSet.SetFlag()
 	CutSceneRef.queue_free()
 	var cutScene = load("res://Scenes/Cutscene.tscn")
-	var instance =  cutScene.instantiate()
+	var instance = cutScene.instantiate()
 	instance.Setup(OptionInfo.CutScenes)
-	Finder.GetPlayer().add_child(instance)
+	GameManager.add_child(instance)
 	
