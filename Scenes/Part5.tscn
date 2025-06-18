@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dihft4ato04q1"]
+[gd_scene load_steps=15 format=3 uid="uid://dihft4ato04q1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_e8hlv"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_06vck"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_0the6"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_ovl7w"]
-[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="6_gcjwq"]
-[ext_resource type="PackedScene" uid="uid://sb848qrectgf" path="res://Scenes/Part6.tscn" id="7_hsolg"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="7_okxt3"]
+[ext_resource type="PackedScene" uid="uid://dxmnq8oj7qq8r" path="res://Prefabs/Environment/House/PlayerHomeDay2.tscn" id="8_gcjwq"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_yo3kc"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_oqype"]
 
@@ -70,10 +69,7 @@ script = ExtResource("1_e8hlv")
 StartingCutScene = Array[ExtResource("2_06vck")]([SubResource("Resource_gcjwq"), SubResource("Resource_hsolg"), SubResource("Resource_ovl7w"), SubResource("Resource_0the6")])
 Delay = -1.0
 
-[node name="Environment" parent="." instance=ExtResource("6_gcjwq")]
-
-[node name="InteractableDoor" parent="Environment" index="9"]
-SceneToChangeTo = ExtResource("7_hsolg")
+[node name="Environment" parent="." instance=ExtResource("8_gcjwq")]
 
 [node name="Player" parent="." instance=ExtResource("9_yo3kc")]
 position = Vector2(390, 551)
@@ -82,5 +78,3 @@ position = Vector2(390, 551)
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_oqype")]
 visible = false
-
-[editable path="Environment"]

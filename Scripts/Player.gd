@@ -10,7 +10,9 @@ func _ready() -> void:
 	TargetPosition = global_position
 	
 
-		
+func StopMoving():
+	TargetPosition = GetPlayerPosition()
+	
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("left_click") and TransitionScene.bHasTransitioned:
 		TargetPosition = get_global_mouse_position()

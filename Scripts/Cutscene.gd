@@ -20,7 +20,7 @@ func Setup(newData):
 	
 func _ready() -> void:
 	get_tree().paused = true
-
+	Finder.GetPlayer().StopMoving()
 	$CanvasLayer/AnimationPlayer.play("animate")
 	$CanvasLayer/Panel.visible = true
 	PlayNextScene()
@@ -101,7 +101,7 @@ func PlayNextText():
 		$CanvasLayer/TextureRect2.visible = false
 		$CanvasLayer/Panel/RichTextLabel.text = RemainingText.pop_front()
 		tween.tween_property(Content, "visible_ratio", 1, len(Content.text) * .01)
-		await tween.finished or bCanSkip
+		await tween.finished
 		bCanSkip = true
 		$CanvasLayer/Options.visible = false
 		

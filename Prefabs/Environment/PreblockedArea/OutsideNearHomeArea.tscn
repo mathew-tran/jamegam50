@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqir1nb6nyi34"]
+[gd_scene load_steps=3 format=3 uid="uid://dqir1nb6nyi34"]
 
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="1_x3q7f"]
 [ext_resource type="PackedScene" uid="uid://ccbnuyoxkff0o" path="res://Prefabs/Environment/Part2/InteractableNextAreaInPart2.tscn" id="2_8casn"]
-[ext_resource type="PackedScene" uid="uid://bl3yxwcfopbm" path="res://Scenes/Part3.tscn" id="3_ab0l5"]
 
 [node name="OutsideNearHomeArea" type="Node2D"]
 
@@ -44,4 +43,3 @@ position = Vector2(1649, 953)
 
 [node name="InteractableItem" parent="." instance=ExtResource("2_8casn")]
 position = Vector2(1831, 596)
-SceneToChangeTo = ExtResource("3_ab0l5")

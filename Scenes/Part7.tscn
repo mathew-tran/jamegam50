@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://cbj4s2vv6cope"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_obh71"]
-[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="2_h6x15"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="3_02ban"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="4_uvrsx"]
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="5_u0vg6"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="6_ksy1r"]
 [ext_resource type="PackedScene" uid="uid://bg5rv4fo3we8r" path="res://Scenes/Part8.tscn" id="6_p2i1t"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_cscyu"]
+[ext_resource type="PackedScene" uid="uid://bevb4f4acu5if" path="res://Prefabs/Environment/House/PlayerHomeDay3.tscn" id="7_p2i1t"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="9_06nlk"]
 
 [sub_resource type="Resource" id="Resource_oc7sc"]
@@ -51,7 +51,7 @@ PostTransitionScene = ExtResource("6_p2i1t")
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Environment" parent="Node2D" instance=ExtResource("2_h6x15")]
+[node name="Environment" parent="Node2D" instance=ExtResource("7_p2i1t")]
 
 [node name="Player" parent="." instance=ExtResource("3_02ban")]
 position = Vector2(-26, 849)

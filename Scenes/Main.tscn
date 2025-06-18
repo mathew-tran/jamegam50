@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="4_frkhe"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_grg3l"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="5_pbw6q"]
-[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="7_grg3l"]
+[ext_resource type="PackedScene" uid="uid://c66gaffxsr6oj" path="res://Prefabs/Environment/House/PlayerHomeDay1.tscn" id="7_4kpch"]
 [ext_resource type="AudioStream" uid="uid://cdv6mdlspog7o" path="res://Audio/Ambients/ambientstreet.ogg" id="26_5jffn"]
 [ext_resource type="Script" uid="uid://smhacb81w4cp" path="res://Scripts/AmbientPlayer.gd" id="27_5jffn"]
 
@@ -43,7 +43,7 @@ script = ExtResource("1_r150o")
 StartingCutScene = Array[ExtResource("2_4kpch")]([SubResource("Resource_1p5hy"), SubResource("Resource_h1m7h")])
 Delay = -1.0
 
-[node name="Environment" parent="." instance=ExtResource("7_grg3l")]
+[node name="Environment" parent="." instance=ExtResource("7_4kpch")]
 
 [node name="Player" parent="." instance=ExtResource("2_idj7w")]
 position = Vector2(428, 471)

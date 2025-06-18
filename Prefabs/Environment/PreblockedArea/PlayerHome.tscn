@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ostal422jvs1"]
+[gd_scene load_steps=21 format=3 uid="uid://ostal422jvs1"]
 
 [ext_resource type="PackedScene" uid="uid://cpjejg7t712hd" path="res://Prefabs/Environment/House/FloorWalls.tscn" id="1_eteni"]
 [ext_resource type="PackedScene" uid="uid://c0fvdyooognd7" path="res://Prefabs/Environment/House/HouseTable.tscn" id="2_0avi4"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bu7s8j3t15jmy" path="res://Prefabs/Environment/House/Microwave.tscn" id="8_1xd3r"]
 [ext_resource type="PackedScene" uid="uid://bfvaw5h806ccy" path="res://Prefabs/Environment/House/InteractableBook.tscn" id="9_0g2o7"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="10_vpgg6"]
-[ext_resource type="PackedScene" uid="uid://dvoydeg05t3xe" path="res://Scenes/Part2.tscn" id="11_fxbx1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="12_e6flj"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="13_4evrs"]
 [ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="14_kmt6n"]
@@ -60,7 +59,6 @@ position = Vector2(328, 1068)
 
 [node name="InteractableDoor" parent="." instance=ExtResource("10_vpgg6")]
 position = Vector2(1591, 733)
-SceneToChangeTo = ExtResource("11_fxbx1")
 InteractText = "Go outside"
 CutScenes = Array[ExtResource("12_e6flj")]([SubResource("Resource_erwvk")])
 

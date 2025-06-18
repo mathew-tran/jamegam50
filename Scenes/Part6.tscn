@@ -1,12 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://sb848qrectgf"]
+[gd_scene load_steps=21 format=3 uid="uid://sb848qrectgf"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_52u7e"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_eipvv"]
+[ext_resource type="PackedScene" uid="uid://cu1uho0niw53p" path="res://Prefabs/Environment/OutsideNearHome/OutsideNearHomeAreaDay2.tscn" id="2_kbb2x"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_1mt3d"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_esmdm"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_c6c8l"]
 [ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="5_ip70l"]
-[ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="6_52u7e"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="7_kbb2x"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="8_xopr3"]
 [ext_resource type="Texture2D" uid="uid://djr107yw8653y" path="res://Art/Environment/House/notes.PNG" id="10_c6c8l"]
@@ -42,10 +42,17 @@ MusicType = 2
 Options = Array[ExtResource("4_esmdm")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_kbb2x"]
+script = ExtResource("2_eipvv")
+TextToSay = "The sheet was picked up."
+MusicType = 2
+Options = Array[ExtResource("4_esmdm")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [sub_resource type="Resource" id="Resource_4646v"]
 script = ExtResource("4_esmdm")
 OptionName = "Pick up the sheet."
-CutScenes = Array[ExtResource("2_eipvv")]([])
+CutScenes = Array[ExtResource("2_eipvv")]([SubResource("Resource_kbb2x")])
 StoryFlagSet = ExtResource("11_8uyqq")
 metadata/_custom_type_script = "uid://dvueh6b07v70v"
 
@@ -65,7 +72,7 @@ Delay = -1.0
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="OutsideNearHomeArea" parent="Node2D" instance=ExtResource("6_52u7e")]
+[node name="OutsideNearHomeArea" parent="Node2D" instance=ExtResource("2_kbb2x")]
 
 [node name="Player" parent="." instance=ExtResource("7_kbb2x")]
 position = Vector2(390, 551)

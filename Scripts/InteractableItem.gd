@@ -57,7 +57,7 @@ func DoInteraction():
 	await instance.CutsceneComplete
 	DoPostInteraction()
 	
-	if get_node(ToggleObject):
+	if get_node_or_null(ToggleObject):
 		get_node(ToggleObject).DoInteraction()
 	if bHideItemWhileInteracting:
 		visible = true
