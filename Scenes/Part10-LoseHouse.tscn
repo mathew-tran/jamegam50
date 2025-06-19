@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbd4fbek6nevu"]
+[gd_scene load_steps=14 format=3 uid="uid://dbd4fbek6nevu"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7byfm"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_bgq4r"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_xjr2p"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_qwsht"]
 [ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="5_667mn"]
+[ext_resource type="PackedScene" uid="uid://ce3jbbrtl73d0" path="res://Prefabs/Environment/House/SaleItems/InteractableDresser.tscn" id="6_qri1s"]
 [ext_resource type="AudioStream" uid="uid://cdv6mdlspog7o" path="res://Audio/Ambients/ambientstreet.ogg" id="8_uegfr"]
 [ext_resource type="Script" uid="uid://smhacb81w4cp" path="res://Scripts/AmbientPlayer.gd" id="9_qri1s"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_tyjlm"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_xc3ns"]
+[ext_resource type="Script" uid="uid://cah28uxy76xks" path="res://Scripts/SceneSwitchListener.gd" id="11_bgq4r"]
+[ext_resource type="Resource" uid="uid://dhs7soibyyahb" path="res://Content/StoryFlags/FLAG_004_GET_KICKED_OUT.tres" id="12_xjr2p"]
 
 [sub_resource type="Resource" id="Resource_1awfp"]
 script = ExtResource("2_bgq4r")
@@ -30,6 +33,9 @@ Delay = -1.0
 [node name="InteractableDoor" parent="Environment" index="9"]
 TriggerState = 2
 
+[node name="InteractableItem" parent="." instance=ExtResource("6_qri1s")]
+position = Vector2(1415, 317)
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("9_tyjlm")]
@@ -47,5 +53,10 @@ stream = ExtResource("8_uegfr")
 volume_db = -10.0
 autoplay = true
 script = ExtResource("9_qri1s")
+
+[node name="Node2D2" type="Node2D" parent="."]
+script = ExtResource("11_bgq4r")
+FlagToListenTo = ExtResource("12_xjr2p")
+SceneToGoTo = "uid://die2tva6wo1hx"
 
 [editable path="Environment"]

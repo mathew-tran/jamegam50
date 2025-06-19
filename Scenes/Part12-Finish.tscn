@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0c7oohliswdv"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_i5fln"]
+[ext_resource type="Script" uid="uid://bcahe48r6we0l" path="res://Scripts/Ending.gd" id="9_drfrw"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="11_eop0n"]
+
+[sub_resource type="Animation" id="Animation_d6yr6"]
+resource_name = "animIn"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.9333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_drfrw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lkmr"]
+_data = {
+&"RESET": SubResource("Animation_drfrw"),
+&"animIn": SubResource("Animation_d6yr6")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_i5fln")
+Delay = -1.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_drfrw")
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("11_eop0n")]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -633.5
+offset_top = -63.5
+offset_right = 633.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "“And Kuranes reigned thereafter over Ooth-Nargai and all the neighbouring regions of dream, and held his court alternately in Celephaïs and in the cloud-fashioned Serannian. He reigns there still, and will reign happily forever, though below the cliffs at Innsmouth the channel tides played mockingly with the body of a tramp who had stumbled through the half-deserted village at dawn; played mockingly, and cast it upon the rocks by ivy-covered Trevor Towers, where a notably fat and especially offensive millionaire brewer enjoys the purchased atmosphere of extinct nobility.”
+"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label"]
+layout_mode = 0
+offset_left = 675.5
+offset_top = 384.5
+offset_right = 1354.5
+offset_bottom = 453.5
+theme_override_font_sizes/font_size = 50
+text = "Celephaïs by H. P. Lovecraft."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_1lkmr")
+}
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.787465, 0.66984, 1)
+energy = 2.13
+blend_mode = 2

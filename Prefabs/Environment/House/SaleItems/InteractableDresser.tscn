@@ -1,0 +1,131 @@
+[gd_scene load_steps=23 format=3 uid="uid://ce3jbbrtl73d0"]
+
+[ext_resource type="PackedScene" uid="uid://cr3mstg62i332" path="res://Prefabs/Environment/InteractableDresser.tscn" id="1_rq268"]
+[ext_resource type="Texture2D" uid="uid://c4hycnl2vqrpy" path="res://Art/Environment/House/wardrobe.PNG" id="2_4gea6"]
+[ext_resource type="Script" uid="uid://cp0iucyq1mh0w" path="res://Scripts/InteractableItem.gd" id="2_ijwvs"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_6pm5v"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_28bwr"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_4gea6"]
+[ext_resource type="AudioStream" uid="uid://d0puxgd53a0na" path="res://Audio/SFX/drawer.ogg" id="6_i4t7m"]
+[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="7_41fmo"]
+[ext_resource type="Resource" uid="uid://b4mqoxqj0ub52" path="res://Content/Characters/Character_Owner.tres" id="8_28bwr"]
+[ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="9_4gea6"]
+[ext_resource type="Resource" uid="uid://dhs7soibyyahb" path="res://Content/StoryFlags/FLAG_004_GET_KICKED_OUT.tres" id="10_i4t7m"]
+
+[sub_resource type="Resource" id="Resource_c2mm6"]
+script = ExtResource("3_6pm5v")
+TextToSay = "Crap..
+It ran out.
+.. I need to buy more.
+..
+Money, I need money...
+Maybe I could take out a loan?
+I can't live without my lovely whales."
+Owner = ExtResource("5_4gea6")
+MusicType = 2
+SFX = ExtResource("6_i4t7m")
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_30ptv"]
+script = ExtResource("3_6pm5v")
+TextToSay = "The door suddenly opens."
+MusicType = 2
+SFX = ExtResource("7_41fmo")
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_jdsb2"]
+script = ExtResource("3_6pm5v")
+TextToSay = "Damn.. who is it?
+"
+Owner = ExtResource("5_4gea6")
+MusicType = 2
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_so2j6"]
+script = ExtResource("3_6pm5v")
+TextToSay = "Are you Mr W.?
+I've been trying to get a hold of you.
+It looks like you haven't read our letters.
+..
+You haven't paid rent in a long while.
+I am here to evict you from this place if you don't have the money."
+Owner = ExtResource("8_28bwr")
+MusicType = 2
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_i4t7m"]
+script = ExtResource("3_6pm5v")
+TextToSay = "...
+I...
+"
+Owner = ExtResource("5_4gea6")
+MusicType = 2
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_41fmo"]
+script = ExtResource("3_6pm5v")
+TextToSay = "Glad to hear, Mr W.
+Au revoir!
+"
+Owner = ExtResource("8_28bwr")
+MusicType = 2
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_b4fqj"]
+script = ExtResource("3_6pm5v")
+TextToSay = "!"
+MusicType = 2
+SFX = ExtResource("7_41fmo")
+Options = Array[ExtResource("4_28bwr")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_w8ja0"]
+script = ExtResource("4_28bwr")
+OptionName = "Continue"
+CutScenes = Array[ExtResource("3_6pm5v")]([SubResource("Resource_b4fqj")])
+StoryFlagSet = ExtResource("10_i4t7m")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
+[sub_resource type="Resource" id="Resource_m4ckl"]
+script = ExtResource("3_6pm5v")
+TextToSay = "...
+Crap..."
+MusicType = 2
+SFX = ExtResource("9_4gea6")
+Options = Array[ExtResource("4_28bwr")]([SubResource("Resource_w8ja0")])
+ScreenEffect = 1
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnsqv"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(370, 326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6heqv"]
+resource_local_to_scene = true
+size = Vector2(150, 149)
+
+[node name="InteractableItem" instance=ExtResource("1_rq268")]
+texture = ExtResource("2_4gea6")
+script = ExtResource("2_ijwvs")
+CutScenes = Array[ExtResource("3_6pm5v")]([SubResource("Resource_c2mm6"), SubResource("Resource_30ptv"), SubResource("Resource_jdsb2"), SubResource("Resource_so2j6"), SubResource("Resource_i4t7m"), SubResource("Resource_41fmo"), SubResource("Resource_m4ckl")])
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-5, -18)
+shape = SubResource("RectangleShape2D_fnsqv")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_6heqv")

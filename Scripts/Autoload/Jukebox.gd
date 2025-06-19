@@ -18,7 +18,7 @@ func PlayMusic(musicType : MUSIC_TYPE):
 		MUSIC_TYPE.DREAM:
 			stream = load("res://Audio/Music/Jamgam-50dream.ogg")
 		MUSIC_TYPE.ENDING:
-			stream = load("res://Scripts/Autoload/Jukebox.gd")
+			stream = load("res://Audio/Music/JamGame50ending.ogg")
 		MUSIC_TYPE.NONE:
 			stream = null
 			stop()

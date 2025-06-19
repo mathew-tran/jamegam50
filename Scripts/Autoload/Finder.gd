@@ -1,7 +1,10 @@
 extends Node
 
 func GetPlayer() -> Player:
-	return get_tree().get_nodes_in_group("Player")[0]
+	var result = get_tree().get_nodes_in_group("Player")
+	if result:
+		return result[0]
+	return null
 	
 func GetInteractPanel() -> InteractPanel:
 	return get_tree().get_nodes_in_group("InteractPanel")[0]

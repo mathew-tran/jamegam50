@@ -25,7 +25,8 @@ func GetNewCutSceneData(newData):
 	
 func _ready() -> void:
 	get_tree().paused = true
-	Finder.GetPlayer().StopMoving()
+	if Finder.GetPlayer():
+		Finder.GetPlayer().StopMoving()
 	$AnimationPlayer.play("animIn")
 	$CanvasLayer/AnimationPlayer.play("animate")
 	$CanvasLayer/Panel.visible = true

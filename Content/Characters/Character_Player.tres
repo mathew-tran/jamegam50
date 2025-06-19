@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_cssye")
-OwnerName = "Player"
+OwnerName = "YOU"
 OwnerImage = ExtResource("1_xllrf")
 metadata/_custom_type_script = "uid://dk4h0ebc24me"

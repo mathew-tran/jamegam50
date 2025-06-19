@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_lagxv")
-StoryFlagID = "002"
+StoryFlagID = "003"
 metadata/_custom_type_script = "uid://bmcdwkv0lweiu"

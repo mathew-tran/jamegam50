@@ -22,7 +22,7 @@ Peeling wallpaper, old furniture, garbage in the corners and usual discomfort.
 The windows and walls are thin, you are able to hear the cars and other sounds of life outside.
 You wake up."
 BackgroundImage = ExtResource("3_k5f7n")
-MusicType = 3
+MusicType = 4
 Options = Array[ExtResource("4_8l0us")]([])
 ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"

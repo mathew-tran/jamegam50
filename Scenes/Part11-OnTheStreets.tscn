@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=3 uid="uid://die2tva6wo1hx"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_1slwb"]
+[ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_iotay"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="3_d10xs"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="4_1ddwr"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="6_5fu11"]
+[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="7_jt823"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_xp85i"]
+[ext_resource type="Resource" uid="uid://dpthi3sors0b7" path="res://Content/Characters/Character_Narrator.tres" id="8_bn4lc"]
+[ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="8_bvtxt"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="9_482la"]
+[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="10_twhrk"]
+
+[sub_resource type="Resource" id="Resource_ih121"]
+script = ExtResource("6_5fu11")
+TextToSay = "...
+I can't, it's unbearable.
+..
+The pain. It has returned.
+God bless me, stop this suffering.
+"
+BackgroundImage = ExtResource("10_twhrk")
+Owner = ExtResource("9_482la")
+MusicType = 2
+SFX = ExtResource("8_bvtxt")
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 1
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_bn4lc"]
+script = ExtResource("6_5fu11")
+TextToSay = "You pass out.
+You wake up again, only to fall over after trying to get up."
+BackgroundImage = ExtResource("7_jt823")
+MusicType = 4
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_1slwb"]
+script = ExtResource("6_5fu11")
+TextToSay = "..
+Looks like it's over."
+BackgroundImage = ExtResource("7_jt823")
+Owner = ExtResource("9_482la")
+MusicType = 2
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_iotay"]
+script = ExtResource("6_5fu11")
+TextToSay = "But then, they appeared.
+His safe haven. His savior.
+He realized that now he was alive.."
+BackgroundImage = ExtResource("7_jt823")
+Owner = ExtResource("9_482la")
+MusicType = 1
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_d10xs"]
+script = ExtResource("6_5fu11")
+TextToSay = "And I set off on a new endless journey.
+..
+..
+A journey between countless stars and planets."
+BackgroundImage = ExtResource("10_twhrk")
+Owner = ExtResource("9_482la")
+MusicType = 2
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_1ddwr"]
+script = ExtResource("6_5fu11")
+TextToSay = "...and at the same time, his corpse was still laying on the street. 
+And nobody cared about it, because it was a usual thing for strangers.
+..
+Sometimes they looked at his miserable body, and that was it."
+Owner = ExtResource("8_bn4lc")
+MusicType = 2
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 0
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1slwb")
+StartingCutScene = Array[ExtResource("6_5fu11")]([SubResource("Resource_ih121"), SubResource("Resource_bn4lc"), SubResource("Resource_1slwb"), SubResource("Resource_iotay"), SubResource("Resource_d10xs"), SubResource("Resource_1ddwr")])
+Delay = -1.0
+PostTransitionScene = "uid://b0c7oohliswdv"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="OutsideNearHomeArea" parent="Node2D" instance=ExtResource("2_iotay")]
+
+[node name="Player" parent="." instance=ExtResource("3_d10xs")]
+position = Vector2(390, 551)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("4_1ddwr")]
+visible = false
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.787465, 0.66984, 1)
+energy = 2.13
+blend_mode = 2
