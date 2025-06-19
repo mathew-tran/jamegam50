@@ -20,6 +20,7 @@ TextToSay = "You arrive at the WHITE WHALE factory."
 BackgroundImage = ExtResource("3_hqcir")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_72s53"]
@@ -31,6 +32,7 @@ A factory sound begins to ring."
 BackgroundImage = ExtResource("5_bv73p")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_lfjbx"]
@@ -38,6 +40,7 @@ script = ExtResource("2_72s53")
 TextToSay = "A red light flashes then the simulated voice begins to speak."
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_er777"]
@@ -50,6 +53,7 @@ EMPLOYEE 9048 WILL TAKE YOUR PLACE.
 Owner = ExtResource("6_bv73p")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_x3wfb"]
@@ -60,6 +64,7 @@ You clutch your head."
 MusicType = 2
 SFX = ExtResource("7_c1c2q")
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 1
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_a0562"]
@@ -69,6 +74,7 @@ It's unbearable!"
 Owner = ExtResource("5_x3wfb")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_n67k7"]
@@ -79,6 +85,7 @@ Ugh.
 I need.. I need help. I gotta go to the medical unit."
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_7g1ov"]
@@ -96,6 +103,7 @@ It’s really uncomfortable to be aware that some crap is inside my brain
 Owner = ExtResource("5_x3wfb")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([SubResource("Resource_7g1ov")])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_7a2xq"]
@@ -104,6 +112,7 @@ TextToSay = "You open the door to the medical room."
 MusicType = 2
 SFX = ExtResource("13_er777")
 Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

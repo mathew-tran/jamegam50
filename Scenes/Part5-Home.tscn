@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dihft4ato04q1"]
+[gd_scene load_steps=17 format=3 uid="uid://dihft4ato04q1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_8urp1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_uq5xe"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="6_vital"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="7_lcbam"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="8_liinq"]
+[ext_resource type="AudioStream" uid="uid://cdv6mdlspog7o" path="res://Audio/Ambients/ambientstreet.ogg" id="9_2ejhk"]
+[ext_resource type="Script" uid="uid://smhacb81w4cp" path="res://Scripts/AmbientPlayer.gd" id="10_bxgyb"]
 
 [sub_resource type="Resource" id="Resource_gcjwq"]
 script = ExtResource("2_uq5xe")
@@ -17,6 +19,7 @@ BackgroundImage = ExtResource("3_2ejhk")
 Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_hsolg"]
@@ -27,6 +30,7 @@ Sometime later. You find yourself laying in bed at home. Trying to get up.
 BackgroundImage = ExtResource("3_2ejhk")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_ovl7w"]
@@ -35,6 +39,7 @@ TextToSay = "..."
 BackgroundImage = ExtResource("3_2ejhk")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_e8hlv"]
@@ -48,6 +53,7 @@ They don't give a shit about us. We are just consumables for them."
 Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_06vck"]
@@ -63,6 +69,7 @@ BackgroundImage = ExtResource("3_2ejhk")
 Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([SubResource("Resource_06vck")])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
@@ -84,8 +91,16 @@ position = Vector2(390, 551)
 visible = false
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.452701, 0.521098, 1, 1)
+color = Color(0.97001, 0.800284, 0.691461, 1)
 energy = 1.23
 blend_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(1307, -348)
+stream = ExtResource("9_2ejhk")
+volume_db = -15.901
+autoplay = true
+script = ExtResource("10_bxgyb")
 
 [editable path="Environment"]

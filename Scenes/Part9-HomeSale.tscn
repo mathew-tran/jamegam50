@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2xyyik2trpn"]
+[gd_scene load_steps=15 format=3 uid="uid://2xyyik2trpn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_0klud"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_yodkn"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b6iw318pxqtdn" path="res://Prefabs/Environment/House/SaleItems/SaleItem2.tscn" id="7_yodkn"]
 [ext_resource type="PackedScene" uid="uid://dmiy7jugw0t3k" path="res://Prefabs/Environment/House/SaleItems/SaleItem3.tscn" id="8_fb2xp"]
 [ext_resource type="Script" uid="uid://dg8pi17ns21hb" path="res://Scripts/SceneDestroyListener.gd" id="11_yodkn"]
+[ext_resource type="AudioStream" uid="uid://cdv6mdlspog7o" path="res://Audio/Ambients/ambientstreet.ogg" id="12_1m0us"]
+[ext_resource type="Script" uid="uid://smhacb81w4cp" path="res://Scripts/AmbientPlayer.gd" id="13_wjggt"]
 
 [sub_resource type="Resource" id="Resource_1awfp"]
 script = ExtResource("2_yodkn")
@@ -18,8 +20,9 @@ TextToSay = ".. I can't take it anymore.
 I need to get more of the Black Whale..
 I just need to get rid of some things.."
 Owner = ExtResource("5_wjggt")
-MusicType = 2
+MusicType = 0
 Options = Array[ExtResource("4_1m0us")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
@@ -55,5 +58,13 @@ visible = false
 script = ExtResource("11_yodkn")
 ObjectsToListenTo = [NodePath("../InteractableItem"), NodePath("../InteractableItem2"), NodePath("../InteractableItem3")]
 SceneToChangeTo = "uid://dbd4fbek6nevu"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(1307, -348)
+stream = ExtResource("12_1m0us")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("13_wjggt")
 
 [editable path="Environment"]

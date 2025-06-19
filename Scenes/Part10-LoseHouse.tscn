@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbd4fbek6nevu"]
+[gd_scene load_steps=11 format=3 uid="uid://dbd4fbek6nevu"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7byfm"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_bgq4r"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_xjr2p"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_qwsht"]
 [ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="5_667mn"]
+[ext_resource type="AudioStream" uid="uid://cdv6mdlspog7o" path="res://Audio/Ambients/ambientstreet.ogg" id="8_uegfr"]
+[ext_resource type="Script" uid="uid://smhacb81w4cp" path="res://Scripts/AmbientPlayer.gd" id="9_qri1s"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_tyjlm"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_xc3ns"]
 
@@ -15,6 +17,7 @@ But what left do I have?"
 Owner = ExtResource("4_qwsht")
 MusicType = 2
 Options = Array[ExtResource("3_xjr2p")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
@@ -36,5 +39,13 @@ position = Vector2(14, 838)
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_xc3ns")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(1307, -348)
+stream = ExtResource("8_uegfr")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("9_qri1s")
 
 [editable path="Environment"]

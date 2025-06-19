@@ -4,7 +4,22 @@ class_name TransitionSceneManager
 
 var bHasTransitioned = true
 
+enum SCREEN_EFFECT {
+	NONE,
+	BLACK_BLINK,
+
+}
+
+func PlayScreenEffect(screenEffect : SCREEN_EFFECT):
+	match screenEffect:
+		SCREEN_EFFECT.BLACK_BLINK:
+			$AnimationPlayer.play("BlackBlink")
+		SCREEN_EFFECT.NONE:
+			return
+	await $AnimationPlayer.animation_finished
+	
 func TransitionToScene(newPackedScene : PackedScene):
+	
 	var sceneToTransitionTo = newPackedScene.duplicate()
 	bHasTransitioned = false
 	$AnimationPlayer.speed_scale = 1

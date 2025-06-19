@@ -11,6 +11,7 @@ script = ExtResource("3_bor3q")
 TextToSay = "Sale Item # 3"
 MusicType = 2
 Options = Array[ExtResource("4_8aq62")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_gvmcg"]
@@ -19,6 +20,7 @@ TextToSay = ",,,,"
 BackgroundImage = ExtResource("5_cji8q")
 MusicType = 2
 Options = Array[ExtResource("4_8aq62")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix85k"]

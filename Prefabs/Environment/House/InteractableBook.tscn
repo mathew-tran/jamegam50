@@ -16,6 +16,7 @@ TextToSay = "The book reads:
 MusicType = 2
 SFX = ExtResource("5_f4cur")
 Options = Array[ExtResource("4_f4cur")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gw5v1"]

@@ -397,6 +397,7 @@ radius = 20.0
 height = 42.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 5
 script = ExtResource("1_x3d5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -409,7 +410,7 @@ texture = ExtResource("2_shmu5")
 position = Vector2(0, -151)
 sprite_frames = SubResource("SpriteFrames_kln2b")
 animation = &"idle"
-frame_progress = 0.11199
+frame_progress = 0.957154
 speed_scale = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

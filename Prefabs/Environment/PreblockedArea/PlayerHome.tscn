@@ -26,6 +26,7 @@ TextToSay = "You open the door to go outside."
 MusicType = 3
 SFX = ExtResource("14_kmt6n")
 Options = Array[ExtResource("13_4evrs")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Environment" type="Node2D"]

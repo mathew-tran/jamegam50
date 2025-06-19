@@ -16,6 +16,7 @@ TextToSay = "Finally... the \"Black Whale\"
 .. Maybe this thing will finally help me..."
 MusicType = 2
 Options = Array[ExtResource("3_a7dly")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_u0vg6"]
@@ -27,6 +28,7 @@ BackgroundImage = ExtResource("4_f41g3")
 MusicType = 2
 SFX = ExtResource("5_pao0k")
 Options = Array[ExtResource("3_a7dly")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_p2i1t"]
@@ -34,6 +36,7 @@ script = ExtResource("2_pao0k")
 TextToSay = "You drop to the ground immediately."
 MusicType = 2
 Options = Array[ExtResource("3_a7dly")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_00ljf"]
@@ -42,6 +45,7 @@ TextToSay = "Oh.. That's how it is.."
 BackgroundImage = ExtResource("5_ymdno")
 MusicType = 2
 Options = Array[ExtResource("3_a7dly")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

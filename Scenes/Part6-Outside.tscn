@@ -23,6 +23,7 @@ You hold your head writhing in pain."
 MusicType = 2
 SFX = ExtResource("8_a3i65")
 Options = Array[ExtResource("7_sgxcx")]([])
+ScreenEffect = 1
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_ushc4"]
@@ -31,6 +32,7 @@ TextToSay = "FUCK..... FUCK."
 Owner = ExtResource("8_v0sdx")
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_oqxf7"]
@@ -41,6 +43,7 @@ TextToSay = "You lose conciousness.
 BackgroundImage = ExtResource("9_f7j8j")
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_kbb2x"]
@@ -48,6 +51,7 @@ script = ExtResource("6_20y4e")
 TextToSay = "The sheet was picked up."
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_4646v"]
@@ -65,6 +69,7 @@ BackgroundImage = ExtResource("10_dl60f")
 MusicType = 2
 SFX = ExtResource("12_xaqea")
 Options = Array[ExtResource("7_sgxcx")]([SubResource("Resource_4646v")])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
@@ -84,10 +89,15 @@ position = Vector2(390, 551)
 visible = false
 
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("5_1d5ea")]
-position = Vector2(0, -21)
+position = Vector2(1358, 3)
 Cutscenes = Array[ExtResource("6_20y4e")]([SubResource("Resource_xopr3"), SubResource("Resource_ushc4"), SubResource("Resource_oqxf7"), SubResource("Resource_gd6id")])
 
 [node name="SceneSwitchListener" type="Node2D" parent="."]
 script = ExtResource("13_pcurt")
 FlagToListenTo = ExtResource("11_jwf1m")
 SceneToGoTo = "uid://cbj4s2vv6cope"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(1, 0.787465, 0.66984, 1)
+energy = 2.13
+blend_mode = 2

@@ -1,15 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://bg5rv4fo3we8r"]
+[gd_scene load_steps=24 format=3 uid="uid://bg5rv4fo3we8r"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="3_3rod6"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_aaji3"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_od1vv"]
+[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="6_3rod6"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_7rjx3"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_pvgoq"]
 [ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="8_ia3fu"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="9_ltpxr"]
 [ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="10_s7xk8"]
+[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="12_aaji3"]
 
 [sub_resource type="Resource" id="Resource_1awfp"]
 script = ExtResource("2_pg5py")
@@ -17,6 +19,7 @@ TextToSay = "You suddenly find yourself among the clouds."
 BackgroundImage = ExtResource("3_3rod6")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_5uir8"]
@@ -26,6 +29,7 @@ I want to walk a bit. It's God's will."
 Owner = ExtResource("5_od1vv")
 MusicType = 1
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_8g6cp"]
@@ -35,6 +39,7 @@ You begin to speak to yourself."
 BackgroundImage = ExtResource("9_ltpxr")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_p06xb"]
@@ -46,6 +51,7 @@ BackgroundImage = ExtResource("3_3rod6")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_wqo1j"]
@@ -56,6 +62,7 @@ BackgroundImage = ExtResource("10_s7xk8")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_t8l5c"]
@@ -65,6 +72,7 @@ BackgroundImage = ExtResource("3_3rod6")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_hkhdp"]
@@ -75,6 +83,7 @@ BackgroundImage = ExtResource("9_ltpxr")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_cnyuk"]
@@ -85,6 +94,7 @@ BackgroundImage = ExtResource("3_3rod6")
 Owner = ExtResource("5_od1vv")
 MusicType = 4
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_uwo6w"]
@@ -94,6 +104,7 @@ You exhange money with a stranger in a mask."
 BackgroundImage = ExtResource("10_s7xk8")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_svdgm"]
@@ -104,6 +115,7 @@ BackgroundImage = ExtResource("10_s7xk8")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_pacvq"]
@@ -116,6 +128,7 @@ BackgroundImage = ExtResource("3_3rod6")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
@@ -124,6 +137,31 @@ StartingCutScene = Array[ExtResource("2_pg5py")]([SubResource("Resource_1awfp"),
 Delay = -1.0
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Blocker" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(-238, 50)
+rotation = 1.57079
+
+[node name="Blocker2" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(-151, 32)
+
+[node name="Blocker3" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(1591, 45)
+
+[node name="Blocker4" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(2203, 112)
+
+[node name="Blocker5" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(-239, 1377)
+
+[node name="Blocker6" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(1429, 1431)
+
+[node name="Blocker7" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(2398, 1303)
+
+[node name="Blocker8" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(2721, 1162)
 
 [node name="Player" parent="." instance=ExtResource("6_7rjx3")]
 position = Vector2(-26, 849)
@@ -134,6 +172,59 @@ position = Vector2(-26, 849)
 visible = false
 
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
-position = Vector2(-379, 525)
+position = Vector2(2621, 230)
 Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
 SceneToChangeTo = "uid://2xyyik2trpn"
+
+[node name="Box" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(-40, 1224)
+
+[node name="Box2" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(115, 1264)
+
+[node name="Box3" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(283, 1277)
+
+[node name="Box4" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(444, 1297)
+
+[node name="Box5" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(1083, 1324)
+
+[node name="Box6" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(1345, 1311)
+
+[node name="Box7" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(1977, 1365)
+
+[node name="Box8" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(2448, 1358)
+
+[node name="Box9" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(2912, 1392)
+
+[node name="Box10" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(3477, 1352)
+
+[node name="Box11" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(-41, -81)
+
+[node name="Box12" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(215, -168)
+
+[node name="Box13" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(928, -215)
+
+[node name="Box14" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(1581, -215)
+
+[node name="Box15" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(2180, -249)
+
+[node name="Box16" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(2806, -242)
+
+[node name="Box17" parent="." instance=ExtResource("12_aaji3")]
+position = Vector2(3324, -188)
+
+[node name="Box18" parent="." instance=ExtResource("12_aaji3")]

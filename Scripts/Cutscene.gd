@@ -90,6 +90,8 @@ func PlayNextScene():
 				RemainingText.append(textToAdd)
 		
 		PlayNextText()
+		TransitionScene.PlayScreenEffect(newData.ScreenEffect)
+
 	else:
 		Destroy()
 		

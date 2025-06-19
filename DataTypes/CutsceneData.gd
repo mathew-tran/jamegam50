@@ -12,3 +12,5 @@ class_name CutSceneData
 @export var SFX : AudioStream
 
 @export var Options : Array[OptionData]
+
+@export var ScreenEffect : TransitionSceneManager.SCREEN_EFFECT
