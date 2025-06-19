@@ -4,6 +4,8 @@ class_name InteractPanel
 
 var ObjectPressed
 func ShowText(newText):
+	if TransitionScene.bHasTransitioned == false:
+		return
 	$Label.text = newText.to_upper()
 	visible = true
 	$AnimationPlayer.play("animateIn")
