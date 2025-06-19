@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmwjabbwgt077"]
+[gd_scene load_steps=7 format=3 uid="uid://cmwjabbwgt077"]
 
 [ext_resource type="Script" uid="uid://dspmkffa0qyql" path="res://Scripts/UI/InteractPanel.gd" id="1_buwaf"]
+[ext_resource type="AudioStream" uid="uid://ctluh7tv4onru" path="res://Audio/SFX/click.wav" id="2_yopaf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buwaf"]
 bg_color = Color(0, 0, 0, 0.823529)
@@ -71,3 +72,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_nnfgk")
 }
 speed_scale = 2.0
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yopaf")

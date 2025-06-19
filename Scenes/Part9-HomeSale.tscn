@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://2xyyik2trpn"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_0klud"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_yodkn"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_1m0us"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_wjggt"]
+[ext_resource type="PackedScene" uid="uid://db2jyq84x7rei" path="res://Prefabs/Environment/House/SaleItems/SaleItem1.tscn" id="6_0klud"]
+[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="6_qkr8h"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_sdnhx"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_00wxq"]
+[ext_resource type="PackedScene" uid="uid://b6iw318pxqtdn" path="res://Prefabs/Environment/House/SaleItems/SaleItem2.tscn" id="7_yodkn"]
+[ext_resource type="PackedScene" uid="uid://dmiy7jugw0t3k" path="res://Prefabs/Environment/House/SaleItems/SaleItem3.tscn" id="8_fb2xp"]
+[ext_resource type="Script" uid="uid://dg8pi17ns21hb" path="res://Scripts/SceneDestroyListener.gd" id="11_yodkn"]
+
+[sub_resource type="Resource" id="Resource_1awfp"]
+script = ExtResource("2_yodkn")
+TextToSay = ".. I can't take it anymore.
+I need to get more of the Black Whale..
+I just need to get rid of some things.."
+Owner = ExtResource("5_wjggt")
+MusicType = 2
+Options = Array[ExtResource("4_1m0us")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0klud")
+StartingCutScene = Array[ExtResource("2_yodkn")]([SubResource("Resource_1awfp")])
+Delay = -1.0
+
+[node name="Environment" parent="." instance=ExtResource("6_qkr8h")]
+
+[node name="InteractableDoor" parent="Environment" index="9"]
+TriggerState = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="InteractableItem" parent="." instance=ExtResource("6_0klud")]
+position = Vector2(423, 348)
+
+[node name="InteractableItem2" parent="." instance=ExtResource("7_yodkn")]
+position = Vector2(518, 877)
+
+[node name="InteractableItem3" parent="." instance=ExtResource("8_fb2xp")]
+position = Vector2(1503, 875)
+
+[node name="Player" parent="." instance=ExtResource("6_sdnhx")]
+position = Vector2(14, 838)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("7_00wxq")]
+visible = false
+
+[node name="SceneDestroyListener" type="Node2D" parent="." node_paths=PackedStringArray("ObjectsToListenTo")]
+script = ExtResource("11_yodkn")
+ObjectsToListenTo = [NodePath("../InteractableItem"), NodePath("../InteractableItem2"), NodePath("../InteractableItem3")]
+SceneToChangeTo = "uid://dbd4fbek6nevu"
+
+[editable path="Environment"]

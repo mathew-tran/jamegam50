@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6iw318pxqtdn"]
+
+[ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_0dqus"]
+[ext_resource type="Script" uid="uid://d4d0n1xpkkda4" path="res://Scripts/InteractableItemDisappear.gd" id="2_ghx8y"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_bhakr"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_i4n3q"]
+[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="5_jsj37"]
+
+[sub_resource type="Resource" id="Resource_ob4vs"]
+script = ExtResource("3_bhakr")
+TextToSay = "Sale Item # 2"
+MusicType = 2
+Options = Array[ExtResource("4_i4n3q")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_gvmcg"]
+script = ExtResource("3_bhakr")
+TextToSay = ",,,,"
+BackgroundImage = ExtResource("5_jsj37")
+MusicType = 2
+Options = Array[ExtResource("4_i4n3q")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix85k"]
+resource_local_to_scene = true
+custom_solver_bias = 1.0
+size = Vector2(150, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thihq"]
+resource_local_to_scene = true
+size = Vector2(150, 149)
+
+[node name="InteractableItem" instance=ExtResource("1_0dqus")]
+script = ExtResource("2_ghx8y")
+CutScenes = Array[ExtResource("3_bhakr")]([SubResource("Resource_ob4vs"), SubResource("Resource_gvmcg")])
+bHideItemWhileInteracting = true
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_ix85k")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_thihq")

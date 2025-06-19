@@ -10,6 +10,7 @@ func ShowText(newText):
 
 func SelectObject(object):
 	ObjectPressed = object
+	$Click.play()
 	
 func Hide():
 	$AnimationPlayer.play_backwards("animateIn")

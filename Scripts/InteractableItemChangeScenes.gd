@@ -5,4 +5,3 @@ class_name InteractableItemChangeScenes
 
 func DoPostInteraction():
 	TransitionScene.TransitionToScene(load(SceneToChangeTo))
-	queue_free()

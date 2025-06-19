@@ -6,6 +6,8 @@ class_name InteractableItem
 @export var CutScenes : Array[CutSceneData]
 @export var ToggleObject : NodePath
 
+signal Destroyed
+
 enum HOVER_STATE {
 	HOVERED,
 	UNHOVERED
@@ -65,3 +67,6 @@ func DoInteraction():
 func DoPostInteraction():
 	pass
 	
+func DestroyInteractable():
+	Destroyed.emit()
+	queue_free()

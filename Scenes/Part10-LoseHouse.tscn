@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbd4fbek6nevu"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7byfm"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_bgq4r"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_xjr2p"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_qwsht"]
+[ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="5_667mn"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_tyjlm"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_xc3ns"]
+
+[sub_resource type="Resource" id="Resource_1awfp"]
+script = ExtResource("2_bgq4r")
+TextToSay = ".. I need more.
+But what left do I have?"
+Owner = ExtResource("4_qwsht")
+MusicType = 2
+Options = Array[ExtResource("3_xjr2p")]([])
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7byfm")
+StartingCutScene = Array[ExtResource("2_bgq4r")]([SubResource("Resource_1awfp")])
+Delay = -1.0
+
+[node name="Environment" parent="." instance=ExtResource("5_667mn")]
+
+[node name="InteractableDoor" parent="Environment" index="9"]
+TriggerState = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("9_tyjlm")]
+position = Vector2(14, 838)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_xc3ns")]
+visible = false
+
+[editable path="Environment"]

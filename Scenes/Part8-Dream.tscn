@@ -136,3 +136,4 @@ visible = false
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
 position = Vector2(-379, 525)
 Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
+SceneToChangeTo = "uid://2xyyik2trpn"

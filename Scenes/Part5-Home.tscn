@@ -45,6 +45,7 @@ TextToSay = "These bastards..
 ...
 \"Insignificance of symptoms\" ...
 They don't give a shit about us. We are just consumables for them."
+Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
