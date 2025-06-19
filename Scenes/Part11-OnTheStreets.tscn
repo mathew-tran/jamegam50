@@ -89,7 +89,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1slwb")
 StartingCutScene = Array[ExtResource("6_5fu11")]([SubResource("Resource_ih121"), SubResource("Resource_bn4lc"), SubResource("Resource_1slwb"), SubResource("Resource_iotay"), SubResource("Resource_d10xs"), SubResource("Resource_1ddwr")])
-Delay = -1.0
+Delay = 5.0
 PostTransitionScene = "uid://b0c7oohliswdv"
 
 [node name="Node2D" type="Node2D" parent="."]

@@ -8,4 +8,5 @@ func _ready() -> void:
 	
 func OnFlagSet(flagData):
 	if flagData == FlagToListenTo:
+		await get_tree().create_timer(0.5).timeout
 		TransitionScene.TransitionToScene(load(SceneToGoTo))

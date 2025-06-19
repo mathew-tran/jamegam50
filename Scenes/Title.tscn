@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjwc1x8a33x0h"]
+[gd_scene load_steps=6 format=3 uid="uid://bjwc1x8a33x0h"]
 
 [ext_resource type="Script" uid="uid://cgh7midq3rr6c" path="res://Scripts/Title.gd" id="1_tochr"]
+[ext_resource type="PackedScene" uid="uid://co7q8kbeob27x" path="res://Prefabs/UI/PlayButton.tscn" id="2_phf2g"]
+[ext_resource type="PackedScene" uid="uid://dltq2sjiowmj1" path="res://Prefabs/UI/CreditsButton.tscn" id="3_6khh7"]
+[ext_resource type="FontFile" uid="uid://b2vygowa6rqn7" path="res://Font/Saira-VariableFont_wdth,wght.ttf" id="4_bwrlp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phf2g"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_tochr")
-SceneToChangeTo = "uid://cnsfdc5wb0cb1"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -16,3 +18,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_phf2g")
+
+[node name="Button" parent="." instance=ExtResource("2_phf2g")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -338.0
+offset_right = 400.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button2" parent="." instance=ExtResource("3_6khh7")]
+offset_left = 1297.0
+offset_top = 915.0
+offset_right = 1897.0
+offset_bottom = 1045.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_top = 23.0
+offset_right = 226.5
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_bwrlp")
+theme_override_font_sizes/font_size = 50
+text = "THE BLACK WHALE"
