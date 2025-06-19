@@ -97,6 +97,7 @@ func PlayNextScene():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and bCanSkip:
 			PlayNextText()
+			Jukebox.PlayClickSound()
 		
 func PlayNextText():
 	if len(RemainingText) > 0:

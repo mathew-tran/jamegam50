@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfvaw5h806ccy"]
+[gd_scene load_steps=9 format=3 uid="uid://bfvaw5h806ccy"]
 
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_kfccb"]
 [ext_resource type="Texture2D" uid="uid://k5w3jqvhxget" path="res://Art/Environment/House/book.PNG" id="2_y0wba"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="3_dl6w5"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_f4cur"]
+[ext_resource type="AudioStream" uid="uid://bjhv875jsp7d0" path="res://Audio/SFX/book.wav" id="5_f4cur"]
 
 [sub_resource type="Resource" id="Resource_y0wba"]
 script = ExtResource("3_dl6w5")
@@ -13,6 +14,7 @@ TextToSay = "The book reads:
 \"Not because of their next grief, but from that endless immense beauty above their heads…”
 "
 MusicType = 2
+SFX = ExtResource("5_f4cur")
 Options = Array[ExtResource("4_f4cur")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 

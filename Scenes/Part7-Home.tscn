@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbj4s2vv6cope"]
+[gd_scene load_steps=14 format=3 uid="uid://cbj4s2vv6cope"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_up07u"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pao0k"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_a7dly"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="4_f41g3"]
+[ext_resource type="AudioStream" uid="uid://d1s3uaydrbhom" path="res://Audio/SFX/sniff.wav" id="5_pao0k"]
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="5_ymdno"]
 [ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="6_10vx3"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="7_3s3xf"]
@@ -24,6 +25,7 @@ TextToSay = "Oh fuck..
 My God, the pain. Is it finally over? I can't believe it.."
 BackgroundImage = ExtResource("4_f41g3")
 MusicType = 2
+SFX = ExtResource("5_pao0k")
 Options = Array[ExtResource("3_a7dly")]([])
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 

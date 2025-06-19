@@ -26,6 +26,10 @@ func PlayMusic(musicType : MUSIC_TYPE):
 			return
 	play()
 
+func PlayClickSound():
+	$ClickSFX.pitch_scale = randf_range(1, 1.1)
+	$ClickSFX.play()
+	
 func PlaySFX(audiostream : AudioStream):
 	if audiostream:
 		$SFX.stream = audiostream
