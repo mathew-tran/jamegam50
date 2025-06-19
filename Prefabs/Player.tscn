@@ -409,7 +409,7 @@ texture = ExtResource("2_shmu5")
 position = Vector2(0, -151)
 sprite_frames = SubResource("SpriteFrames_kln2b")
 animation = &"idle"
-frame_progress = 0.510332
+frame_progress = 0.11199
 speed_scale = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

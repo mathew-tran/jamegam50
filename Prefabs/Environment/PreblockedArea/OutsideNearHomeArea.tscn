@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqir1nb6nyi34"]
+[gd_scene load_steps=10 format=3 uid="uid://dqir1nb6nyi34"]
 
-[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="1_x3q7f"]
+[ext_resource type="Texture2D" uid="uid://cyaqqvqr6wedk" path="res://Art/Environment/Streets/Street1.PNG" id="1_3ycg5"]
 [ext_resource type="Texture2D" uid="uid://b8itsy0ifd55a" path="res://Art/Environment/NextArea.png" id="2_ab0l5"]
 [ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="3_3ycg5"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="4_nx0j3"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="5_y4503"]
+[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="6_nx0j3"]
 
 [sub_resource type="Resource" id="Resource_hm87k"]
 script = ExtResource("4_nx0j3")
@@ -24,49 +25,18 @@ size = Vector2(137, 348)
 
 [node name="OutsideNearHomeArea" type="Node2D"]
 
-[node name="Box" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(172, 951)
-
-[node name="Box2" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(461, 949)
-
-[node name="Box3" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(316, 951)
-
-[node name="Box4" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(616, 951)
-
-[node name="Box5" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(905, 949)
-
-[node name="Box6" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(760, 951)
-
-[node name="Box7" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(1054, 951)
-
-[node name="Box8" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(1343, 949)
-
-[node name="Box9" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(1198, 951)
-
-[node name="Box10" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(1505, 953)
-
-[node name="Box11" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(1794, 951)
-
-[node name="Box12" parent="." instance=ExtResource("1_x3q7f")]
-position = Vector2(1649, 953)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2597, 161)
+texture = ExtResource("1_3ycg5")
 
 [node name="InteractableItem" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.564706)
-position = Vector2(1831, 596)
+position = Vector2(5053, 502)
 texture = ExtResource("2_ab0l5")
 script = ExtResource("3_3ycg5")
 InteractText = "Continue forward"
 CutScenes = Array[ExtResource("4_nx0j3")]([SubResource("Resource_hm87k")])
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="InteractableItem"]
 
@@ -79,6 +49,28 @@ shape = SubResource("RectangleShape2D_sfmjd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableItem/StaticBody2D"]
 position = Vector2(6.5, 1)
 shape = SubResource("RectangleShape2D_ly1b4")
+
+[node name="Blocker" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(82, 764)
+
+[node name="Blocker7" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(0, 764)
+rotation = -1.57079
+
+[node name="Blocker2" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(1905, 764)
+
+[node name="Blocker3" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(3728, 764)
+
+[node name="Blocker4" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(97, 328)
+
+[node name="Blocker5" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(1920, 328)
+
+[node name="Blocker6" parent="." instance=ExtResource("6_nx0j3")]
+position = Vector2(3743, 328)
 
 [connection signal="mouse_entered" from="InteractableItem/Area2D" to="InteractableItem" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="InteractableItem/Area2D" to="InteractableItem" method="_on_area_2d_mouse_exited"]
