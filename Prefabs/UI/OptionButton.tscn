@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdio8dlltmahx"]
+[gd_scene load_steps=6 format=3 uid="uid://cdio8dlltmahx"]
 
 [ext_resource type="Script" uid="uid://bte55yf0fhrap" path="res://Scripts/UI/OptionButton.gd" id="1_inmwa"]
+[ext_resource type="FontFile" uid="uid://b2vygowa6rqn7" path="res://Font/Saira-VariableFont_wdth,wght.ttf" id="2_8sggi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inmwa"]
 bg_color = Color(0, 0.710205, 0.879495, 1)
@@ -40,6 +41,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_8sggi")
 theme_override_font_sizes/font_size = 40
 text = "This is a very long test option. This is a very long test option. This is a very long test option."
 horizontal_alignment = 1

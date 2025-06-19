@@ -60,6 +60,7 @@ func PlayNextScene():
 			$CanvasLayer/OwnerImage.modulate = Color(1,1, 1, 0)
 			$CanvasLayer/OwnerImage.texture = newData.Owner.OwnerImage
 			$CanvasLayer/OwnerImage/Label.text = newData.Owner.OwnerName
+			$CanvasLayer/OwnerImage/Label2.text = newData.Owner.OwnerName
 			$CanvasLayer/OwnerImage.visible = true
 			var tween = get_tree().create_tween()
 			tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)

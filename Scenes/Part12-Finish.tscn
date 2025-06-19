@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0c7oohliswdv"]
+[gd_scene load_steps=8 format=3 uid="uid://b0c7oohliswdv"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_i5fln"]
+[ext_resource type="FontFile" uid="uid://b2vygowa6rqn7" path="res://Font/Saira-VariableFont_wdth,wght.ttf" id="4_ugg57"]
 [ext_resource type="Script" uid="uid://bcahe48r6we0l" path="res://Scripts/Ending.gd" id="9_drfrw"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="11_eop0n"]
 
@@ -65,6 +66,10 @@ offset_right = 633.5
 offset_bottom = 63.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ugg57")
 theme_override_font_sizes/font_size = 30
 text = "“And Kuranes reigned thereafter over Ooth-Nargai and all the neighbouring regions of dream, and held his court alternately in Celephaïs and in the cloud-fashioned Serannian. He reigns there still, and will reign happily forever, though below the cliffs at Innsmouth the channel tides played mockingly with the body of a tramp who had stumbled through the half-deserted village at dawn; played mockingly, and cast it upon the rocks by ivy-covered Trevor Towers, where a notably fat and especially offensive millionaire brewer enjoys the purchased atmosphere of extinct nobility.”
 "
@@ -76,6 +81,10 @@ offset_left = 675.5
 offset_top = 384.5
 offset_right = 1354.5
 offset_bottom = 453.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("4_ugg57")
 theme_override_font_sizes/font_size = 50
 text = "Celephaïs by H. P. Lovecraft."
 

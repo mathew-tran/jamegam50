@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmwjabbwgt077"]
+[gd_scene load_steps=8 format=3 uid="uid://cmwjabbwgt077"]
 
 [ext_resource type="Script" uid="uid://dspmkffa0qyql" path="res://Scripts/UI/InteractPanel.gd" id="1_buwaf"]
+[ext_resource type="FontFile" uid="uid://b2vygowa6rqn7" path="res://Font/Saira-VariableFont_wdth,wght.ttf" id="2_nnfgk"]
 [ext_resource type="AudioStream" uid="uid://ctluh7tv4onru" path="res://Audio/SFX/click.wav" id="2_yopaf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buwaf"]
@@ -48,7 +49,7 @@ _data = {
 }
 
 [node name="Panel" type="Panel"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(300, 90)
 offset_right = 40.0
 offset_bottom = 40.0
 pivot_offset = Vector2(100, 25)
@@ -63,9 +64,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_nnfgk")
+theme_override_font_sizes/font_size = 30
 text = "INTERACT"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
