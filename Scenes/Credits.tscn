@@ -22,26 +22,30 @@ theme_override_font_sizes/font_size = 50
 text = "CREDITS"
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-custom_minimum_size = Vector2(1020, 700)
+custom_minimum_size = Vector2(1080, 700)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -459.5
-offset_top = -345.5
-offset_right = 459.5
-offset_bottom = 345.5
+offset_left = -540.0
+offset_top = -391.0
+offset_right = 540.0
+offset_bottom = 309.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Panel"]
+custom_minimum_size = Vector2(1030, 0)
 layout_mode = 0
-offset_right = 1020.0
-offset_bottom = 696.0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 1067.0
+offset_bottom = 672.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="VBoxContainer" type="GridContainer" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(1000, 200)
@@ -50,24 +54,24 @@ theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 22
 columns = 2
 
-[node name="Title" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
+[node name="Title3" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "Composer / SFX"
+text = "2D Artist"
 horizontal_alignment = 1
 
-[node name="Person" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
+[node name="Person3" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "Cameron"
+text = "Sok"
 horizontal_alignment = 1
 
 [node name="Title2" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
@@ -90,24 +94,24 @@ theme_override_font_sizes/font_size = 50
 text = "Marrit"
 horizontal_alignment = 1
 
-[node name="Title3" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
+[node name="Title" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "2D Artist"
+text = "Composer / SFX"
 horizontal_alignment = 1
 
-[node name="Person3" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
+[node name="Person" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "Sok"
+text = "Cameron"
 horizontal_alignment = 1
 
 [node name="Title4" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
@@ -117,7 +121,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "Programmer"
+text = "Programmer / Designer"
 horizontal_alignment = 1
 
 [node name="Person4" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]

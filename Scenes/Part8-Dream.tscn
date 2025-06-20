@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bg5rv4fo3we8r"]
+[gd_scene load_steps=25 format=3 uid="uid://bg5rv4fo3we8r"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
@@ -7,11 +7,12 @@
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_od1vv"]
 [ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="6_3rod6"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_7rjx3"]
+[ext_resource type="Texture2D" uid="uid://cq1nxmo3hxetf" path="res://Art/Environment/Dream/DreamScape.PNG" id="6_aaji3"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_pvgoq"]
 [ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="8_ia3fu"]
-[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="9_ltpxr"]
 [ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="10_s7xk8"]
-[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="12_aaji3"]
+[ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="11_od1vv"]
+[ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="12_7rjx3"]
 
 [sub_resource type="Resource" id="Resource_1awfp"]
 script = ExtResource("2_pg5py")
@@ -36,7 +37,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "A space whale suddenly swoops over.
 You begin to speak to yourself."
-BackgroundImage = ExtResource("9_ltpxr")
+BackgroundImage = ExtResource("11_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
 ScreenEffect = 0
@@ -47,7 +48,7 @@ script = ExtResource("2_pg5py")
 TextToSay = "And then… I saw it.
 So beautiful, so incredible God’s creation.
 Hovering in the sky, it seemed to be so real and natural.."
-BackgroundImage = ExtResource("3_3rod6")
+BackgroundImage = ExtResource("11_od1vv")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -58,7 +59,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "It let me saddle it. And… its skin was so soft, like a plush toy. 
 I wanted only two things — to hug it and soar into the sky, flying from horizon to horizon"
-BackgroundImage = ExtResource("10_s7xk8")
+BackgroundImage = ExtResource("11_od1vv")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -68,7 +69,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [sub_resource type="Resource" id="Resource_t8l5c"]
 script = ExtResource("2_pg5py")
 TextToSay = "Unbelievable. The fresh air washed over my face, I never felt this relief and enjoyment before."
-BackgroundImage = ExtResource("3_3rod6")
+BackgroundImage = ExtResource("11_od1vv")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -79,7 +80,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "Other black whales, appearing from nowhere, joined our journey. 
 And we flew… We flew together in this infinite space of happiness and endless delight."
-BackgroundImage = ExtResource("9_ltpxr")
+BackgroundImage = ExtResource("11_od1vv")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -90,7 +91,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "Unexpectedly, it has all come to an end. 
 I woke up, and I never felt so disappointed in reality. I wanted to be there — only there. Forever.."
-BackgroundImage = ExtResource("3_3rod6")
+BackgroundImage = ExtResource("12_7rjx3")
 Owner = ExtResource("5_od1vv")
 MusicType = 4
 Options = Array[ExtResource("4_aaji3")]([])
@@ -136,10 +137,18 @@ script = ExtResource("1_bjs68")
 StartingCutScene = Array[ExtResource("2_pg5py")]([SubResource("Resource_1awfp"), SubResource("Resource_5uir8")])
 Delay = -1.0
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2249, 719)
+texture = ExtResource("6_aaji3")
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Blocker" parent="Node2D" instance=ExtResource("6_3rod6")]
 position = Vector2(-238, 50)
+rotation = 1.57079
+
+[node name="Blocker11" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(4794, 43)
 rotation = 1.57079
 
 [node name="Blocker2" parent="Node2D" instance=ExtResource("6_3rod6")]
@@ -149,7 +158,7 @@ position = Vector2(-151, 32)
 position = Vector2(1591, 45)
 
 [node name="Blocker4" parent="Node2D" instance=ExtResource("6_3rod6")]
-position = Vector2(2203, 112)
+position = Vector2(3154, 82)
 
 [node name="Blocker5" parent="Node2D" instance=ExtResource("6_3rod6")]
 position = Vector2(-239, 1377)
@@ -157,14 +166,20 @@ position = Vector2(-239, 1377)
 [node name="Blocker6" parent="Node2D" instance=ExtResource("6_3rod6")]
 position = Vector2(1429, 1431)
 
+[node name="Blocker9" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(1545, 1269)
+
+[node name="Blocker10" parent="Node2D" instance=ExtResource("6_3rod6")]
+position = Vector2(2991, 1259)
+
 [node name="Blocker7" parent="Node2D" instance=ExtResource("6_3rod6")]
-position = Vector2(2398, 1303)
+position = Vector2(2823, 1394)
 
 [node name="Blocker8" parent="Node2D" instance=ExtResource("6_3rod6")]
-position = Vector2(2721, 1162)
+position = Vector2(3226, 1455)
 
 [node name="Player" parent="." instance=ExtResource("6_7rjx3")]
-position = Vector2(-26, 849)
+position = Vector2(4540, 805)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -172,59 +187,6 @@ position = Vector2(-26, 849)
 visible = false
 
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
-position = Vector2(2621, 230)
+position = Vector2(-957, 278)
 Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
 SceneToChangeTo = "uid://2xyyik2trpn"
-
-[node name="Box" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(-40, 1224)
-
-[node name="Box2" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(115, 1264)
-
-[node name="Box3" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(283, 1277)
-
-[node name="Box4" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(444, 1297)
-
-[node name="Box5" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(1083, 1324)
-
-[node name="Box6" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(1345, 1311)
-
-[node name="Box7" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(1977, 1365)
-
-[node name="Box8" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(2448, 1358)
-
-[node name="Box9" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(2912, 1392)
-
-[node name="Box10" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(3477, 1352)
-
-[node name="Box11" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(-41, -81)
-
-[node name="Box12" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(215, -168)
-
-[node name="Box13" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(928, -215)
-
-[node name="Box14" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(1581, -215)
-
-[node name="Box15" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(2180, -249)
-
-[node name="Box16" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(2806, -242)
-
-[node name="Box17" parent="." instance=ExtResource("12_aaji3")]
-position = Vector2(3324, -188)
-
-[node name="Box18" parent="." instance=ExtResource("12_aaji3")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ce3jbbrtl73d0"]
+[gd_scene load_steps=24 format=3 uid="uid://ce3jbbrtl73d0"]
 
 [ext_resource type="PackedScene" uid="uid://cr3mstg62i332" path="res://Prefabs/Environment/InteractableDresser.tscn" id="1_rq268"]
 [ext_resource type="Texture2D" uid="uid://c4hycnl2vqrpy" path="res://Art/Environment/House/wardrobe.PNG" id="2_4gea6"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://d0puxgd53a0na" path="res://Audio/SFX/drawer.ogg" id="6_i4t7m"]
 [ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="7_41fmo"]
 [ext_resource type="Resource" uid="uid://b4mqoxqj0ub52" path="res://Content/Characters/Character_Owner.tres" id="8_28bwr"]
+[ext_resource type="AudioStream" uid="uid://bdhumpyew00bu" path="res://Audio/SFX/doorbell.wav" id="8_41fmo"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="9_4gea6"]
 [ext_resource type="Resource" uid="uid://dhs7soibyyahb" path="res://Content/StoryFlags/FLAG_004_GET_KICKED_OUT.tres" id="10_i4t7m"]
 
@@ -30,9 +31,10 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_30ptv"]
 script = ExtResource("3_6pm5v")
-TextToSay = "The door suddenly opens."
+TextToSay = "The bell rings..
+Then the door suddenly opens."
 MusicType = 2
-SFX = ExtResource("7_41fmo")
+SFX = ExtResource("8_41fmo")
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"

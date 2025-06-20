@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://die2tva6wo1hx"]
+[gd_scene load_steps=19 format=3 uid="uid://die2tva6wo1hx"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_1slwb"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_iotay"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_xp85i"]
 [ext_resource type="Resource" uid="uid://dpthi3sors0b7" path="res://Content/Characters/Character_Narrator.tres" id="8_bn4lc"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="8_bvtxt"]
+[ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="8_jt823"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="9_482la"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="10_twhrk"]
 
@@ -54,7 +55,7 @@ script = ExtResource("6_5fu11")
 TextToSay = "But then, they appeared.
 His safe haven. His savior.
 He realized that now he was alive.."
-BackgroundImage = ExtResource("7_jt823")
+BackgroundImage = ExtResource("8_jt823")
 Owner = ExtResource("9_482la")
 MusicType = 1
 Options = Array[ExtResource("7_xp85i")]([])
@@ -67,7 +68,7 @@ TextToSay = "And I set off on a new endless journey.
 ..
 ..
 A journey between countless stars and planets."
-BackgroundImage = ExtResource("10_twhrk")
+BackgroundImage = ExtResource("8_jt823")
 Owner = ExtResource("9_482la")
 MusicType = 2
 Options = Array[ExtResource("7_xp85i")]([])
@@ -80,6 +81,7 @@ TextToSay = "...and at the same time, his corpse was still laying on the street.
 And nobody cared about it, because it was a usual thing for strangers.
 ..
 Sometimes they looked at his miserable body, and that was it."
+BackgroundImage = ExtResource("10_twhrk")
 Owner = ExtResource("8_bn4lc")
 MusicType = 2
 Options = Array[ExtResource("7_xp85i")]([])

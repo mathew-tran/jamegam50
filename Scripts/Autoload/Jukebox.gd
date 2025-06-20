@@ -7,7 +7,8 @@ enum MUSIC_TYPE {
 	DREAM,
 	CONTINUE,
 	ENDING,
-	NONE
+	NONE,
+	FACTORY
 }
 
 func PlayMusic(musicType : MUSIC_TYPE):
@@ -19,6 +20,8 @@ func PlayMusic(musicType : MUSIC_TYPE):
 			stream = load("res://Audio/Music/Jamgam-50dream.ogg")
 		MUSIC_TYPE.ENDING:
 			stream = load("res://Audio/Music/JamGame50ending.ogg")
+		MUSIC_TYPE.FACTORY:
+			stream = load("res://Audio/Music/Jamegame-50Work (1).ogg")
 		MUSIC_TYPE.NONE:
 			stream = null
 			stop()

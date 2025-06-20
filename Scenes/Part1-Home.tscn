@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_yyccc"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_1n0y3"]
+[ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="3_bpi7m"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_k5f7n"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_8l0us"]
-[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="5_b8s41"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="6_tj4bo"]
 [ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="7_flwds"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="8_pyjmp"]
@@ -33,7 +33,7 @@ TextToSay = "...
 Another day, another day.... 
 I would really like myself to be in a coffin rather than here.
 ... I should go to work."
-BackgroundImage = ExtResource("5_b8s41")
+BackgroundImage = ExtResource("3_bpi7m")
 Owner = ExtResource("6_tj4bo")
 MusicType = 0
 Options = Array[ExtResource("4_8l0us")]([])

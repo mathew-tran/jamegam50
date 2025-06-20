@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dihft4ato04q1"]
+[gd_scene load_steps=18 format=3 uid="uid://dihft4ato04q1"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_8urp1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_uq5xe"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_2ejhk"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_bxgyb"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_l54pq"]
+[ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="6_bxgyb"]
 [ext_resource type="PackedScene" uid="uid://ostal422jvs1" path="res://Prefabs/Environment/PreblockedArea/PlayerHome.tscn" id="6_vital"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="7_lcbam"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="8_liinq"]
@@ -17,7 +18,7 @@ TextToSay = "!!!
 Ugh.."
 BackgroundImage = ExtResource("3_2ejhk")
 Owner = ExtResource("5_l54pq")
-MusicType = 2
+MusicType = 4
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
@@ -50,6 +51,7 @@ TextToSay = "These bastards..
 ...
 \"Insignificance of symptoms\" ...
 They don't give a shit about us. We are just consumables for them."
+BackgroundImage = ExtResource("6_bxgyb")
 Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])

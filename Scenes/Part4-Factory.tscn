@@ -18,7 +18,7 @@
 script = ExtResource("2_72s53")
 TextToSay = "You arrive at the WHITE WHALE factory."
 BackgroundImage = ExtResource("3_hqcir")
-MusicType = 2
+MusicType = 5
 Options = Array[ExtResource("3_lfjbx")]([])
 ScreenEffect = 0
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
