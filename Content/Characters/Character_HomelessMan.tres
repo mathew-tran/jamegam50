@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OwnerData" load_steps=3 format=3 uid="uid://dc1butuwnqt30"]
 
-[ext_resource type="Texture2D" uid="uid://d2t7h3dpxyix" path="res://Art/CharacterPortraits/HomelessmanFace.png" id="1_h3ske"]
+[ext_resource type="Texture2D" uid="uid://cyny4ftkqn18v" path="res://Art/CharacterPortraits/homeless portrait.PNG" id="1_h3ske"]
 [ext_resource type="Script" uid="uid://dk4h0ebc24me" path="res://DataTypes/OwnerData.gd" id="2_gs0ui"]
 
 [resource]

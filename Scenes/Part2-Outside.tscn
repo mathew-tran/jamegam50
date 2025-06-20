@@ -47,7 +47,10 @@ Delay = 0.5
 
 [node name="OutsideNearHomeArea" parent="." instance=ExtResource("5_m2c28")]
 
-[node name="InteractableItem" parent="OutsideNearHomeArea" index="1"]
+[node name="Sprite2D2" parent="OutsideNearHomeArea" index="1"]
+position = Vector2(1439, 425)
+
+[node name="InteractableItem" parent="OutsideNearHomeArea" index="2"]
 SceneToChangeTo = "uid://bl3yxwcfopbm"
 
 [node name="CollisionShape2D" parent="OutsideNearHomeArea/InteractableItem/Area2D" index="0"]
@@ -56,13 +59,13 @@ shape = SubResource("RectangleShape2D_5gkrr")
 [node name="CollisionShape2D" parent="OutsideNearHomeArea/InteractableItem/StaticBody2D" index="0"]
 shape = SubResource("RectangleShape2D_0osii")
 
-[node name="Blocker7" parent="OutsideNearHomeArea" index="3"]
+[node name="Blocker7" parent="OutsideNearHomeArea" index="4"]
 position = Vector2(406, 764)
 
-[node name="Blocker4" parent="OutsideNearHomeArea" index="6"]
+[node name="Blocker4" parent="OutsideNearHomeArea" index="7"]
 position = Vector2(115, 399)
 
-[node name="Blocker5" parent="OutsideNearHomeArea" index="7"]
+[node name="Blocker5" parent="OutsideNearHomeArea" index="8"]
 position = Vector2(1933, 421)
 
 [node name="Player" parent="." instance=ExtResource("6_hmfqx")]

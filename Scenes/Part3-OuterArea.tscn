@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bl3yxwcfopbm"]
+[gd_scene load_steps=30 format=3 uid="uid://bl3yxwcfopbm"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_l01m1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_gbgjl"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="12_8bmng"]
 [ext_resource type="Texture2D" uid="uid://earu2m2wroxq" path="res://Art/Environment/Streets/Bus.PNG" id="12_apx80"]
 [ext_resource type="AudioStream" uid="uid://dl2ul0pjh2cpd" path="res://Audio/SFX/Bus.wav" id="14_8bmng"]
+[ext_resource type="Texture2D" uid="uid://2x7yj7ptnivf" path="res://Art/Characters/Homeless/homeless .PNG" id="15_apx80"]
 
 [sub_resource type="Resource" id="Resource_kokk2"]
 script = ExtResource("2_gbgjl")
@@ -166,8 +167,12 @@ rotation = -1.57079
 
 [node name="Environment" type="Node2D" parent="."]
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(644, 566)
+texture = ExtResource("15_apx80")
+
 [node name="Player" parent="." instance=ExtResource("9_hif2b")]
-position = Vector2(186, 558)
+position = Vector2(1413, 604)
 CurrentArea = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -176,8 +181,9 @@ CurrentArea = 1
 visible = false
 
 [node name="InteractableItem" type="Sprite2D" parent="."]
-position = Vector2(4356, 325)
+position = Vector2(4042, 325)
 texture = ExtResource("12_apx80")
+offset = Vector2(250, 0)
 script = ExtResource("12_8bmng")
 SceneToChangeTo = "uid://ynu4hab6besn"
 InteractText = "Go to work"
