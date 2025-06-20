@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bg5rv4fo3we8r"]
+[gd_scene load_steps=28 format=3 uid="uid://bg5rv4fo3we8r"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cq1nxmo3hxetf" path="res://Art/Environment/Dream/DreamScape.PNG" id="6_aaji3"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_pvgoq"]
 [ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="8_ia3fu"]
+[ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="10_7rjx3"]
 [ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="10_s7xk8"]
+[ext_resource type="Resource" uid="uid://d11bgo02eako0" path="res://Content/StoryFlags/FLAG_007_FIRST_DREAM.tres" id="11_7rjx3"]
 [ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="11_od1vv"]
 [ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="12_7rjx3"]
 
@@ -35,6 +37,9 @@ ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia3fu"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Resource" id="Resource_8g6cp"]
 script = ExtResource("2_pg5py")
 TextToSay = "A space whale suddenly swoops over.
@@ -57,6 +62,7 @@ MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
 ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
+FlagSet = ExtResource("11_7rjx3")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_wqo1j"]
@@ -197,7 +203,18 @@ position = Vector2(4540, 805)
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("7_pvgoq")]
 visible = false
 
+[node name="CoverPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ia3fu")
+script = ExtResource("10_7rjx3")
+FlagToListenTo = ExtResource("11_7rjx3")
+
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
-position = Vector2(-957, 278)
+position = Vector2(-79, 241)
 Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
 SceneToChangeTo = "uid://2xyyik2trpn"

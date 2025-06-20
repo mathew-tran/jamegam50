@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=29 format=3 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -12,7 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_1matk"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_7a2xq"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="11_72s53"]
+[ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="12_xkshq"]
+[ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="13_41onr"]
 [ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="13_er777"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="13_onsst"]
 
 [sub_resource type="Resource" id="Resource_7qjir"]
 script = ExtResource("2_72s53")
@@ -114,11 +117,34 @@ ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hydla"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Resource" id="Resource_7a2xq"]
 script = ExtResource("2_72s53")
-TextToSay = "You open the door to the medical room."
+TextToSay = "You open the door to the medical room.
+"
+BackgroundImage = ExtResource("13_onsst")
 MusicType = 2
 SFX = ExtResource("13_er777")
+Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+FlagSet = ExtResource("13_41onr")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_jaiep"]
+script = ExtResource("2_72s53")
+TextToSay = "EMPLOYEE 2329.
+YOU WERE REGISTERED FOR A MEDICAL EXAMINATION UNDER THE VETERANS ASSISTANCE PROGRAMME.
+..
+..
+APPROXIMATE WAITING TIME: 58 MONTHS.
+..
+...
+THANK YOU FOR YOUR UNDERSTANDING!"
+Owner = ExtResource("6_bv73p")
+MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
 ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
@@ -175,7 +201,18 @@ position = Vector2(306, 536)
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("10_7a2xq")]
 visible = false
 
+[node name="CoverPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hydla")
+script = ExtResource("12_xkshq")
+FlagToListenTo = ExtResource("13_41onr")
+
 [node name="InteractableDoor" parent="." instance=ExtResource("11_72s53")]
 position = Vector2(1854, 590)
 SceneToChangeTo = "uid://dihft4ato04q1"
-CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq")])
+CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq"), SubResource("Resource_jaiep")])
