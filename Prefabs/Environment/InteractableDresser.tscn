@@ -12,6 +12,7 @@ TextToSay = "There is nothing in here."
 MusicType = 2
 Options = Array[ExtResource("5_uibst")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp3wt"]

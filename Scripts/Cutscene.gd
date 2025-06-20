@@ -38,6 +38,10 @@ func PlayNextScene():
 		var newData = Data.pop_front() as CutSceneData
 		$CanvasLayer/TextureRect.texture = newData.BackgroundImage
 		
+
+		if newData.FlagSet:
+			newData.FlagSet.SetFlag()
+			
 		Jukebox.PlayMusic(newData.MusicType)
 		
 		Jukebox.PlaySFX(newData.SFX)

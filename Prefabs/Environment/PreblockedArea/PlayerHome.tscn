@@ -27,6 +27,7 @@ MusicType = 2
 SFX = ExtResource("14_kmt6n")
 Options = Array[ExtResource("13_4evrs")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Environment" type="Node2D"]

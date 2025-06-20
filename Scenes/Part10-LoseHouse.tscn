@@ -21,6 +21,7 @@ Owner = ExtResource("4_qwsht")
 MusicType = 2
 Options = Array[ExtResource("3_xjr2p")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

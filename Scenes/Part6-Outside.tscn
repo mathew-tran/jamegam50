@@ -24,6 +24,7 @@ MusicType = 2
 SFX = ExtResource("8_a3i65")
 Options = Array[ExtResource("7_sgxcx")]([])
 ScreenEffect = 1
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_ushc4"]
@@ -33,6 +34,7 @@ Owner = ExtResource("8_v0sdx")
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_oqxf7"]
@@ -44,6 +46,7 @@ BackgroundImage = ExtResource("9_f7j8j")
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_kbb2x"]
@@ -52,6 +55,7 @@ TextToSay = "The sheet was picked up."
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_4646v"]
@@ -70,6 +74,7 @@ MusicType = 2
 SFX = ExtResource("12_xaqea")
 Options = Array[ExtResource("7_sgxcx")]([SubResource("Resource_4646v")])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

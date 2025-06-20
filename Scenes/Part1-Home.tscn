@@ -25,6 +25,7 @@ BackgroundImage = ExtResource("3_k5f7n")
 MusicType = 4
 Options = Array[ExtResource("4_8l0us")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_h1m7h"]
@@ -38,6 +39,7 @@ Owner = ExtResource("6_tj4bo")
 MusicType = 0
 Options = Array[ExtResource("4_8l0us")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

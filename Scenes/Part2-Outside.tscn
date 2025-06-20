@@ -16,6 +16,7 @@ Sidewalks filled to the brim with trash and newspapers."
 MusicType = 2
 Options = Array[ExtResource("3_evgd8")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_hbeeb"]
@@ -27,6 +28,7 @@ Owner = ExtResource("4_yew80")
 MusicType = 2
 Options = Array[ExtResource("3_evgd8")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gkrr"]

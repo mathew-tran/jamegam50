@@ -14,3 +14,7 @@ class_name CutSceneData
 @export var Options : Array[OptionData]
 
 @export var ScreenEffect : TransitionSceneManager.SCREEN_EFFECT
+
+@export var EndCutSceneSubscriber : NodePath
+
+@export var FlagSet : StoryFlagData

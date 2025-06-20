@@ -13,6 +13,7 @@ TextToSay = "You move to the next area."
 MusicType = 2
 Options = Array[ExtResource("5_y4503")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfmjd"]

@@ -27,6 +27,7 @@ MusicType = 2
 SFX = ExtResource("6_i4t7m")
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_30ptv"]
@@ -37,6 +38,7 @@ MusicType = 2
 SFX = ExtResource("8_41fmo")
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_jdsb2"]
@@ -47,6 +49,7 @@ Owner = ExtResource("5_4gea6")
 MusicType = 2
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_so2j6"]
@@ -61,6 +64,7 @@ Owner = ExtResource("8_28bwr")
 MusicType = 2
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_i4t7m"]
@@ -72,6 +76,7 @@ Owner = ExtResource("5_4gea6")
 MusicType = 2
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_41fmo"]
@@ -83,6 +88,7 @@ Owner = ExtResource("8_28bwr")
 MusicType = 2
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_b4fqj"]
@@ -92,6 +98,7 @@ MusicType = 2
 SFX = ExtResource("7_41fmo")
 Options = Array[ExtResource("4_28bwr")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_w8ja0"]
@@ -109,6 +116,7 @@ MusicType = 2
 SFX = ExtResource("9_4gea6")
 Options = Array[ExtResource("4_28bwr")]([SubResource("Resource_w8ja0")])
 ScreenEffect = 1
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnsqv"]

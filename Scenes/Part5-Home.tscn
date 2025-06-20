@@ -21,6 +21,7 @@ Owner = ExtResource("5_l54pq")
 MusicType = 4
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_hsolg"]
@@ -32,6 +33,7 @@ BackgroundImage = ExtResource("3_2ejhk")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_ovl7w"]
@@ -41,6 +43,7 @@ BackgroundImage = ExtResource("3_2ejhk")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_e8hlv"]
@@ -56,6 +59,7 @@ Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_06vck"]
@@ -72,6 +76,7 @@ Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([SubResource("Resource_06vck")])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]

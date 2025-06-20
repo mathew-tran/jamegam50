@@ -19,6 +19,7 @@ BackgroundImage = ExtResource("3_idm0t")
 MusicType = 2
 Options = Array[ExtResource("4_dqmat")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_g4us0"]
@@ -28,6 +29,7 @@ BackgroundImage = ExtResource("4_0m8yb")
 MusicType = 2
 Options = Array[ExtResource("4_dqmat")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_dqmat"]
@@ -37,6 +39,7 @@ BackgroundImage = ExtResource("5_kweal")
 MusicType = 2
 Options = Array[ExtResource("4_dqmat")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kweal"]

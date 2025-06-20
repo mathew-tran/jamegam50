@@ -22,6 +22,7 @@ A homeless man comes up to you
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_jupxk"]
@@ -32,6 +33,7 @@ Owner = ExtResource("4_apx80")
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_r57g8"]
@@ -41,6 +43,7 @@ Owner = ExtResource("5_u40ah")
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_hqtm8"]
@@ -50,6 +53,7 @@ Owner = ExtResource("4_apx80")
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_bvtwy"]
@@ -58,6 +62,7 @@ TextToSay = "The homeless man smiles. Thanks you and goes on with his life."
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_p2vix"]
@@ -73,6 +78,7 @@ TextToSay = "You walk past him. He is silent."
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_86v50"]
@@ -87,6 +93,7 @@ TextToSay = "You move past the homeless man. Knocking him down by accident."
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_2guxd"]
@@ -103,6 +110,7 @@ Owner = ExtResource("4_apx80")
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([SubResource("Resource_p2vix"), SubResource("Resource_86v50"), SubResource("Resource_2guxd")])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_enrcn"]
@@ -112,6 +120,7 @@ TextToSay = "You take the bus to work.
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apx80"]
