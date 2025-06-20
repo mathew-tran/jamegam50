@@ -1,10 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://bl3yxwcfopbm"]
+[gd_scene load_steps=29 format=3 uid="uid://bl3yxwcfopbm"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_l01m1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_gbgjl"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_8bmng"]
 [ext_resource type="Resource" uid="uid://dc1butuwnqt30" path="res://Content/Characters/Character_HomelessMan.tres" id="4_apx80"]
-[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_u40ah"]
+[ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="5_8bmng"]
 [ext_resource type="Resource" uid="uid://c61lgyo74kdki" path="res://Content/StoryFlags/FLAG_001_NICE_TO_HOMELESS.tres" id="6_moamj"]
 [ext_resource type="Resource" uid="uid://t3fk5g3bhmlh" path="res://Content/StoryFlags/FLAG_002_MEAN_TO_HOMELESS.tres" id="7_471px"]
 [ext_resource type="Texture2D" uid="uid://b0fagnaynfuct" path="res://Art/Environment/Streets/Street2.PNG" id="8_l01m1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_vkqv7"]
 [ext_resource type="Script" uid="uid://dnaixeyaslevm" path="res://Scripts/InteractableItemChangeScenes.gd" id="12_8bmng"]
 [ext_resource type="Texture2D" uid="uid://earu2m2wroxq" path="res://Art/Environment/Streets/Bus.PNG" id="12_apx80"]
+[ext_resource type="AudioStream" uid="uid://dl2ul0pjh2cpd" path="res://Audio/SFX/Bus.wav" id="14_8bmng"]
 
 [sub_resource type="Resource" id="Resource_kokk2"]
 script = ExtResource("2_gbgjl")
@@ -39,7 +40,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [sub_resource type="Resource" id="Resource_r57g8"]
 script = ExtResource("2_gbgjl")
 TextToSay = ".."
-Owner = ExtResource("5_u40ah")
+Owner = ExtResource("5_8bmng")
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
@@ -118,6 +119,7 @@ script = ExtResource("2_gbgjl")
 TextToSay = "You take the bus to work.
 .."
 MusicType = 2
+SFX = ExtResource("14_8bmng")
 Options = Array[ExtResource("3_8bmng")]([])
 ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
@@ -166,6 +168,7 @@ rotation = -1.57079
 
 [node name="Player" parent="." instance=ExtResource("9_hif2b")]
 position = Vector2(186, 558)
+CurrentArea = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -5,6 +5,7 @@ extends Node2D
 @export_file("*.tscn") var PostTransitionScene
 
 func _ready() -> void:
+	await get_tree().create_timer(.03).timeout
 	if Delay > 0:
 		await get_tree().create_timer(Delay).timeout
 	var scene = load("res://Scenes/Cutscene.tscn")

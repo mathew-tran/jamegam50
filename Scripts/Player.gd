@@ -5,6 +5,14 @@ class_name Player
 var TargetPosition = Vector2.ZERO
 var MoveSpeed = 3000
 
+enum AREA {
+	HOME,
+	STREET,
+	FACTORY,
+	HALLUCINATION
+}
+
+@export var CurrentArea = AREA.HOME
 
 func _ready() -> void:
 	TargetPosition = global_position
@@ -15,10 +23,23 @@ func StopMoving():
 	TargetPosition = GetPlayerPosition()
 	
 func UpdateAnim():
+	var animName = GetAnimType()
 	if TargetPosition != GetPlayerPosition():
-		$AnimatedSprite2D.play("MoveLeft")
+		animName += "moveleft"
 	else:
-		$AnimatedSprite2D.play("idle")
+		animName += "idle"
+	$AnimatedSprite2D.play(animName)
+	
+func GetAnimType():
+	match CurrentArea:
+		AREA.HOME:
+			return ""
+		AREA.STREET:
+			return "street"
+		AREA.FACTORY:
+			return "factory"
+		AREA.HALLUCINATION:
+			return "hallucination"
 	
 func _process(delta: float) -> void:
 	UpdateAnim()

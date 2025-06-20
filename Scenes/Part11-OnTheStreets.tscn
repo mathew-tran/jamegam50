@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://die2tva6wo1hx"]
+[gd_scene load_steps=24 format=3 uid="uid://die2tva6wo1hx"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_1slwb"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_iotay"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="3_d10xs"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="4_1ddwr"]
 [ext_resource type="Resource" uid="uid://df1nh0qxuj3gy" path="res://Content/StoryFlags/FLAG_005_DEAD.tres" id="4_bn4lc"]
+[ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="6_1slwb"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="6_5fu11"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_xp85i"]
 [ext_resource type="Resource" uid="uid://dpthi3sors0b7" path="res://Content/Characters/Character_Narrator.tres" id="8_bn4lc"]
@@ -23,7 +24,7 @@ The pain. It has returned.
 God bless me, stop this suffering.
 "
 BackgroundImage = ExtResource("10_twhrk")
-Owner = ExtResource("9_482la")
+Owner = ExtResource("6_1slwb")
 MusicType = 2
 SFX = ExtResource("8_bvtxt")
 Options = Array[ExtResource("7_xp85i")]([])
@@ -46,7 +47,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("6_5fu11")
 TextToSay = "..
 Looks like it's over."
-Owner = ExtResource("9_482la")
+Owner = ExtResource("6_1slwb")
 MusicType = 2
 Options = Array[ExtResource("7_xp85i")]([])
 ScreenEffect = 0
@@ -73,7 +74,7 @@ TextToSay = "And I set off on a new endless journey.
 ..
 A journey between countless stars and planets."
 BackgroundImage = ExtResource("8_jt823")
-Owner = ExtResource("9_482la")
+Owner = ExtResource("6_1slwb")
 MusicType = 2
 Options = Array[ExtResource("7_xp85i")]([])
 ScreenEffect = 0
@@ -127,6 +128,7 @@ shape = SubResource("RectangleShape2D_iotay")
 
 [node name="Player" parent="." instance=ExtResource("3_d10xs")]
 position = Vector2(390, 551)
+CurrentArea = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

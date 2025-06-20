@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="OwnerData" load_steps=3 format=3 uid="uid://dj34nl5s4isfl"]
+
+[ext_resource type="Texture2D" uid="uid://cllyw6w0vkinb" path="res://Art/CharacterPortraits/work.PNG" id="1_il13d"]
+[ext_resource type="Script" uid="uid://dk4h0ebc24me" path="res://DataTypes/OwnerData.gd" id="2_pdfmo"]
+
+[resource]
+script = ExtResource("2_pdfmo")
+OwnerName = "YOU"
+OwnerImage = ExtResource("1_il13d")
+metadata/_custom_type_script = "uid://dk4h0ebc24me"

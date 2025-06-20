@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_5gkrr"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_0osii"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_evgd8"]
-[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_yew80"]
+[ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="4_5gkrr"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="5_m2c28"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_hmfqx"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_2xft7"]
@@ -24,7 +24,7 @@ script = ExtResource("2_0osii")
 TextToSay = "Since my childhood it was always unsafe on the streets.
 ..
 Bunches of junkies, pickpockets and other dregs of society."
-Owner = ExtResource("4_yew80")
+Owner = ExtResource("4_5gkrr")
 MusicType = 2
 Options = Array[ExtResource("3_evgd8")]([])
 ScreenEffect = 0
@@ -67,6 +67,7 @@ position = Vector2(1933, 421)
 
 [node name="Player" parent="." instance=ExtResource("6_hmfqx")]
 position = Vector2(1005, 539)
+CurrentArea = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

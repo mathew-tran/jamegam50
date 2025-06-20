@@ -197,6 +197,7 @@ position = Vector2(3226, 1455)
 
 [node name="Player" parent="." instance=ExtResource("6_7rjx3")]
 position = Vector2(4540, 805)
+CurrentArea = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

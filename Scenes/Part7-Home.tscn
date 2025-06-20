@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbj4s2vv6cope"]
+[gd_scene load_steps=15 format=3 uid="uid://cbj4s2vv6cope"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_up07u"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pao0k"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_a7dly"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="4_a7dly"]
 [ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="4_f41g3"]
 [ext_resource type="AudioStream" uid="uid://d1s3uaydrbhom" path="res://Audio/SFX/sniff.wav" id="5_pao0k"]
 [ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="5_ymdno"]
@@ -14,6 +15,7 @@
 script = ExtResource("2_pao0k")
 TextToSay = "Finally... the \"Black Whale\"
 .. Maybe this thing will finally help me..."
+Owner = ExtResource("4_a7dly")
 MusicType = 2
 Options = Array[ExtResource("3_a7dly")]([])
 ScreenEffect = 0
@@ -26,6 +28,7 @@ TextToSay = "Oh fuck..
 ..
 My God, the pain. Is it finally over? I can't believe it.."
 BackgroundImage = ExtResource("4_f41g3")
+Owner = ExtResource("4_a7dly")
 MusicType = 2
 SFX = ExtResource("5_pao0k")
 Options = Array[ExtResource("3_a7dly")]([])
@@ -46,6 +49,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pao0k")
 TextToSay = "Oh.. That's how it is.."
 BackgroundImage = ExtResource("5_ymdno")
+Owner = ExtResource("4_a7dly")
 MusicType = 2
 Options = Array[ExtResource("3_a7dly")]([])
 ScreenEffect = 0

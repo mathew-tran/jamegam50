@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=30 format=3 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="7_c1c2q"]
 [ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="8_7g1ov"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_1matk"]
+[ext_resource type="Resource" uid="uid://dj34nl5s4isfl" path="res://Content/Characters/Character_Player_Factory.tres" id="9_41onr"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_7a2xq"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="11_72s53"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="12_xkshq"]
@@ -110,7 +111,7 @@ TextToSay = "..
 This circuit board pisses me off..
 It’s really uncomfortable to be aware that some crap is inside my brain
 "
-Owner = ExtResource("5_x3wfb")
+Owner = ExtResource("9_41onr")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([SubResource("Resource_7g1ov")])
 ScreenEffect = 0
@@ -195,6 +196,7 @@ position = Vector2(1649, 953)
 
 [node name="Player" parent="." instance=ExtResource("9_1matk")]
 position = Vector2(306, 536)
+CurrentArea = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
