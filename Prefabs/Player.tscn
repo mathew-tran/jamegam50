@@ -2236,7 +2236,8 @@ range_item_cull_mask = 2
 texture = ExtResource("3_b43ah")
 
 [node name="PollTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.15
+one_shot = true
 
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="path_changed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_path_changed"]

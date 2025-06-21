@@ -52,8 +52,10 @@ func SetTargetPosition(newPosition):
 func _physics_process(delta: float) -> void:
 	UpdateAnim()
 	MovementDelta = MoveSpeed * delta
-	if Input.is_action_just_released("left_click") and TransitionScene.bHasTransitioned:
-		SetTargetPosition(get_global_mouse_position())
+	if Input.is_action_pressed("left_click") and TransitionScene.bHasTransitioned:
+		if $PollTimer.time_left == 0.0:
+			$PollTimer.start()
+			SetTargetPosition(get_global_mouse_position())
 		
 	if TargetPosition != GetPlayerPosition():
 		$Waypoint.global_position = TargetPosition
