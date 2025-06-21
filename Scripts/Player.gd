@@ -44,13 +44,16 @@ func GetAnimType():
 			return "factory"
 		AREA.HALLUCINATION:
 			return "hallucination"
-	
+
+func SetTargetPosition(newPosition):
+	TargetPosition = newPosition
+	$NavigationAgent2D.set_target_position(newPosition)
+		
 func _physics_process(delta: float) -> void:
 	UpdateAnim()
 	MovementDelta = MoveSpeed * delta
-	if Input.is_action_pressed("left_click") and TransitionScene.bHasTransitioned:
-		TargetPosition = get_global_mouse_position()
-		$NavigationAgent2D.set_target_position(TargetPosition)
+	if Input.is_action_just_released("left_click") and TransitionScene.bHasTransitioned:
+		SetTargetPosition(get_global_mouse_position())
 		
 	if TargetPosition != GetPlayerPosition():
 		$Waypoint.global_position = TargetPosition
@@ -65,12 +68,13 @@ func _physics_process(delta: float) -> void:
 			else:
 				_on_navigation_agent_2d_velocity_computed(new_velocity)
 		else:
+			global_position = $NavigationAgent2D.get_next_path_position()
 			_on_navigation_agent_2d_navigation_finished()
 	else:
 		$Waypoint.visible = false
 		
 func IsCloseToTarget():
-	return GetPlayerPosition().distance_to(TargetPosition) < 100
+	return GetPlayerPosition().distance_to($NavigationAgent2D.get_next_path_position()) < 5
 
 		
 		
@@ -94,3 +98,7 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	$NavigationAgent2D.set_velocity_forced(Vector2.ZERO)
 	MovementDelta = 0
 	Finder.GetInteractPanel().InteractWithObject()
+
+
+func _on_poll_timer_timeout() -> void:
+	$NavigationAgent2D.set_target_position(TargetPosition)

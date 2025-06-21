@@ -2217,7 +2217,6 @@ path_desired_distance = 10.0
 target_desired_distance = 60.0
 path_max_distance = 300.0
 navigation_layers = 129
-simplify_path = true
 avoidance_mask = 257
 debug_enabled = true
 debug_use_custom = true
@@ -2236,6 +2235,10 @@ energy = 16.0
 range_item_cull_mask = 2
 texture = ExtResource("3_b43ah")
 
+[node name="PollTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="path_changed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_path_changed"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="timeout" from="PollTimer" to="." method="_on_poll_timer_timeout"]

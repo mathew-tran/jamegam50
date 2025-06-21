@@ -12,6 +12,8 @@ func ShowText(newText):
 
 func SelectObject(object):
 	ObjectPressed = object
+	await get_tree().create_timer(.1).timeout
+	Finder.GetPlayer().SetTargetPosition(object.global_position)
 	$Click.play()
 	
 func Hide():
