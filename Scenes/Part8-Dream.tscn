@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bg5rv4fo3we8r"]
+[gd_scene load_steps=34 format=4 uid="uid://bg5rv4fo3we8r"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c1g27h13x3l3r" path="res://Art/CutSceneStills/hallucination3.PNG" id="14_ltpxr"]
 [ext_resource type="Texture2D" uid="uid://dfmwc7ld0mshy" path="res://Art/CutSceneStills/hallucination1.PNG" id="14_pvgoq"]
 [ext_resource type="PackedScene" uid="uid://bpv4w4gpof4ko" path="res://Prefabs/WalkableTileMap.tscn" id="15_7rjx3"]
+[ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="16_ltpxr"]
 [ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="16_pvgoq"]
 
 [sub_resource type="Resource" id="Resource_1awfp"]
@@ -135,10 +136,12 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [sub_resource type="Resource" id="Resource_cnyuk"]
 script = ExtResource("2_pg5py")
 TextToSay = "Unexpectedly, it has all come to an end. 
-I woke up, and I never felt so disappointed in reality. I wanted to be there — only there. Forever.."
+I woke up, and I never felt so disappointed in reality. 
+I wanted to be there — only there. Forever.."
 BackgroundImage = ExtResource("12_7rjx3")
 Owner = ExtResource("5_od1vv")
 MusicType = 4
+SFX = ExtResource("16_ltpxr")
 Options = Array[ExtResource("4_aaji3")]([])
 ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
@@ -172,7 +175,7 @@ script = ExtResource("2_pg5py")
 TextToSay = "...
 And then, I had no money left. 
 I spent everything for an opportunity to go on a fantastic sky journey saddling the black whales.
-I didn’t have a choice… I had to sell my property"
+I didn’t have a choice… I had to sell my whatever I could."
 BackgroundImage = ExtResource("16_pvgoq")
 Owner = ExtResource("5_od1vv")
 MusicType = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d1whs8f10sg5k"]
+[gd_scene load_steps=21 format=4 uid="uid://d1whs8f10sg5k"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_0euoa"]
 [ext_resource type="Texture2D" uid="uid://bcwonug2wnjq" path="res://Art/Environment/Factory/factory2.PNG" id="2_27u7m"]
@@ -9,8 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_f1di1"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="11_pcfby"]
 [ext_resource type="PackedScene" uid="uid://bpv4w4gpof4ko" path="res://Prefabs/WalkableTileMap.tscn" id="11_qoufh"]
+[ext_resource type="PackedScene" uid="uid://djyltequwdddi" path="res://Prefabs/Environment/NPC.tscn" id="12_5advm"]
 [ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="12_q8x88"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="13_nrxpd"]
+[ext_resource type="Resource" uid="uid://bui0gqwccxde0" path="res://Content/Characters/Character_Worker.tres" id="13_pa13g"]
+[ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="14_6ops5"]
 
 [sub_resource type="Resource" id="Resource_0euoa"]
 script = ExtResource("2_jqirw")
@@ -20,6 +23,29 @@ This place has always been such a maze.
 ..
 If I recall I go south?"
 Owner = ExtResource("7_ojwug")
+MusicType = 2
+Options = Array[ExtResource("4_25ava")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_6ops5"]
+script = ExtResource("2_jqirw")
+TextToSay = "..
+What do you want?
+..
+My shift is just starting.."
+Owner = ExtResource("13_pa13g")
+MusicType = 2
+Options = Array[ExtResource("4_25ava")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_27u7m"]
+script = ExtResource("2_jqirw")
+TextToSay = ""
+Owner = ExtResource("14_6ops5")
 MusicType = 2
 Options = Array[ExtResource("4_25ava")]([])
 ScreenEffect = 0
@@ -54,6 +80,12 @@ texture = ExtResource("2_27u7m")
 
 [node name="Environment" type="Node2D" parent="."]
 
+[node name="InteractableItem" parent="." instance=ExtResource("12_5advm")]
+position = Vector2(-83, -321)
+frame_progress = 0.13574
+speed_scale = 4.0
+CutScenes = Array[ExtResource("2_jqirw")]([SubResource("Resource_6ops5"), SubResource("Resource_27u7m")])
+
 [node name="Player" parent="." instance=ExtResource("9_ivn82")]
 position = Vector2(786, -1202)
 CurrentArea = 2
@@ -81,6 +113,7 @@ bHideIfCantBeInteracted = false
 CutScenes = Array[ExtResource("2_jqirw")]([SubResource("Resource_pa13g")])
 
 [node name="NavigationRegion2D" parent="." instance=ExtResource("11_qoufh")]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_5advm")
 
 [node name="TileMapLayer" parent="NavigationRegion2D" index="0"]

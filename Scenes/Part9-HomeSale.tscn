@@ -58,7 +58,7 @@ visible = false
 
 [node name="SceneDestroyListener" type="Node2D" parent="." node_paths=PackedStringArray("ObjectsToListenTo")]
 script = ExtResource("11_yodkn")
-ObjectsToListenTo = [NodePath("../InteractableItem"), NodePath("../InteractableItem2"), NodePath("../InteractableItem3")]
+ObjectsToListenTo = [null, null, null]
 SceneToChangeTo = "uid://dbd4fbek6nevu"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

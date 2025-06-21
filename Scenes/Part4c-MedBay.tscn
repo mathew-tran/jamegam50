@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://b8637mr6auwa8"]
+[gd_scene load_steps=30 format=4 uid="uid://b8637mr6auwa8"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_ph4la"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_5yykm"]
@@ -21,8 +21,18 @@
 
 [sub_resource type="Resource" id="Resource_0euoa"]
 script = ExtResource("2_5yykm")
-TextToSay = "You see an AI Assistant at the desk. 
-No one else seems to be here."
+TextToSay = "You enter the room."
+MusicType = 2
+Options = Array[ExtResource("3_enbjr")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_enbjr"]
+script = ExtResource("2_5yykm")
+TextToSay = "Anyone here??
+.."
+Owner = ExtResource("4_7qh8p")
 MusicType = 2
 Options = Array[ExtResource("3_enbjr")]([])
 ScreenEffect = 0
@@ -43,8 +53,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_7a2xq"]
 script = ExtResource("2_5yykm")
-TextToSay = "You go upto the AI Assistant.
-"
+TextToSay = "Your chip begins activate."
 BackgroundImage = ExtResource("11_uah4r")
 MusicType = 2
 SFX = ExtResource("12_6uqy6")
@@ -54,10 +63,19 @@ EndCutSceneSubscriber = NodePath("")
 FlagSet = ExtResource("9_p2ox6")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_7qh8p"]
+script = ExtResource("2_5yykm")
+TextToSay = "After analyzing your bio data and your insurance policy, the chip begins to speak"
+MusicType = 2
+Options = Array[ExtResource("3_enbjr")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [sub_resource type="Resource" id="Resource_jaiep"]
 script = ExtResource("2_5yykm")
 TextToSay = "EMPLOYEE 2329.
-YOU WERE REGISTERED FOR A MEDICAL EXAMINATION UNDER THE VETERANS ASSISTANCE PROGRAMME.
+YOU ARE REGISTERED FOR A MEDICAL EXAMINATION UNDER THE VETERANS ASSISTANCE PROGRAMME.
 ..
 ..
 APPROXIMATE WAITING TIME: 58 MONTHS.
@@ -74,7 +92,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [sub_resource type="Resource" id="Resource_xkshq"]
 script = ExtResource("2_5yykm")
 TextToSay = "...
-You damn machine, I hope you die!"
+No help anytime soon.."
 Owner = ExtResource("4_7qh8p")
 MusicType = 2
 Options = Array[ExtResource("3_enbjr")]([])
@@ -89,7 +107,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-44, 145, -113, 1265, 1
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ph4la")
-StartingCutScene = Array[ExtResource("2_5yykm")]([SubResource("Resource_0euoa")])
+StartingCutScene = Array[ExtResource("2_5yykm")]([SubResource("Resource_0euoa"), SubResource("Resource_enbjr")])
 Delay = -1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -159,7 +177,7 @@ FlagToListenTo = ExtResource("9_p2ox6")
 position = Vector2(571, 695)
 SceneToChangeTo = "uid://dihft4ato04q1"
 bHideIfCantBeInteracted = false
-CutScenes = Array[ExtResource("2_5yykm")]([SubResource("Resource_7a2xq"), SubResource("Resource_jaiep"), SubResource("Resource_xkshq")])
+CutScenes = Array[ExtResource("2_5yykm")]([SubResource("Resource_7a2xq"), SubResource("Resource_7qh8p"), SubResource("Resource_jaiep"), SubResource("Resource_xkshq")])
 
 [node name="NavigationRegion2D" parent="." instance=ExtResource("18_enbjr")]
 navigation_polygon = SubResource("NavigationPolygon_7qh8p")

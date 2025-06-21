@@ -2208,8 +2208,8 @@ shape = SubResource("CapsuleShape2D_rgh2o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
-position = Vector2(0, -167)
-zoom = Vector2(0.9, 0.9)
+position = Vector2(0, -172)
+zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

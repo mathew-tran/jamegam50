@@ -1,19 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr3mstg62i332"]
+[gd_scene load_steps=6 format=3 uid="uid://cr3mstg62i332"]
 
 [ext_resource type="PackedScene" uid="uid://c3l54mkl1be42" path="res://Prefabs/Environment/InteractableItem.tscn" id="1_q4mim"]
 [ext_resource type="Script" uid="uid://cxr6tu35485wj" path="res://Scripts/InteractableItemChangeSprite.gd" id="2_d1ktl"]
 [ext_resource type="Texture2D" uid="uid://borwyfesgvafa" path="res://Art/Environment/InteractableObjectPlaceholderOpened.png" id="3_pbsqk"]
-[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="4_wp3wt"]
-[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="5_uibst"]
-
-[sub_resource type="Resource" id="Resource_uibst"]
-script = ExtResource("4_wp3wt")
-TextToSay = "There is nothing in here."
-MusicType = 2
-Options = Array[ExtResource("5_uibst")]([])
-ScreenEffect = 0
-EndCutSceneSubscriber = NodePath("")
-metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp3wt"]
 resource_local_to_scene = true
@@ -27,7 +16,6 @@ size = Vector2(150, 149)
 [node name="InteractableItem" instance=ExtResource("1_q4mim")]
 script = ExtResource("2_d1ktl")
 PostCutSceneTexture = ExtResource("3_pbsqk")
-CutScenes = Array[ExtResource("4_wp3wt")]([SubResource("Resource_uibst")])
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_wp3wt")
