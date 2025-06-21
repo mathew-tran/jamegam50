@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvoydeg05t3xe"]
+[gd_scene load_steps=13 format=3 uid="uid://dvoydeg05t3xe"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_5gkrr"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_0osii"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_evgd8"]
 [ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="4_5gkrr"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="5_m2c28"]
+[ext_resource type="Texture2D" uid="uid://dhm62628o5ijr" path="res://Art/UI/TeleportArea.png" id="6_0osii"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_hmfqx"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_2xft7"]
 
@@ -47,10 +48,9 @@ Delay = 0.5
 
 [node name="OutsideNearHomeArea" parent="." instance=ExtResource("5_m2c28")]
 
-[node name="Sprite2D2" parent="OutsideNearHomeArea" index="1"]
-position = Vector2(1439, 425)
-
-[node name="InteractableItem" parent="OutsideNearHomeArea" index="2"]
+[node name="InteractableItem" parent="OutsideNearHomeArea" index="1"]
+position = Vector2(5144, 531)
+texture = ExtResource("6_0osii")
 SceneToChangeTo = "uid://bl3yxwcfopbm"
 
 [node name="CollisionShape2D" parent="OutsideNearHomeArea/InteractableItem/Area2D" index="0"]
@@ -59,13 +59,13 @@ shape = SubResource("RectangleShape2D_5gkrr")
 [node name="CollisionShape2D" parent="OutsideNearHomeArea/InteractableItem/StaticBody2D" index="0"]
 shape = SubResource("RectangleShape2D_0osii")
 
-[node name="Blocker7" parent="OutsideNearHomeArea" index="4"]
+[node name="Blocker7" parent="OutsideNearHomeArea" index="3"]
 position = Vector2(406, 764)
 
-[node name="Blocker4" parent="OutsideNearHomeArea" index="7"]
+[node name="Blocker4" parent="OutsideNearHomeArea" index="6"]
 position = Vector2(115, 399)
 
-[node name="Blocker5" parent="OutsideNearHomeArea" index="8"]
+[node name="Blocker5" parent="OutsideNearHomeArea" index="7"]
 position = Vector2(1933, 421)
 
 [node name="Player" parent="." instance=ExtResource("6_hmfqx")]

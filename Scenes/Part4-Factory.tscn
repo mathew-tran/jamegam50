@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=29 format=3 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -148,6 +148,17 @@ ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_xkshq"]
+script = ExtResource("2_72s53")
+TextToSay = "...
+You damn machine, I hope you die!"
+Owner = ExtResource("9_41onr")
+MusicType = 2
+Options = Array[ExtResource("3_lfjbx")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7qjir")
 StartingCutScene = Array[ExtResource("2_72s53")]([SubResource("Resource_7qjir"), SubResource("Resource_72s53"), SubResource("Resource_lfjbx"), SubResource("Resource_er777"), SubResource("Resource_1matk")])
@@ -214,4 +225,5 @@ FlagToListenTo = ExtResource("13_41onr")
 [node name="InteractableDoor" parent="." instance=ExtResource("11_72s53")]
 position = Vector2(1854, 590)
 SceneToChangeTo = "uid://dihft4ato04q1"
-CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq"), SubResource("Resource_jaiep")])
+bHideIfCantBeInteracted = false
+CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq"), SubResource("Resource_jaiep"), SubResource("Resource_xkshq")])

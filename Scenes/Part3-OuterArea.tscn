@@ -183,7 +183,7 @@ visible = false
 [node name="InteractableItem" type="Sprite2D" parent="."]
 position = Vector2(4042, 325)
 texture = ExtResource("12_apx80")
-offset = Vector2(250, 0)
+offset = Vector2(500, 0)
 script = ExtResource("12_8bmng")
 SceneToChangeTo = "uid://ynu4hab6besn"
 InteractText = "Go to work"

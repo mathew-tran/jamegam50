@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_8urp1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_uq5xe"]
-[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="3_2ejhk"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="3_bxgyb"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_bxgyb"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_l54pq"]
 [ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="6_bxgyb"]
@@ -16,7 +16,7 @@
 script = ExtResource("2_uq5xe")
 TextToSay = "!!!
 Ugh.."
-BackgroundImage = ExtResource("3_2ejhk")
+BackgroundImage = ExtResource("3_bxgyb")
 Owner = ExtResource("5_l54pq")
 MusicType = 4
 Options = Array[ExtResource("4_bxgyb")]([])
@@ -29,7 +29,7 @@ script = ExtResource("2_uq5xe")
 TextToSay = "You black out..
 Sometime later. You find yourself laying in bed at home. Trying to get up.
 "
-BackgroundImage = ExtResource("3_2ejhk")
+BackgroundImage = ExtResource("3_bxgyb")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [sub_resource type="Resource" id="Resource_ovl7w"]
 script = ExtResource("2_uq5xe")
 TextToSay = "..."
-BackgroundImage = ExtResource("3_2ejhk")
+BackgroundImage = ExtResource("3_bxgyb")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([])
 ScreenEffect = 0
@@ -71,7 +71,7 @@ metadata/_custom_type_script = "uid://dvueh6b07v70v"
 [sub_resource type="Resource" id="Resource_0the6"]
 script = ExtResource("2_uq5xe")
 TextToSay = ".. I can't take it anymore.. It hurts so bad.."
-BackgroundImage = ExtResource("3_2ejhk")
+BackgroundImage = ExtResource("3_bxgyb")
 Owner = ExtResource("5_l54pq")
 MusicType = 2
 Options = Array[ExtResource("4_bxgyb")]([SubResource("Resource_06vck")])

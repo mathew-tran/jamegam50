@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://bg5rv4fo3we8r"]
+[gd_scene load_steps=30 format=3 uid="uid://bg5rv4fo3we8r"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
-[ext_resource type="Texture2D" uid="uid://col6mb1s1fvko" path="res://Art/CutSceneStills/Test2.png" id="3_3rod6"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="4_aaji3"]
 [ext_resource type="Resource" uid="uid://rdwh1ys6h2x" path="res://Content/Characters/Character_Player.tres" id="5_od1vv"]
 [ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="6_3rod6"]
@@ -11,16 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_pvgoq"]
 [ext_resource type="PackedScene" uid="uid://cd7vultm6esdi" path="res://Prefabs/Environment/OneTimeCollideCutScene.tscn" id="8_ia3fu"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="10_7rjx3"]
-[ext_resource type="Texture2D" uid="uid://dbeodcufdlern" path="res://Art/CutSceneStills/Test3.png" id="10_s7xk8"]
 [ext_resource type="Resource" uid="uid://d11bgo02eako0" path="res://Content/StoryFlags/FLAG_007_FIRST_DREAM.tres" id="11_7rjx3"]
 [ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="11_od1vv"]
 [ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="12_7rjx3"]
 [ext_resource type="Texture2D" uid="uid://dfmwc7ld0mshy" path="res://Art/CutSceneStills/hallucination1.PNG" id="14_pvgoq"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="16_pvgoq"]
 
 [sub_resource type="Resource" id="Resource_1awfp"]
 script = ExtResource("2_pg5py")
 TextToSay = "You suddenly find yourself among the clouds."
-BackgroundImage = ExtResource("3_3rod6")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
 ScreenEffect = 0
@@ -29,7 +27,11 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_5uir8"]
 script = ExtResource("2_pg5py")
-TextToSay = "I want..
+TextToSay = "What’s this?
+Am I… 
+Am I dead?
+..
+I want..
 I want to walk a bit. It's God's will."
 Owner = ExtResource("5_od1vv")
 MusicType = 1
@@ -45,6 +47,33 @@ bg_color = Color(0, 0, 0, 1)
 script = ExtResource("2_pg5py")
 TextToSay = "A space whale suddenly swoops over.
 You begin to speak to yourself."
+BackgroundImage = ExtResource("11_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_pvgoq"]
+script = ExtResource("2_pg5py")
+TextToSay = "Where..
+Where am I? Am I dead?
+"
+BackgroundImage = ExtResource("11_od1vv")
+Owner = ExtResource("5_od1vv")
+MusicType = 2
+Options = Array[ExtResource("4_aaji3")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_ia3fu"]
+script = ExtResource("2_pg5py")
+TextToSay = "The whale talks,
+\"No my friend... you are more alive than ever.\"
+\"Come closer I'll show you a life, a life that everyone deserves\"
+\"Life without the darkening of harsh reality\"
+.."
 BackgroundImage = ExtResource("11_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -117,7 +146,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "Some time passes.
 You exhange money with a stranger in a mask."
-BackgroundImage = ExtResource("10_s7xk8")
+BackgroundImage = ExtResource("16_pvgoq")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
 ScreenEffect = 0
@@ -128,7 +157,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "But what I got was a free sample. 
 I needed to pay for the next doses. And it was very expensive.."
-BackgroundImage = ExtResource("10_s7xk8")
+BackgroundImage = ExtResource("16_pvgoq")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -142,7 +171,7 @@ TextToSay = "...
 And then, I had no money left. 
 I spent everything for an opportunity to go on a fantastic sky journey saddling the black whales.
 I didn’t have a choice… I had to sell my property"
-BackgroundImage = ExtResource("3_3rod6")
+BackgroundImage = ExtResource("16_pvgoq")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -218,5 +247,5 @@ FlagToListenTo = ExtResource("11_7rjx3")
 
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
 position = Vector2(-79, 241)
-Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
+Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_pvgoq"), SubResource("Resource_ia3fu"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
 SceneToChangeTo = "uid://2xyyik2trpn"

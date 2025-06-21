@@ -32,6 +32,7 @@ Delay = -1.0
 [node name="Environment" parent="." instance=ExtResource("5_667mn")]
 
 [node name="InteractableDoor" parent="Environment" index="9"]
+bHideIfCantBeInteracted = false
 TriggerState = 2
 
 [node name="InteractableItem" parent="." instance=ExtResource("6_qri1s")]

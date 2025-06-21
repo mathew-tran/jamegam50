@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_sgxcx"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="8_a3i65"]
 [ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="9_a3i65"]
-[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="9_f7j8j"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="10_a3i65"]
 [ext_resource type="Texture2D" uid="uid://djr107yw8653y" path="res://Art/Environment/House/notes.PNG" id="10_dl60f"]
 [ext_resource type="Resource" uid="uid://osbtdc63buww" path="res://Content/StoryFlags/FLAG_003_PICKUP_SHEET.tres" id="11_jwf1m"]
 [ext_resource type="AudioStream" uid="uid://b7m2orjiytd7l" path="res://Audio/SFX/static.ogg" id="12_xaqea"]
@@ -29,7 +29,12 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_ushc4"]
 script = ExtResource("6_20y4e")
-TextToSay = "FUCK..... FUCK."
+TextToSay = "FUCK..... FUCK.
+.. It was a mistake!
+The pain.. it's horrible.
+I gotta get this crap out of my head! 
+..
+God save my sinful soul.."
 Owner = ExtResource("9_a3i65")
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
@@ -42,7 +47,7 @@ script = ExtResource("6_20y4e")
 TextToSay = "You lose conciousness.
 ..
 ."
-BackgroundImage = ExtResource("9_f7j8j")
+BackgroundImage = ExtResource("10_a3i65")
 MusicType = 2
 Options = Array[ExtResource("7_sgxcx")]([])
 ScreenEffect = 0
@@ -67,9 +72,9 @@ metadata/_custom_type_script = "uid://dvueh6b07v70v"
 
 [sub_resource type="Resource" id="Resource_gd6id"]
 script = ExtResource("6_20y4e")
-TextToSay = "You wake up.
-There is a sheet in front of you."
+TextToSay = "Huh, what's that?"
 BackgroundImage = ExtResource("10_dl60f")
+Owner = ExtResource("9_a3i65")
 MusicType = 2
 SFX = ExtResource("12_xaqea")
 Options = Array[ExtResource("7_sgxcx")]([SubResource("Resource_4646v")])
