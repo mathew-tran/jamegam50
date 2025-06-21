@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://sb848qrectgf"]
+[gd_scene load_steps=22 format=3 uid="uid://sb848qrectgf"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_a3i65"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_2t8ut"]
@@ -54,11 +54,25 @@ ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_a3i65"]
+script = ExtResource("7_sgxcx")
+OptionName = "Continue."
+CutScenes = Array[ExtResource("6_20y4e")]([])
+StoryFlagSet = ExtResource("11_jwf1m")
+metadata/_custom_type_script = "uid://dvueh6b07v70v"
+
 [sub_resource type="Resource" id="Resource_kbb2x"]
 script = ExtResource("6_20y4e")
-TextToSay = "The sheet was picked up."
+TextToSay = "The sheet was picked up.
+The text reads, 
+\"SEVERE PAINS? FOREIGN BODY INSIDE YOUR BRAIN CAUSES SUFFERING?\"
+\"THERE IS A SOLUTION!\"
+\"BLACK WHALE — THE BEST OPTION AND YOUR INDISPENSABLE PAL.\"
+\"CALL 1-349-843-BLA-WHA\"
+... \"FIRST USE IS FREE! THERE ARE LIMITED SUPPLIES SO CALL NOW!\"
+.."
 MusicType = 2
-Options = Array[ExtResource("7_sgxcx")]([])
+Options = Array[ExtResource("7_sgxcx")]([SubResource("Resource_a3i65")])
 ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
@@ -67,7 +81,6 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("7_sgxcx")
 OptionName = "Pick up the sheet."
 CutScenes = Array[ExtResource("6_20y4e")]([SubResource("Resource_kbb2x")])
-StoryFlagSet = ExtResource("11_jwf1m")
 metadata/_custom_type_script = "uid://dvueh6b07v70v"
 
 [sub_resource type="Resource" id="Resource_gd6id"]
