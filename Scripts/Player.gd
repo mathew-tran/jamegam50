@@ -25,9 +25,13 @@ func StopMoving():
 func UpdateAnim():
 	var animName = GetAnimType()
 	if TargetPosition != GetPlayerPosition():
-		animName += "moveleft"
+		if $NavigationAgent2D.get_next_path_position().x > GetPlayerPosition().x:
+			animName += "moveright"
+		else:
+			animName += "moveleft"
 	else:
 		animName += "idle"
+		$AnimatedSprite2D.flip_h = false
 	$AnimatedSprite2D.play(animName)
 	
 func GetAnimType():
