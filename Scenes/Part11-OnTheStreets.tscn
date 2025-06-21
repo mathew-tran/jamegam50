@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://dpthi3sors0b7" path="res://Content/Characters/Character_Narrator.tres" id="8_bn4lc"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="8_bvtxt"]
 [ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="8_jt823"]
-[ext_resource type="Texture2D" uid="uid://bboqsmd00emng" path="res://Art/CutSceneStills/Test1.png" id="10_twhrk"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="9_bn4lc"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="14_1slwb"]
 
 [sub_resource type="Resource" id="Resource_ih121"]
@@ -22,7 +22,7 @@ I can't, it's unbearable.
 The pain. It has returned.
 God bless me, stop this suffering.
 "
-BackgroundImage = ExtResource("10_twhrk")
+BackgroundImage = ExtResource("9_bn4lc")
 Owner = ExtResource("6_1slwb")
 MusicType = 2
 SFX = ExtResource("8_bvtxt")

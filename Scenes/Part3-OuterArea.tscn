@@ -19,7 +19,8 @@
 [sub_resource type="Resource" id="Resource_kokk2"]
 script = ExtResource("2_gbgjl")
 TextToSay = "...
-A homeless man comes up to you
+As you walk to the bus..
+A homeless man to the left of you begins to speak..
 .."
 MusicType = 2
 Options = Array[ExtResource("3_8bmng")]([])

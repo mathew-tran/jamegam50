@@ -33,7 +33,11 @@ script = ExtResource("2_1n0y3")
 TextToSay = "...
 Another day, another day.... 
 I would really like myself to be in a coffin rather than here.
-... I should go to work."
+...
+ugh..
+I've been getting headaches lately. I am not sure why.
+... I should go to work.
+I got no time for this. I can't be late."
 BackgroundImage = ExtResource("3_bpi7m")
 Owner = ExtResource("6_tj4bo")
 MusicType = 0
@@ -52,7 +56,6 @@ Delay = -1.0
 [node name="InteractableDoor" parent="Environment" index="9"]
 position = Vector2(1635, 733)
 SceneToChangeTo = "uid://dvoydeg05t3xe"
-bHideIfCantBeInteracted = false
 
 [node name="Player" parent="." instance=ExtResource("8_pyjmp")]
 position = Vector2(428, 471)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8637mr6auwa8"]
+[gd_scene load_steps=27 format=3 uid="uid://b8637mr6auwa8"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_ph4la"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_5yykm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dekqm5mkxb7u3" path="res://Art/Environment/Factory/medbed.PNG" id="7_7qh8p"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_lysj6"]
 [ext_resource type="Texture2D" uid="uid://dtntdhk7b5i64" path="res://Art/Environment/Factory/medtable.PNG" id="8_5pp0y"]
+[ext_resource type="Texture2D" uid="uid://cvriu5ai160uy" path="res://Art/Environment/Factory/factorynotes.PNG" id="8_enbjr"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="8_yt5v2"]
 [ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="9_p2ox6"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="10_11tip"]
@@ -124,6 +125,10 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D"]
 position = Vector2(-4, 15)
 shape = SubResource("RectangleShape2D_yt5v2")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D4/StaticBody2D"]
+position = Vector2(17, -45)
+texture = ExtResource("8_enbjr")
 
 [node name="Player" parent="." instance=ExtResource("6_lncck")]
 position = Vector2(57, 951)

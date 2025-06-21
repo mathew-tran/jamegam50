@@ -32,6 +32,7 @@ TextToSay = "You get to work assembling computer chips.
 A few hours pass.
 ..
 A factory sound begins to ring."
+BackgroundImage = ExtResource("13_onsst")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
 ScreenEffect = 0
@@ -88,7 +89,10 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_72s53")
 TextToSay = "Ugh.
 ..
-I need.. I need help. I gotta go to the medical unit."
+I need.. I need help. I gotta go to the medical room to see what's going on.
+I keep feeling worse by the day..
+.. 
+It's somewhere south.. I think.."
 Owner = ExtResource("9_41onr")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
@@ -104,9 +108,17 @@ metadata/_custom_type_script = "uid://dvueh6b07v70v"
 
 [sub_resource type="Resource" id="Resource_1matk"]
 script = ExtResource("2_72s53")
-TextToSay = "..
-This circuit board pisses me off..
-It’s really uncomfortable to be aware that some crap is inside my brain
+TextToSay = "The same thing. Every day. 
+Now I understand how people go crazy.
+..
+Why have I been born in this place? 
+In this time? 
+All my life is just an endless spiral of suffering. And I work while standing up?.. It's like they’re making fun of me..
+...
+Also......
+This circuit board makes me uncomfortable..
+It pisses me off to know that some electric crap is inside my brain
+..
 "
 Owner = ExtResource("9_41onr")
 MusicType = 2

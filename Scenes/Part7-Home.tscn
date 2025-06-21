@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbj4s2vv6cope"]
+[gd_scene load_steps=15 format=3 uid="uid://cbj4s2vv6cope"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_up07u"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pao0k"]
@@ -10,9 +10,24 @@
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="7_3s3xf"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="8_k7jmg"]
 
+[sub_resource type="Resource" id="Resource_pao0k"]
+script = ExtResource("2_pao0k")
+TextToSay = "Some time passes.
+In a desperate attempt to stop these migraines. You ended up getting the free sample of the Black Whale.
+..
+Now you find yourself at home with the \"Black Whale\" at the table.
+The supposed drug that can help with these migraines.
+"
+BackgroundImage = ExtResource("5_a7dly")
+MusicType = 2
+Options = Array[ExtResource("3_a7dly")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [sub_resource type="Resource" id="Resource_oc7sc"]
 script = ExtResource("2_pao0k")
-TextToSay = "Finally... the \"Black Whale\"
+TextToSay = "Finally... it's here...
 .. Maybe this thing will finally help me..."
 Owner = ExtResource("4_a7dly")
 MusicType = 2
@@ -23,7 +38,8 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_u0vg6"]
 script = ExtResource("2_pao0k")
-TextToSay = "Oh fuck..
+TextToSay = "!!!
+Oh fuck..
 ..
 My God, the pain. Is it finally over? I can't believe it.."
 BackgroundImage = ExtResource("5_a7dly")
@@ -37,7 +53,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [sub_resource type="Resource" id="Resource_p2i1t"]
 script = ExtResource("2_pao0k")
-TextToSay = "You drop to the ground immediately."
+TextToSay = "You start to doze off immediately."
 BackgroundImage = ExtResource("5_a7dly")
 MusicType = 2
 Options = Array[ExtResource("3_a7dly")]([])
@@ -58,11 +74,15 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_up07u")
-StartingCutScene = Array[ExtResource("2_pao0k")]([SubResource("Resource_oc7sc"), SubResource("Resource_u0vg6"), SubResource("Resource_p2i1t"), SubResource("Resource_00ljf")])
+StartingCutScene = Array[ExtResource("2_pao0k")]([SubResource("Resource_pao0k"), SubResource("Resource_oc7sc"), SubResource("Resource_u0vg6"), SubResource("Resource_p2i1t"), SubResource("Resource_00ljf")])
 Delay = -1.0
 PostTransitionScene = "uid://bg5rv4fo3we8r"
 
 [node name="Environment" parent="." instance=ExtResource("6_10vx3")]
+
+[node name="InteractableDoor" parent="Environment" index="9"]
+bHideIfCantBeInteracted = true
+TriggerState = 2
 
 [node name="Node2D" type="Node2D" parent="."]
 
