@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbd4fbek6nevu"]
+[gd_scene load_steps=15 format=3 uid="uid://dbd4fbek6nevu"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7byfm"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_bgq4r"]
@@ -24,6 +24,20 @@ ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="Resource" id="Resource_bgq4r"]
+script = ExtResource("2_bgq4r")
+TextToSay = "The note reads, 
+\"Dear Mr W.!\"
+\"We regret to inform you that, due to frequent absences from work\"
+..  “Watcher Whale\" decided to fire you from the factory.\"
+..
+"
+MusicType = 2
+Options = Array[ExtResource("3_xjr2p")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7byfm")
 StartingCutScene = Array[ExtResource("2_bgq4r")]([SubResource("Resource_1awfp")])
@@ -34,6 +48,13 @@ Delay = -1.0
 [node name="InteractableDoor" parent="Environment" index="9"]
 bHideIfCantBeInteracted = true
 TriggerState = 2
+
+[node name="InteractableItem4" parent="Environment" index="10"]
+position = Vector2(1178, 732)
+CutScenes = Array[ExtResource("2_bgq4r")]([SubResource("Resource_bgq4r")])
+
+[node name="NavigationRegion2D" parent="Environment" index="15"]
+visible = false
 
 [node name="InteractableItem" parent="." instance=ExtResource("6_qri1s")]
 position = Vector2(1415, 317)

@@ -24,7 +24,9 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_0osii")
 TextToSay = "Since my childhood it was always unsafe on the streets.
 ..
-Bunches of junkies, pickpockets and other dregs of society."
+Bunches of junkies, pickpockets and other dregs of society.
+The politicians don’t give a shit about our future. 
+Nothing has gotten beter here for decades…"
 Owner = ExtResource("4_5gkrr")
 MusicType = 2
 Options = Array[ExtResource("3_evgd8")]([])

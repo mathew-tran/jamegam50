@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bg5rv4fo3we8r"]
+[gd_scene load_steps=33 format=4 uid="uid://bg5rv4fo3we8r"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_bjs68"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_pg5py"]
@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://d11bgo02eako0" path="res://Content/StoryFlags/FLAG_007_FIRST_DREAM.tres" id="11_7rjx3"]
 [ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="11_od1vv"]
 [ext_resource type="Texture2D" uid="uid://rblbyjmfjndq" path="res://Art/CutSceneStills/WakeUp.PNG" id="12_7rjx3"]
+[ext_resource type="Texture2D" uid="uid://5c1uskvt440l" path="res://Art/CutSceneStills/hallucination2.PNG" id="13_ia3fu"]
+[ext_resource type="Texture2D" uid="uid://c1g27h13x3l3r" path="res://Art/CutSceneStills/hallucination3.PNG" id="14_ltpxr"]
 [ext_resource type="Texture2D" uid="uid://dfmwc7ld0mshy" path="res://Art/CutSceneStills/hallucination1.PNG" id="14_pvgoq"]
 [ext_resource type="PackedScene" uid="uid://bpv4w4gpof4ko" path="res://Prefabs/WalkableTileMap.tscn" id="15_7rjx3"]
 [ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="16_pvgoq"]
@@ -110,7 +112,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 [sub_resource type="Resource" id="Resource_t8l5c"]
 script = ExtResource("2_pg5py")
 TextToSay = "Unbelievable. The fresh air washed over my face, I never felt this relief and enjoyment before."
-BackgroundImage = ExtResource("14_pvgoq")
+BackgroundImage = ExtResource("13_ia3fu")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -122,7 +124,7 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("2_pg5py")
 TextToSay = "Other black whales, appearing from nowhere, joined our journey. 
 And we flew… We flew together in this infinite space of happiness and endless delight."
-BackgroundImage = ExtResource("11_od1vv")
+BackgroundImage = ExtResource("14_ltpxr")
 Owner = ExtResource("5_od1vv")
 MusicType = 2
 Options = Array[ExtResource("4_aaji3")]([])
@@ -218,7 +220,7 @@ FlagToListenTo = ExtResource("11_7rjx3")
 [node name="OneTimeCollideCutScene" parent="." instance=ExtResource("8_ia3fu")]
 position = Vector2(-79, 241)
 Cutscenes = Array[ExtResource("2_pg5py")]([SubResource("Resource_8g6cp"), SubResource("Resource_pvgoq"), SubResource("Resource_ia3fu"), SubResource("Resource_p06xb"), SubResource("Resource_wqo1j"), SubResource("Resource_t8l5c"), SubResource("Resource_hkhdp"), SubResource("Resource_cnyuk"), SubResource("Resource_uwo6w"), SubResource("Resource_svdgm"), SubResource("Resource_pacvq")])
-SceneToChangeTo = "uid://2xyyik2trpn"
+SceneToChangeTo = "uid://dbd4fbek6nevu"
 
 [node name="NavigationRegion2D" parent="." instance=ExtResource("15_7rjx3")]
 navigation_polygon = SubResource("NavigationPolygon_pvgoq")

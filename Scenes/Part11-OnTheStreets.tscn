@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://die2tva6wo1hx"]
+[gd_scene load_steps=24 format=3 uid="uid://die2tva6wo1hx"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_1slwb"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_iotay"]
@@ -10,7 +10,9 @@
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_xp85i"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="8_bvtxt"]
 [ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="8_jt823"]
+[ext_resource type="Texture2D" uid="uid://cnocsu8kkdcxd" path="res://Art/CutSceneStills/end.PNG" id="9_1slwb"]
 [ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="9_bn4lc"]
+[ext_resource type="Texture2D" uid="uid://c1g27h13x3l3r" path="res://Art/CutSceneStills/hallucination3.PNG" id="9_iotay"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="14_1slwb"]
 
 [sub_resource type="Resource" id="Resource_ih121"]
@@ -70,10 +72,19 @@ TextToSay = "And I set off on a new endless journey.
 ..
 ....
 A journey between countless stars and planets.
-.. ..
-THE END."
-BackgroundImage = ExtResource("8_jt823")
+.. .."
+BackgroundImage = ExtResource("9_iotay")
 Owner = ExtResource("6_1slwb")
+MusicType = 2
+Options = Array[ExtResource("7_xp85i")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_1ddwr"]
+script = ExtResource("6_5fu11")
+TextToSay = "THE END."
+BackgroundImage = ExtResource("9_1slwb")
 MusicType = 2
 Options = Array[ExtResource("7_xp85i")]([])
 ScreenEffect = 0
@@ -95,7 +106,7 @@ bg_color = Color(0, 0, 0, 1)
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_1slwb")
-StartingCutScene = Array[ExtResource("6_5fu11")]([SubResource("Resource_ih121"), SubResource("Resource_bn4lc"), SubResource("Resource_1slwb"), SubResource("Resource_iotay"), SubResource("Resource_d10xs")])
+StartingCutScene = Array[ExtResource("6_5fu11")]([SubResource("Resource_ih121"), SubResource("Resource_bn4lc"), SubResource("Resource_1slwb"), SubResource("Resource_iotay"), SubResource("Resource_d10xs"), SubResource("Resource_1ddwr")])
 Delay = 1.0
 PostTransitionScene = "uid://b0c7oohliswdv"
 

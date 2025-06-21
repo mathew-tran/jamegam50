@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bl3yxwcfopbm"]
+[gd_scene load_steps=28 format=4 uid="uid://bl3yxwcfopbm"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_l01m1"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_gbgjl"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://dc1butuwnqt30" path="res://Content/Characters/Character_HomelessMan.tres" id="4_apx80"]
 [ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="5_8bmng"]
 [ext_resource type="Resource" uid="uid://c61lgyo74kdki" path="res://Content/StoryFlags/FLAG_001_NICE_TO_HOMELESS.tres" id="6_moamj"]
-[ext_resource type="Resource" uid="uid://t3fk5g3bhmlh" path="res://Content/StoryFlags/FLAG_002_MEAN_TO_HOMELESS.tres" id="7_471px"]
 [ext_resource type="Texture2D" uid="uid://b0fagnaynfuct" path="res://Art/Environment/Streets/Street2.PNG" id="8_l01m1"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_hif2b"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_vkqv7"]
@@ -90,28 +89,12 @@ OptionName = "Nah, leave me alone!"
 CutScenes = Array[ExtResource("2_gbgjl")]([SubResource("Resource_u1qu8")])
 metadata/_custom_type_script = "uid://dvueh6b07v70v"
 
-[sub_resource type="Resource" id="Resource_msf4v"]
-script = ExtResource("2_gbgjl")
-TextToSay = "You move past the homeless man. Knocking him down by accident."
-MusicType = 2
-Options = Array[ExtResource("3_8bmng")]([])
-ScreenEffect = 0
-EndCutSceneSubscriber = NodePath("")
-metadata/_custom_type_script = "uid://byqjsgo6271ad"
-
-[sub_resource type="Resource" id="Resource_2guxd"]
-script = ExtResource("3_8bmng")
-OptionName = "Go away, you old bastard! You're holding me up! [repels]"
-CutScenes = Array[ExtResource("2_gbgjl")]([SubResource("Resource_msf4v")])
-StoryFlagSet = ExtResource("7_471px")
-metadata/_custom_type_script = "uid://dvueh6b07v70v"
-
 [sub_resource type="Resource" id="Resource_o5p0b"]
 script = ExtResource("2_gbgjl")
 TextToSay = ".. Well.. what do you say?"
 Owner = ExtResource("4_apx80")
 MusicType = 2
-Options = Array[ExtResource("3_8bmng")]([SubResource("Resource_p2vix"), SubResource("Resource_86v50"), SubResource("Resource_2guxd")])
+Options = Array[ExtResource("3_8bmng")]([SubResource("Resource_p2vix"), SubResource("Resource_86v50")])
 ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
