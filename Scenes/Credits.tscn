@@ -111,7 +111,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "Cameron"
+text = "RaisonRiot"
 horizontal_alignment = 1
 
 [node name="Title4" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2/VBoxContainer"]
@@ -131,7 +131,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_i8h6y")
 theme_override_font_sizes/font_size = 50
-text = "Mathew Tran"
+text = "Ichit"
 horizontal_alignment = 1
 
 [node name="Title5" type="Label" parent="CanvasLayer/Panel/ScrollContainer/VBoxContainer2"]

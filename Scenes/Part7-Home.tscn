@@ -89,9 +89,6 @@ TriggerState = 2
 [node name="Player" parent="." instance=ExtResource("7_3s3xf")]
 position = Vector2(-26, 849)
 
-[node name="AnimatedSprite2D" parent="Player" index="1"]
-animation = &"idle"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("8_k7jmg")]
@@ -103,4 +100,5 @@ energy = 2.13
 blend_mode = 2
 
 [editable path="Environment"]
+[editable path="Environment/NavigationRegion2D"]
 [editable path="Player"]

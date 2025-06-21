@@ -62,3 +62,4 @@ FlagToListenTo = ExtResource("12_xjr2p")
 SceneToGoTo = "uid://die2tva6wo1hx"
 
 [editable path="Environment"]
+[editable path="Environment/NavigationRegion2D"]

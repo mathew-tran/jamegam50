@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=28 format=4 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="12_xkshq"]
 [ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="13_41onr"]
 [ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="13_onsst"]
-[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="16_41onr"]
+[ext_resource type="PackedScene" uid="uid://bpv4w4gpof4ko" path="res://Prefabs/WalkableTileMap.tscn" id="15_jaiep"]
 
 [sub_resource type="Resource" id="Resource_7qjir"]
 script = ExtResource("2_72s53")
@@ -140,6 +140,11 @@ ScreenEffect = 0
 EndCutSceneSubscriber = NodePath("")
 metadata/_custom_type_script = "uid://byqjsgo6271ad"
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xkshq"]
+vertices = PackedVector2Array(1677.71, 1125.66, 643.953, 1098, 1354, 1098, 303.109, 506.281, 189.242, 326.141, 1518.8, 336.93, 1354, 566, 310, 566, 280.383, 1088.27, 310, 778, 502, 1094.2, 502, 778)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(5, 0, 2, 6), PackedInt32Array(3, 6, 7), PackedInt32Array(8, 3, 7, 9), PackedInt32Array(10, 8, 9, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(293, 509, 270, 1098, 1690, 1136, 1527, 327, 171, 316)])
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7qjir")
 StartingCutScene = Array[ExtResource("2_72s53")]([SubResource("Resource_7qjir"), SubResource("Resource_72s53"), SubResource("Resource_lfjbx"), SubResource("Resource_er777"), SubResource("Resource_1matk")])
@@ -152,7 +157,7 @@ texture = ExtResource("8_xkshq")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("9_1matk")]
-position = Vector2(817, 716)
+position = Vector2(828, 765)
 CurrentArea = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -178,24 +183,10 @@ bHideIfCantBeInteracted = false
 InteractText = "GO TO FACTORY FLOOR"
 CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq")])
 
-[node name="Blocker" parent="." instance=ExtResource("16_41onr")]
-position = Vector2(63, 497)
+[node name="NavigationRegion2D" parent="." instance=ExtResource("15_jaiep")]
+navigation_polygon = SubResource("NavigationPolygon_xkshq")
 
-[node name="Blocker2" parent="." instance=ExtResource("16_41onr")]
-position = Vector2(156, 1056)
+[node name="TileMapLayer" parent="NavigationRegion2D" index="0"]
+tile_map_data = PackedByteArray("AAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAoAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAoAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAASAAoAAAAAAAAAAAASAAsAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAAIAAwAAAAAAAAAAAAIAA0AAAAAAAAAAAAIAA4AAAAAAAAAAAAIAA8AAAAAAAAAAAAIABAAAAAAAAAAAAAJAAwAAAAAAAAAAAAJAA0AAAAAAAAAAAAJAA4AAAAAAAAAAAAJAA8AAAAAAAAAAAAJABAAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAA0AAAAAAAAAAAAKAA4AAAAAAAAAAAAKAA8AAAAAAAAAAAAKABAAAAAAAAAAAAALAAwAAAAAAAAAAAALAA0AAAAAAAAAAAALAA4AAAAAAAAAAAALAA8AAAAAAAAAAAALABAAAAAAAAAAAAAMAAwAAAAAAAAAAAAMAA0AAAAAAAAAAAAMAA4AAAAAAAAAAAAMAA8AAAAAAAAAAAAMABAAAAAAAAAAAAANAAwAAAAAAAAAAAANAA0AAAAAAAAAAAANAA4AAAAAAAAAAAANAA8AAAAAAAAAAAANABAAAAAAAAAAAAAOAAwAAAAAAAAAAAAOAA0AAAAAAAAAAAAOAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAAOABAAAAAAAAAAAAAPAAwAAAAAAAAAAAAPAA0AAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAPABAAAAAAAAAAAAAQAAwAAAAAAAAAAAAQAA0AAAAAAAAAAAAQAA4AAAAAAAAAAAAQAA8AAAAAAAAAAAAQABAAAAAAAAAAAAARAAwAAAAAAAAAAAARAA0AAAAAAAAAAAARAA4AAAAAAAAAAAARAA8AAAAAAAAAAAARABAAAAAAAAAAAAASAAwAAAAAAAAAAAASAA0AAAAAAAAAAAASAA4AAAAAAAAAAAASAA8AAAAAAAAAAAASABAAAAAAAAAAAAATAAwAAAAAAAAAAAATAA0AAAAAAAAAAAATAA4AAAAAAAAAAAATAA8AAAAAAAAAAAATABAAAAAAAAAAAAA=")
 
-[node name="Blocker3" parent="." instance=ExtResource("16_41onr")]
-position = Vector2(246, 573)
-rotation = 1.57079
-
-[node name="Blocker4" parent="." instance=ExtResource("16_41onr")]
-position = Vector2(436, 980)
-rotation = 1.57079
-
-[node name="Blocker5" parent="." instance=ExtResource("16_41onr")]
-position = Vector2(1454, 193)
-rotation = 1.57079
-
-[node name="Blocker6" parent="." instance=ExtResource("16_41onr")]
-position = Vector2(336, 870)
-rotation = 3.14159
+[editable path="NavigationRegion2D"]

@@ -138,3 +138,4 @@ energy = 2.13
 blend_mode = 2
 
 [editable path="Node2D/OutsideNearHomeArea"]
+[editable path="Node2D/OutsideNearHomeArea/NavigationRegion2D"]

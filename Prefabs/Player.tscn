@@ -1435,19 +1435,21 @@ height = 42.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 5
+collision_mask = 0
 script = ExtResource("1_x3d5u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(-1, 95)
+position = Vector2(-1, -8)
 scale = Vector2(2, 2)
 texture = ExtResource("2_shmu5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -151)
 sprite_frames = SubResource("SpriteFrames_kln2b")
-animation = &"hallucinationmoveleft"
+animation = &"idle"
 speed_scale = 6.0
+offset = Vector2(0, -120)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 103)
@@ -1460,12 +1462,17 @@ zoom = Vector2(0.9, 0.9)
 position_smoothing_enabled = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-avoidance_enabled = true
-radius = 60.0
+path_desired_distance = 10.0
+target_desired_distance = 60.0
+path_max_distance = 300.0
+navigation_layers = 129
+simplify_path = true
+avoidance_mask = 257
 debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0.746519, 0.47743, 0.970292, 1)
-debug_path_custom_line_width = 3.05
+debug_path_custom_point_size = 29.96
+debug_path_custom_line_width = 19.98
 
 [node name="Waypoint" type="Sprite2D" parent="."]
 visible = false
@@ -1478,5 +1485,6 @@ energy = 16.0
 range_item_cull_mask = 2
 texture = ExtResource("3_b43ah")
 
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
+[connection signal="path_changed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_path_changed"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
-[connection signal="waypoint_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_waypoint_reached"]

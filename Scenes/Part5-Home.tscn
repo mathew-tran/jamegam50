@@ -115,3 +115,4 @@ autoplay = true
 script = ExtResource("10_bxgyb")
 
 [editable path="Environment"]
+[editable path="Environment/NavigationRegion2D"]
