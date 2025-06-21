@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://die2tva6wo1hx"]
+[gd_scene load_steps=21 format=3 uid="uid://die2tva6wo1hx"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_1slwb"]
 [ext_resource type="PackedScene" uid="uid://dqir1nb6nyi34" path="res://Prefabs/Environment/PreblockedArea/OutsideNearHomeArea.tscn" id="2_iotay"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://df0b2wa7anxw3" path="res://Content/Characters/Character_Player_Street.tres" id="6_1slwb"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="6_5fu11"]
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="7_xp85i"]
-[ext_resource type="Resource" uid="uid://dpthi3sors0b7" path="res://Content/Characters/Character_Narrator.tres" id="8_bn4lc"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="8_bvtxt"]
 [ext_resource type="Texture2D" uid="uid://bmxsaf08tpagg" path="res://Art/CutSceneStills/WhaleAppearse.PNG" id="8_jt823"]
 [ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="9_bn4lc"]
@@ -69,23 +68,12 @@ metadata/_custom_type_script = "uid://byqjsgo6271ad"
 script = ExtResource("6_5fu11")
 TextToSay = "And I set off on a new endless journey.
 ..
-..
-A journey between countless stars and planets."
+....
+A journey between countless stars and planets.
+.. ..
+THE END."
 BackgroundImage = ExtResource("8_jt823")
 Owner = ExtResource("6_1slwb")
-MusicType = 2
-Options = Array[ExtResource("7_xp85i")]([])
-ScreenEffect = 0
-EndCutSceneSubscriber = NodePath("")
-metadata/_custom_type_script = "uid://byqjsgo6271ad"
-
-[sub_resource type="Resource" id="Resource_1ddwr"]
-script = ExtResource("6_5fu11")
-TextToSay = "...and at the same time, his corpse was still laying on the street. 
-And nobody cared about it, because it was a usual thing for strangers.
-..
-Sometimes they looked at his miserable body, and that was it."
-Owner = ExtResource("8_bn4lc")
 MusicType = 2
 Options = Array[ExtResource("7_xp85i")]([])
 ScreenEffect = 0
@@ -107,7 +95,7 @@ bg_color = Color(0, 0, 0, 1)
 [node name="Node2D" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_1slwb")
-StartingCutScene = Array[ExtResource("6_5fu11")]([SubResource("Resource_ih121"), SubResource("Resource_bn4lc"), SubResource("Resource_1slwb"), SubResource("Resource_iotay"), SubResource("Resource_d10xs"), SubResource("Resource_1ddwr")])
+StartingCutScene = Array[ExtResource("6_5fu11")]([SubResource("Resource_ih121"), SubResource("Resource_bn4lc"), SubResource("Resource_1slwb"), SubResource("Resource_iotay"), SubResource("Resource_d10xs")])
 Delay = 1.0
 PostTransitionScene = "uid://b0c7oohliswdv"
 
