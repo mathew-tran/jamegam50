@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ynu4hab6besn"]
+[gd_scene load_steps=27 format=3 uid="uid://ynu4hab6besn"]
 
 [ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_7qjir"]
 [ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_72s53"]
@@ -6,15 +6,15 @@
 [ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_lfjbx"]
 [ext_resource type="Resource" uid="uid://cka4xesmx7e7g" path="res://Content/Characters/Character_PlayerChip.tres" id="6_bv73p"]
 [ext_resource type="AudioStream" uid="uid://c3x4n6ppqn1ol" path="res://Audio/SFX/pain.wav" id="7_c1c2q"]
-[ext_resource type="PackedScene" uid="uid://d2nqmvbp4c2hu" path="res://Prefabs/Environment/Box.tscn" id="8_7g1ov"]
+[ext_resource type="Texture2D" uid="uid://cgdy8q02w8qt5" path="res://Art/Environment/Factory/factory1.PNG" id="8_xkshq"]
 [ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="9_1matk"]
 [ext_resource type="Resource" uid="uid://dj34nl5s4isfl" path="res://Content/Characters/Character_Player_Factory.tres" id="9_41onr"]
 [ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="10_7a2xq"]
 [ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="11_72s53"]
 [ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="12_xkshq"]
 [ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="13_41onr"]
-[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="13_er777"]
 [ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="13_onsst"]
+[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="16_41onr"]
 
 [sub_resource type="Resource" id="Resource_7qjir"]
 script = ExtResource("2_72s53")
@@ -120,39 +120,8 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_7a2xq"]
 script = ExtResource("2_72s53")
-TextToSay = "You open the door to the medical room.
-"
+TextToSay = "You proceed to look for the medical room."
 BackgroundImage = ExtResource("13_onsst")
-MusicType = 2
-SFX = ExtResource("13_er777")
-Options = Array[ExtResource("3_lfjbx")]([])
-ScreenEffect = 0
-EndCutSceneSubscriber = NodePath("")
-FlagSet = ExtResource("13_41onr")
-metadata/_custom_type_script = "uid://byqjsgo6271ad"
-
-[sub_resource type="Resource" id="Resource_jaiep"]
-script = ExtResource("2_72s53")
-TextToSay = "EMPLOYEE 2329.
-YOU WERE REGISTERED FOR A MEDICAL EXAMINATION UNDER THE VETERANS ASSISTANCE PROGRAMME.
-..
-..
-APPROXIMATE WAITING TIME: 58 MONTHS.
-..
-...
-THANK YOU FOR YOUR UNDERSTANDING!"
-Owner = ExtResource("6_bv73p")
-MusicType = 2
-Options = Array[ExtResource("3_lfjbx")]([])
-ScreenEffect = 0
-EndCutSceneSubscriber = NodePath("")
-metadata/_custom_type_script = "uid://byqjsgo6271ad"
-
-[sub_resource type="Resource" id="Resource_xkshq"]
-script = ExtResource("2_72s53")
-TextToSay = "...
-You damn machine, I hope you die!"
-Owner = ExtResource("9_41onr")
 MusicType = 2
 Options = Array[ExtResource("3_lfjbx")]([])
 ScreenEffect = 0
@@ -164,46 +133,14 @@ script = ExtResource("1_7qjir")
 StartingCutScene = Array[ExtResource("2_72s53")]([SubResource("Resource_7qjir"), SubResource("Resource_72s53"), SubResource("Resource_lfjbx"), SubResource("Resource_er777"), SubResource("Resource_1matk")])
 Delay = -1.0
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(955, 535)
+texture = ExtResource("8_xkshq")
+
 [node name="Environment" type="Node2D" parent="."]
 
-[node name="Box" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(172, 951)
-
-[node name="Box2" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(461, 949)
-
-[node name="Box3" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(322, 883)
-
-[node name="Box4" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(639, 991)
-
-[node name="Box5" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(894, 889)
-
-[node name="Box6" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(760, 951)
-
-[node name="Box7" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(1054, 951)
-
-[node name="Box8" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(1343, 949)
-
-[node name="Box9" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(1198, 1008)
-
-[node name="Box10" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(1502, 907)
-
-[node name="Box11" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(1794, 951)
-
-[node name="Box12" parent="Environment" instance=ExtResource("8_7g1ov")]
-position = Vector2(1649, 953)
-
 [node name="Player" parent="." instance=ExtResource("9_1matk")]
-position = Vector2(306, 536)
+position = Vector2(817, 716)
 CurrentArea = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -223,7 +160,30 @@ script = ExtResource("12_xkshq")
 FlagToListenTo = ExtResource("13_41onr")
 
 [node name="InteractableDoor" parent="." instance=ExtResource("11_72s53")]
-position = Vector2(1854, 590)
-SceneToChangeTo = "uid://dihft4ato04q1"
+position = Vector2(855, 1031)
+SceneToChangeTo = "uid://d1whs8f10sg5k"
 bHideIfCantBeInteracted = false
-CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq"), SubResource("Resource_jaiep"), SubResource("Resource_xkshq")])
+InteractText = "GO TO FACTORY FLOOR"
+CutScenes = Array[ExtResource("2_72s53")]([SubResource("Resource_7a2xq")])
+
+[node name="Blocker" parent="." instance=ExtResource("16_41onr")]
+position = Vector2(63, 497)
+
+[node name="Blocker2" parent="." instance=ExtResource("16_41onr")]
+position = Vector2(156, 1056)
+
+[node name="Blocker3" parent="." instance=ExtResource("16_41onr")]
+position = Vector2(246, 573)
+rotation = 1.57079
+
+[node name="Blocker4" parent="." instance=ExtResource("16_41onr")]
+position = Vector2(436, 980)
+rotation = 1.57079
+
+[node name="Blocker5" parent="." instance=ExtResource("16_41onr")]
+position = Vector2(1454, 193)
+rotation = 1.57079
+
+[node name="Blocker6" parent="." instance=ExtResource("16_41onr")]
+position = Vector2(336, 870)
+rotation = 3.14159

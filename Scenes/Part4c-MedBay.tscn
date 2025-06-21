@@ -1,0 +1,162 @@
+[gd_scene load_steps=26 format=3 uid="uid://b8637mr6auwa8"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_ph4la"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_5yykm"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_enbjr"]
+[ext_resource type="Resource" uid="uid://dj34nl5s4isfl" path="res://Content/Characters/Character_Player_Factory.tres" id="4_7qh8p"]
+[ext_resource type="Texture2D" uid="uid://cmuwcb33d4vdn" path="res://Art/Environment/Factory/medroom.PNG" id="5_5yykm"]
+[ext_resource type="Texture2D" uid="uid://n1kavwn2jy0w" path="res://Art/Environment/Factory/medicalroller.PNG" id="6_enbjr"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_lncck"]
+[ext_resource type="Texture2D" uid="uid://dekqm5mkxb7u3" path="res://Art/Environment/Factory/medbed.PNG" id="7_7qh8p"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_lysj6"]
+[ext_resource type="Texture2D" uid="uid://dtntdhk7b5i64" path="res://Art/Environment/Factory/medtable.PNG" id="8_5pp0y"]
+[ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="8_yt5v2"]
+[ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="9_p2ox6"]
+[ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="10_11tip"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="11_uah4r"]
+[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="12_6uqy6"]
+[ext_resource type="Resource" uid="uid://cka4xesmx7e7g" path="res://Content/Characters/Character_PlayerChip.tres" id="13_4qrcn"]
+[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="14_sahqj"]
+
+[sub_resource type="Resource" id="Resource_0euoa"]
+script = ExtResource("2_5yykm")
+TextToSay = "You see an AI Assistant at the desk. 
+No one else seems to be here."
+MusicType = 2
+Options = Array[ExtResource("3_enbjr")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lncck"]
+size = Vector2(238, 362)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lysj6"]
+size = Vector2(383, 689)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yt5v2"]
+size = Vector2(451, 464)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hydla"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_7a2xq"]
+script = ExtResource("2_5yykm")
+TextToSay = "You go upto the AI Assistant.
+"
+BackgroundImage = ExtResource("11_uah4r")
+MusicType = 2
+SFX = ExtResource("12_6uqy6")
+Options = Array[ExtResource("3_enbjr")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+FlagSet = ExtResource("9_p2ox6")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_jaiep"]
+script = ExtResource("2_5yykm")
+TextToSay = "EMPLOYEE 2329.
+YOU WERE REGISTERED FOR A MEDICAL EXAMINATION UNDER THE VETERANS ASSISTANCE PROGRAMME.
+..
+..
+APPROXIMATE WAITING TIME: 58 MONTHS.
+..
+...
+THANK YOU FOR YOUR UNDERSTANDING!"
+Owner = ExtResource("13_4qrcn")
+MusicType = 2
+Options = Array[ExtResource("3_enbjr")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="Resource" id="Resource_xkshq"]
+script = ExtResource("2_5yykm")
+TextToSay = "...
+You damn machine, I hope you die!"
+Owner = ExtResource("4_7qh8p")
+MusicType = 2
+Options = Array[ExtResource("3_enbjr")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ph4la")
+StartingCutScene = Array[ExtResource("2_5yykm")]([SubResource("Resource_0euoa")])
+Delay = -1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(796, 698)
+texture = ExtResource("5_5yykm")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(901, 367)
+texture = ExtResource("6_enbjr")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D"]
+position = Vector2(-8, -3)
+shape = SubResource("RectangleShape2D_lncck")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1262, 766)
+texture = ExtResource("7_7qh8p")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+position = Vector2(-13.5, 0.5)
+shape = SubResource("RectangleShape2D_lysj6")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(603, 466)
+texture = ExtResource("8_5pp0y")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D"]
+position = Vector2(-4, 15)
+shape = SubResource("RectangleShape2D_yt5v2")
+
+[node name="Player" parent="." instance=ExtResource("6_lncck")]
+position = Vector2(57, 951)
+CurrentArea = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("7_lysj6")]
+visible = false
+
+[node name="CoverPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hydla")
+script = ExtResource("8_yt5v2")
+FlagToListenTo = ExtResource("9_p2ox6")
+
+[node name="InteractableDoor" parent="." instance=ExtResource("10_11tip")]
+position = Vector2(571, 695)
+SceneToChangeTo = "uid://dihft4ato04q1"
+bHideIfCantBeInteracted = false
+CutScenes = Array[ExtResource("2_5yykm")]([SubResource("Resource_7a2xq"), SubResource("Resource_jaiep"), SubResource("Resource_xkshq")])
+
+[node name="Blocker" parent="." instance=ExtResource("14_sahqj")]
+position = Vector2(39, 1189)
+
+[node name="Blocker2" parent="." instance=ExtResource("14_sahqj")]
+position = Vector2(-37, 312)
+
+[node name="Blocker3" parent="." instance=ExtResource("14_sahqj")]
+position = Vector2(-68, 191)
+rotation = 1.5708

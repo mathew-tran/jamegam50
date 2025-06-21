@@ -1,0 +1,228 @@
+[gd_scene load_steps=19 format=3 uid="uid://cdbhpt4nc4tjd"]
+
+[ext_resource type="Script" uid="uid://bx0itqrisx6qs" path="res://Scripts/Main.gd" id="1_sy4y1"]
+[ext_resource type="Script" uid="uid://byqjsgo6271ad" path="res://DataTypes/CutsceneData.gd" id="2_0mwwc"]
+[ext_resource type="Script" uid="uid://dvueh6b07v70v" path="res://DataTypes/OptionData.gd" id="3_aln4y"]
+[ext_resource type="Resource" uid="uid://dj34nl5s4isfl" path="res://Content/Characters/Character_Player_Factory.tres" id="4_0klu0"]
+[ext_resource type="Texture2D" uid="uid://ctecfopbwbyka" path="res://Art/Environment/Factory/factory3.PNG" id="5_sy4y1"]
+[ext_resource type="PackedScene" uid="uid://m7eqcxxm3e24" path="res://Prefabs/Player.tscn" id="6_gv5bc"]
+[ext_resource type="PackedScene" uid="uid://cmwjabbwgt077" path="res://Prefabs/UI/InteractPanel.tscn" id="7_g30x8"]
+[ext_resource type="Script" uid="uid://xaed3k8cptud" path="res://Scripts/CoverPanel.gd" id="8_aoml5"]
+[ext_resource type="Resource" uid="uid://dir7xd1s77l2x" path="res://Content/StoryFlags/FLAG_006_NO_MEDICAL.tres" id="9_k056s"]
+[ext_resource type="PackedScene" uid="uid://bcml3rn2er3g2" path="res://Prefabs/Environment/House/InteractableDoor.tscn" id="10_7q6it"]
+[ext_resource type="Texture2D" uid="uid://u52f2do5qjsx" path="res://Art/CutSceneStills/BlackScreen.png" id="11_xqbd2"]
+[ext_resource type="AudioStream" uid="uid://ej728w2bnxlv" path="res://Audio/SFX/Dooropenreal.wav" id="12_50xba"]
+[ext_resource type="PackedScene" uid="uid://cic07ev5n0vgg" path="res://Prefabs/Environment/Blockers/Blocker.tscn" id="14_1yxrc"]
+[ext_resource type="PackedScene" uid="uid://cqo4lbpnnk7d8" path="res://Prefabs/Environment/Blockers/BlockerSmall.tscn" id="15_tkxxe"]
+[ext_resource type="PackedScene" uid="uid://jhsrq3qrypt7" path="res://Prefabs/Environment/Blockers/BlockerSmallest.tscn" id="16_wt4kk"]
+
+[sub_resource type="Resource" id="Resource_0euoa"]
+script = ExtResource("2_0mwwc")
+TextToSay = ".. Getting closer. I think."
+Owner = ExtResource("4_0klu0")
+MusicType = 2
+Options = Array[ExtResource("3_aln4y")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hydla"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_7a2xq"]
+script = ExtResource("2_0mwwc")
+TextToSay = "You open the door to the medical room.
+"
+BackgroundImage = ExtResource("11_xqbd2")
+MusicType = 2
+SFX = ExtResource("12_50xba")
+Options = Array[ExtResource("3_aln4y")]([])
+ScreenEffect = 0
+EndCutSceneSubscriber = NodePath("")
+FlagSet = ExtResource("9_k056s")
+metadata/_custom_type_script = "uid://byqjsgo6271ad"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_sy4y1")
+StartingCutScene = Array[ExtResource("2_0mwwc")]([SubResource("Resource_0euoa")])
+Delay = -1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(955, 535)
+texture = ExtResource("5_sy4y1")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("6_gv5bc")]
+position = Vector2(342, -1100)
+CurrentArea = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" parent="CanvasLayer" groups=["InteractPanel"] instance=ExtResource("7_g30x8")]
+visible = false
+
+[node name="CoverPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hydla")
+script = ExtResource("8_aoml5")
+FlagToListenTo = ExtResource("9_k056s")
+
+[node name="InteractableDoor" parent="." instance=ExtResource("10_7q6it")]
+position = Vector2(2855, 2037)
+SceneToChangeTo = "uid://b8637mr6auwa8"
+bHideIfCantBeInteracted = false
+CutScenes = Array[ExtResource("2_0mwwc")]([SubResource("Resource_7a2xq")])
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1883, 12)
+rotation = -3.14159
+scale = Vector2(1, -1)
+metadata/_edit_group_ = true
+
+[node name="Blocker" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(389, 155)
+
+[node name="Blocker3" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(18, 1094)
+rotation = 1.57079
+
+[node name="Blocker13" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(604, -1389)
+rotation = 3.14159
+
+[node name="Blocker14" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(2427, -1405)
+rotation = 3.14159
+
+[node name="Blocker15" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(-1025, 272)
+rotation = -1.5708
+
+[node name="Blocker16" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(-1009, 2038)
+rotation = -1.5708
+
+[node name="Blocker17" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(-977, 2575)
+
+[node name="Blocker18" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(-1042, 2885)
+rotation = -1.5708
+
+[node name="Blocker4" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(2780, 1875)
+rotation = 3.14159
+
+[node name="Blocker10" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(1893, 1965)
+rotation = 3.14159
+
+[node name="Blocker11" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(2854, 2462)
+rotation = 3.14159
+
+[node name="Blocker12" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(1584, 2438)
+rotation = 3.14159
+
+[node name="Blocker6" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(2957, 341)
+rotation = 1.5708
+
+[node name="Blocker7" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(2534, -1328)
+rotation = 1.5708
+
+[node name="Blocker8" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(4137, 278)
+rotation = 3.14159
+
+[node name="Blocker9" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(1923, 590)
+rotation = 3.14159
+
+[node name="Blocker19" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(1152, 590)
+rotation = 3.14159
+
+[node name="Blocker20" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(1152, 155)
+rotation = 3.14159
+
+[node name="Blocker21" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(-591, 155)
+rotation = -1.5708
+
+[node name="Blocker22" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(-1227, -970)
+
+[node name="Blocker23" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(82, -1845)
+rotation = 1.30899
+scale = Vector2(1, 1)
+
+[node name="Blocker24" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(486, -309)
+
+[node name="Blocker25" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(468, -627)
+
+[node name="Blocker26" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(468, -627)
+
+[node name="Blocker27" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(1207, -63)
+rotation = -1.5708
+
+[node name="Blocker28" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(987, -69)
+rotation = -1.5708
+
+[node name="Blocker29" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(559, -204)
+rotation = -1.5708
+
+[node name="Blocker30" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(1109, -69)
+rotation = -1.5708
+
+[node name="Blocker31" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(1109, -69)
+rotation = -1.5708
+
+[node name="Blocker32" parent="Node2D" instance=ExtResource("16_wt4kk")]
+position = Vector2(2112, -479)
+rotation = 1.57079
+
+[node name="Blocker33" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(2124, 298)
+rotation = 1.57079
+scale = Vector2(0.715, 0.715)
+
+[node name="Blocker36" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(1760, 349)
+rotation = 1.57079
+scale = Vector2(0.715, 0.715)
+
+[node name="Blocker2" parent="Node2D" instance=ExtResource("14_1yxrc")]
+position = Vector2(339, 1084)
+rotation = 1.57079
+
+[node name="Blocker34" parent="Node2D" instance=ExtResource("16_wt4kk")]
+position = Vector2(160, 1006)
+
+[node name="Blocker5" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(-488, 220)
+rotation = 1.57079
+
+[node name="Blocker35" parent="Node2D" instance=ExtResource("15_tkxxe")]
+position = Vector2(-1573, 1354)
+
+[node name="Blocker37" parent="Node2D" instance=ExtResource("16_wt4kk")]
+position = Vector2(1930, 1521)
